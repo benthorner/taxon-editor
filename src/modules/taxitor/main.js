@@ -1,21 +1,19 @@
 function Taxitor(element) {
-  var element = d3.select(element)
-  var events = {}
+  _.extend(this, Backbone.Events)
+  this.element = element
+  this.g = d3.select(element).append("svg").append("g")
 
-  _.extend(events, Backbone.Events)
+  new Taxitor.Tree(this)
+  new Taxitor.Expand(this)
+  new Taxitor.Resize(this)
+  this.on("all", this._pipe, this)
+}
 
-  new Taxitor.Tree(events, element)
-  new Taxitor.Drag(events, element)
-  new Taxitor.Hide(events, element)
-  new Taxitor.Size(events, element)
+Taxitor.prototype._pipe = function(name, args) {
+  var pipe = ["onData", "onBind", "afterBind",
+              "beforeMove", "onMove", "afterMove"]
 
-  var data = {
-    name: "foo bar woo war", children: [
-      { name: "bar" },
-      { name: "woo" }
-    ]
-  }
-
-  events.trigger("data", data)
-  events.trigger("draw")
+  var index = pipe.indexOf(name)
+  if (index < 0 || index == pipe.length-1) return
+  this.trigger(pipe[index+1], args)
 }
