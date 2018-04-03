@@ -1,110 +1,18 @@
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script type="text/javascript">
-      function script() {
-        var width = d3.select("#tree-container").node().clientWidth
-        var height = d3.select("#tree-container").node().clientHeight
-        var radius = 50
-        var margin = 10
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="http://backbonejs.org/backbone-min.js"></script>
 
-        d3.select("#tree-container")
-          .append("svg")
-          .attr("width", width)
-          .attr("height", height)
-          .append("g")
-          .attr("id", "tree")
-
-        d3.select("body")
-          .call(d3.zoom().on("zoom", function () {
-            d3.select("#tree")
-              .attr("transform", d3.event.transform)
-          }))
-
-        var root = d3.hierarchy(
-          { name: "foo bar woo war", children: [
-            { name: "bar" },
-            { name: "woo" }
-          ] }
-        )
-
-        d3.tree()
-          .size([width-2*radius-2*margin, height-2*radius-2*margin])
-          (root)
-
-        var tree = d3.select("#tree")
-
-        function enter() {
-          tree.selectAll(".line")
-            .data(root.links())
-            .enter()
-            .append("line")
-            .attr("class", "line")
-
-          tree.selectAll(".node")
-            .data(root.descendants())
-            .enter()
-            .append("g")
-            .attr("class", "node")
-
-          tree.selectAll(".node")
-            .append("circle")
-
-          tree.selectAll(".node")
-            .append("text")
-        }
-
-        function update() {
-          tree.selectAll(".line")
-            .attr("x1", function(d) { return d.source.x + radius + margin })
-            .attr("y1", function(d) { return d.source.y + radius + margin })
-            .attr("x2", function(d) { return d.target.x + radius + margin })
-            .attr("y2", function(d) { return d.target.y + radius + margin })
-            .style("stroke", "black")
-
-          tree.selectAll(".node circle")
-            .attr("cx", function(d) { return d.x + radius + margin })
-            .attr("cy", function(d) { return d.y + radius + margin })
-            .attr("fill", "red")
-            .attr("r", radius)
-
-          tree.selectAll(".node text")
-            .attr("x", function(d) { return d.x + radius + margin })
-            .attr("y", function(d) { return d.y + radius + margin })
-            .attr("text-anchor", "middle")
-            .attr("alignment-baseline", "central")
-            .style("font-family", "courier")
-            .html(function(d) { return d.data.name })
-        }
-
-        enter()
-        update()
-
-        tree.selectAll(".node")
-          .style("cursor", "hand")
-          .call(d3.drag().on("drag", function (d) {
-            d.x = d3.event.x
-            d.y = d3.event.y
-            update()
-          }))
-
-        tree.selectAll(".node")
-          .on("click", function(d) {
-            d.each(function(d2) {
-              if (d2 == d) return
-              d2.data.collapsed = !d2.data.collapsed
-            })
-
-            tree.selectAll(".node")
-              .style("visibility", function(d2) { return d2.data.collapsed ? "hidden" : "visible" })
-
-            tree.selectAll(".line")
-              .style("visibility", function(d) { return (d.source.data.collapsed || d.target.data.collapsed) ? "hidden" : "visible" })
-          })
-      }
-    </script>
+    <script src="src/application.js"></script>
+    <script src="src/modules/taxitor/main.js"></script>
+    <script src="src/modules/taxitor/tree.js"></script>
+    <script src="src/modules/taxitor/hide.js"></script>
+    <script src="src/modules/taxitor/drag.js"></script>
+    <script src="src/modules/taxitor/size.js"></script>
   </head>
-  <body onload="script()">
+  <body>
     <div style="width: 100%; height: 75%" id="tree-container"/>
   </body>
 </html>
