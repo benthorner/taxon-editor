@@ -5,5 +5,6 @@ Taxode.Fake = function(parent) {
 }
 
 Taxode.Fake.prototype.expand = function() {
-  this.children = [new Taxode.Fake(this)]
+  this.children = [new Taxode.Fake(this),
+                   new Taxode.Fake(this)]
 }
