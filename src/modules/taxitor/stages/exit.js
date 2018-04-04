@@ -11,7 +11,7 @@ Taxitor.Stages.Exit.prototype.onExit = function() {
     .remove()
 
   this.editor.g
-    .selectAll(".line")
+    .selectAll(".link")
     .data(this.editor.data.links())
     .exit()
     .remove()
