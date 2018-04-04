@@ -1,0 +1,1 @@
+Taxitor.Handlers = {}

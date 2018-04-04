@@ -1,11 +1,10 @@
-Taxitor.Render = function(editor) {
-  editor.on("onMove", this.onMove, this)
+Taxitor.Stages.Update = function(editor) {
+  this.editor = editor
+  this.editor.on("onUpdate", this.onUpdate, this)
 }
 
-Taxitor.Render.prototype.onMove = function() {
-  var that = this
-
-  that.editor.g
+Taxitor.Stages.Update.prototype.onUpdate = function() {
+  this.editor.g
     .selectAll(".line")
     .attr("x1", function(d) { return d.source.x })
     .attr("y1", function(d) { return d.source.y })
@@ -13,13 +12,13 @@ Taxitor.Render.prototype.onMove = function() {
     .attr("y2", function(d) { return d.target.y })
     .style("stroke", "black")
 
-  that.editor.g
+  this.editor.g
     .selectAll(".node circle")
     .attr("cx", function(d) { return d.x })
     .attr("cy", function(d) { return d.y })
     .attr("r", 50)
 
-  that.editor.g
+  this.editor.g
     .selectAll(".node text")
     .attr("x", function(d) { return d.x })
     .attr("y", function(d) { return d.y })

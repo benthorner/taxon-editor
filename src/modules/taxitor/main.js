@@ -3,15 +3,22 @@ function Taxitor(element) {
   this.element = element
   this.g = d3.select(element).append("svg").append("g")
 
-  new Taxitor.Tree(this)
-  new Taxitor.Expand(this)
-  new Taxitor.Resize(this)
+  new Taxitor.Stages.Init(this)
+  new Taxitor.Stages.Enter(this)
+  new Taxitor.Stages.Exit(this)
+  new Taxitor.Stages.Layout(this)
+  new Taxitor.Stages.Update(this)
+  new Taxitor.Handlers.Zoom(this)
+  new Taxitor.Handlers.Expand(this)
   this.on("all", this._pipe, this)
 }
 
 Taxitor.prototype._pipe = function(name, args) {
-  var pipe = ["onData", "onBind", "afterBind",
-              "beforeMove", "onMove", "afterMove"]
+  var pipe = ["beforeInit", "onInit", "afterInit",
+              "beforeEnter", "onEnter", "afterEnter",
+              "beforeExit", "onExit", "afterExit",
+              "beforeLayout", "onLayout", "afterLayout",
+              "beforeUpdate", "onUpdate", "afterUpdate"]
 
   var index = pipe.indexOf(name)
   if (index < 0 || index == pipe.length-1) return
