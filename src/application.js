@@ -1,6 +1,15 @@
 $(document).ready(function() {
-  var taxitor = new Taxitor(d3.select("#tree-container").node())
-  //new Taxadio(d3.select("#data-radio").node(), ["one", "two"])
-  taxitor.trigger("data", new Taxode.Fake())
-  //taxitor.trigger("onInit", Taxode.Real.root)
+  var layoutOptions = Taxitor.Stages.Layout.OPTIONS
+  var layoutTaxadioNode = d3.select("#layout-taxadio").node()
+  var layoutTaxadio = new Taxadio(layoutTaxadioNode, layoutOptions)
+
+  var taxitorNode = d3.select("#taxitor").node()
+  var taxitor = new Taxitor(taxitorNode)
+
+  layoutTaxadio.on("click", function(d) {
+    taxitor.trigger("layoutSelected", d)
+  })
+
+  taxitor.trigger("dataReceived", new Taxode.Fake())
+  //taxitor.trigger("dataReceived", Taxode.Real.root)
 })

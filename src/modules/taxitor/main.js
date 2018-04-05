@@ -17,7 +17,7 @@ function Taxitor(element) {
   new Taxitor.Handlers.Color(this)
   new Taxitor.Pipeline(this)
 
-  this.on("data", function(data) {
+  this.on("dataReceived", function(data) {
     this.data = data
     this.trigger("beforeEnter")
   })

@@ -6,10 +6,10 @@ Taxitor.Handlers.Expand = function(editor) {
 Taxitor.Handlers.Expand.prototype.afterEnter = function() {
   this.editor.g
     .selectAll(".node")
-    .on("click", this._onClick.bind(this))
+    .on("click", this.onClick.bind(this))
 }
 
-Taxitor.Handlers.Expand.prototype._onClick = function(d) {
+Taxitor.Handlers.Expand.prototype.onClick = function(d) {
   var that = this
 
   if (d.children) {

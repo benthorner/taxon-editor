@@ -14,3 +14,21 @@
 .taxitor .link {
   stroke: gray;
 }
+
+.taxadio .button {
+  display: inline-block;
+  padding: 5px;
+  background-color: #00823B;
+  color: white;
+  font-family: arial, sans-serif;
+  margin: 5px;
+  cursor: hand;
+}
+
+.taxadio .button:hover {
+  background-color: #006435;
+}
+
+.taxadio .button.selected {
+  background-color: #FFBF47;
+}
