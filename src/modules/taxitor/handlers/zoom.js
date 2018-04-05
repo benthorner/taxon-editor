@@ -13,7 +13,7 @@ Taxitor.Handlers.Zoom.prototype.afterUpdate = function() {
   var transform = this._fillAndCenter()
 
   d3.zoom().transform(d3.select(element), transform)
-  this.editor.g.attr("transform", transform)
+  this.editor.g.transition().attr("transform", transform)
 }
 
 Taxitor.Handlers.Zoom.prototype._fillAndCenter = function() {
