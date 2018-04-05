@@ -1,13 +1,18 @@
 .node circle {
-  fill: red;
+  fill: #005ea5;
 }
 
 .node text {
   text-anchor: middle;
   alignment-baseline: central;
-  font-family: courier;
+  font-family: arial, sans-serif;
+  fill: white;
 }
 
 .node {
   cursor: hand;
+}
+
+.link {
+  stroke-width: 5px;
 }
