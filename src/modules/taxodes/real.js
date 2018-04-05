@@ -2,8 +2,8 @@ const LINKS_URL = "http://publishing-api.dev.gov.uk/v2/expanded-links/"
 
 Taxode.Real = function(taxon, parent) {
   _.extend(this, new Taxode.Base(parent))
-  this.title = taxon.title
-  this.id = taxon.content_id
+  _.extend(this, taxon)
+  this.id = this.content_id
 }
 
 Taxode.Real.root = new Taxode.Real({

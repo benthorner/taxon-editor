@@ -23,12 +23,14 @@
     <script src="src/modules/taxitor/handlers/expand.js"></script>
     <script src="src/modules/taxitor/handlers/zoom.js"></script>
     <script src="src/modules/taxitor/handlers/color.js"></script>
+    <script src="src/modules/taxitor/handlers/select.js"></script>
     <script src="src/modules/taxitor/layouts/main.js"></script>
     <script src="src/modules/taxitor/layouts/base.js"></script>
     <script src="src/modules/taxitor/layouts/radial.js"></script>
     <script src="src/modules/taxitor/layouts/force.js"></script>
     <script src="src/modules/taxitor/layouts/tree.js"></script>
     <script src="src/modules/taxadio/main.js"></script>
+    <script src="src/modules/taxplay/main.js"></script>
   </head>
 
   <body>
@@ -43,10 +45,17 @@
       </span>
     </div>
 
-    <div style="margin: 5px 15px 15px 15px">
-      <div style="margin-bottom: 15px; display: inline-block" id="layout-taxadio"></div>
-      <div id="data-taxadio" style="margin-bottom: 15px; float: right"></div>
-      <div style="height: 75%" id="taxitor"></div>
+    <div style="margin: 5px 5px 15px 15px">
+      <table style="height: 75%; width: 100%; border-spacing: 0">
+        <td valign="top" style="width: 75%">
+          <div style="margin-bottom: 15px; display: inline-block" id="layout-taxadio"></div>
+          <div id="data-taxadio" style="margin-bottom: 15px; float: right"></div>
+          <div id="taxitor" style="height: 75%"></div>
+        </td>
+        <td valign="top" style="width: 25%">
+          <div id="taxplay" style="height: 100%"></div>
+        </td>
+      </table>
     </div>
 
     <div style="border-top: 10px solid #005ea5; margin-top: 15px"></div>

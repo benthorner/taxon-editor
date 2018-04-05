@@ -9,6 +9,9 @@ $(document).ready(function() {
   var taxitorNode = d3.select("#taxitor").node()
   var taxitor = new Taxitor(taxitorNode)
 
+  var taxplayNode = d3.select("#taxplay").node()
+  var taxplay = new Taxplay(taxplayNode)
+
   layoutTaxadio.on("click", function(d) {
     taxitor.trigger("layoutSelected", d)
   })
@@ -22,6 +25,10 @@ $(document).ready(function() {
         taxitor.trigger("dataReceived", Taxode.Real.root)
         break
     }
+  })
+
+  taxitor.on("nodeSelected", function(d) {
+    taxplay.trigger("dataReceived", d)
   })
 
   taxitor.trigger("dataReceived", new Taxode.Fake())

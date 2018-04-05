@@ -1,0 +1,16 @@
+Taxplay = function(element) {
+  _.extend(this, Backbone.Events)
+  this.element = d3.select(element)
+  this.on("dataReceived", this.dataReceived, this)
+
+  this.element.classed("taxplay", true)
+  this.element.append("div").classed("title", true)
+  this.element.append("div").classed("id", true)
+  this.element.append("div").classed("description", true)
+}
+
+Taxplay.prototype.dataReceived = function(d) {
+  this.element.select(".title").html(d.title)
+  this.element.select(".id").html(d.id)
+  this.element.select(".description").html(d.description)
+}
