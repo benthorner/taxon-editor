@@ -16,17 +16,6 @@ function Taxitor(element) {
   new Taxitor.Handlers.Zoom(this)
   new Taxitor.Handlers.Expand(this)
   new Taxitor.Handlers.Color(this)
-  this.on("all", this._pipe, this)
+  new Taxitor.Pipeline(this)
 }
 
-Taxitor.prototype._pipe = function(name, args) {
-  var pipe = ["beforeInit", "onInit", "afterInit",
-              "beforeEnter", "onEnter", "afterEnter",
-              "beforeExit", "onExit", "afterExit",
-              "beforeLayout", "onLayout", "afterLayout",
-              "beforeUpdate", "onUpdate", "afterUpdate"]
-
-  var index = pipe.indexOf(name)
-  if (index < 0 || index == pipe.length-1) return
-  this.trigger(pipe[index+1], args)
-}

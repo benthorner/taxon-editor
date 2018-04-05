@@ -1,5 +1,4 @@
 const LINKS_URL = "http://publishing-api.dev.gov.uk/v2/expanded-links/"
-const HOME_ID = "f3bbdec2-0e62-4520-a7fd-6ffd5d36e03a"
 
 Taxode.Real = function(taxon, parent) {
   _.extend(this, new Taxode.Base(parent))
@@ -7,8 +6,10 @@ Taxode.Real = function(taxon, parent) {
   this.id = taxon.content_id
 }
 
-Taxode.Real.root = new Taxode.Real({ content_id: HOME_ID,
-                                     title: "GOV.UK" })
+Taxode.Real.root = new Taxode.Real({
+  content_id: "f3bbdec2-0e62-4520-a7fd-6ffd5d36e03a",
+  title: "GOV.UK"
+})
 
 Taxode.Real.prototype.expand = function() {
   var that = this
