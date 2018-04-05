@@ -1,5 +1,6 @@
 Taxitor.Stages.Layout = function(editor) {
   this.editor = editor
+  this.nodeBoundsScaleFactor = 25
   this.editor.on("onLayout", this.onLayout, this)
   this.editor.on("afterUpdate", this.afterUpdate, this)
 
@@ -19,5 +20,11 @@ Taxitor.Stages.Layout.prototype.onLayout = function() {
 
 Taxitor.Stages.Layout.prototype._bounds = function() {
   var element = this.editor.element
-  return [element.clientWidth, element.clientHeight]
+  var nodes = this.editor.g.selectAll(".node").nodes()
+
+  var scale = nodes.length + this.nodeBoundsScaleFactor
+  scale /= this.nodeBoundsScaleFactor
+
+  return [element.clientWidth*scale,
+          element.clientHeight*scale]
 }
