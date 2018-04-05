@@ -4,13 +4,21 @@ Taxitor.Handlers.Expand = function(editor) {
 }
 
 Taxitor.Handlers.Expand.prototype.afterEnter = function() {
+  this.editor.g
+    .selectAll(".node")
+    .on("click", this._onClick.bind(this))
+}
+
+Taxitor.Handlers.Expand.prototype._onClick = function(d) {
   var that = this
 
-  that.editor.g
-    .selectAll(".node")
-    .on("click", function(d) {
-      if (d.children) d.children = null
-      else d.expand()
-      that.editor.trigger("onEnter")
-    })
+  if (d.children) {
+    d.children = null
+    that.editor.trigger("onEnter")
+    return
+  }
+
+  d.expand().then(function() {
+    that.editor.trigger("onEnter")
+  })
 }
