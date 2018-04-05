@@ -9,7 +9,7 @@ Taxitor.Stages.Enter.prototype.onEnter = function() {
   var nodes = this.editor.g
     .select(".nodes")
     .selectAll(".node")
-    .data(this.editor.data.descendants())
+    .data(this.editor.data.descendants(), function(d) { return d.id })
     .enter()
     .append("g")
     .attr("class", "node")
@@ -20,7 +20,7 @@ Taxitor.Stages.Enter.prototype.onEnter = function() {
   this.editor.g
     .select(".links")
     .selectAll(".link")
-    .data(this.editor.data.links())
+    .data(this.editor.data.links(), function(d) { return d.target.id })
     .enter()
     .append("line")
     .attr("class", "link")

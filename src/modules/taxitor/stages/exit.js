@@ -6,13 +6,13 @@ Taxitor.Stages.Exit = function(editor) {
 Taxitor.Stages.Exit.prototype.onExit = function() {
   this.editor.g
     .selectAll(".node")
-    .data(this.editor.data.descendants())
+    .data(this.editor.data.descendants(), function(d) { return d.id })
     .exit()
     .remove()
 
   this.editor.g
     .selectAll(".link")
-    .data(this.editor.data.links())
+    .data(this.editor.data.links(), function(d) { return d.target.id })
     .exit()
     .remove()
 }
