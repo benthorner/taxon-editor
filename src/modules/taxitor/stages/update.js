@@ -1,5 +1,4 @@
 Taxitor.Stages.Update = function(editor) {
-  this.layout = new Taxitor.Layouts.Radial()
   this.editor = editor
   this.editor.on("onUpdate", this.onUpdate, this)
 }

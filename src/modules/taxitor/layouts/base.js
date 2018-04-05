@@ -1,6 +1,8 @@
 Taxitor.Layouts.Base = function(editor) {
   this.editor = editor
-  this.nodeBoundsScaleFactor = 25
+  this.nodeWidth = 100
+  this.nodeHeight = 100
+  this.nodeBoundsScaleFactor = 20
 }
 
 Taxitor.Layouts.Base.prototype.bounds = function() {
