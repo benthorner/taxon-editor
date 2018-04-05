@@ -14,8 +14,12 @@ Taxitor.Stages.Enter.prototype.onEnter = function() {
     .append("g")
     .attr("class", "node")
 
-  nodes.append("circle")
-  nodes.append("text")
+  nodes.append("rect")
+
+  nodes.append("foreignObject")
+    .append("xhtml:div")
+    .append("div")
+    .attr("class", "title")
 
   this.editor.g
     .select(".links")

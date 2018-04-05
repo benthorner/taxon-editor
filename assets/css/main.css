@@ -1,12 +1,14 @@
-.node circle {
+.node rect {
   fill: #005ea5;
 }
 
-.node text {
-  text-anchor: middle;
-  alignment-baseline: central;
+.node .title {
+  color: white;
   font-family: arial, sans-serif;
-  fill: white;
+  font-size: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1px;
 }
 
 .node {
@@ -14,5 +16,6 @@
 }
 
 .link {
-  stroke-width: 5px;
+  stroke-width: 1px;
+  stroke: gray;
 }

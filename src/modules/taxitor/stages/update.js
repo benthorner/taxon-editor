@@ -13,14 +13,18 @@ Taxitor.Stages.Update.prototype.onUpdate = function() {
     .style("stroke", "black")
 
   this.editor.g
-    .selectAll(".node circle")
-    .attr("cx", function(d) { return d.x })
-    .attr("cy", function(d) { return d.y })
-    .attr("r", 50)
+    .selectAll(".node rect")
+    .attr("x", function(d) { return d.x - 25 })
+    .attr("y", function(d) { return d.y - 25 })
+    .attr("width", 50)
+    .attr("height", 50)
 
   this.editor.g
-    .selectAll(".node text")
-    .attr("x", function(d) { return d.x })
-    .attr("y", function(d) { return d.y })
+    .selectAll(".node foreignObject")
+    .attr("x", function(d) { return d.x - 25 })
+    .attr("y", function(d) { return d.y - 25 })
+    .attr("width", 50)
+    .attr("height", 50)
+    .select(".title")
     .html(function(d) { return d.title })
 }
