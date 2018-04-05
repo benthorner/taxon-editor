@@ -5,9 +5,11 @@ Taxode.Fake = function(parent) {
 }
 
 Taxode.Fake.prototype.expand = function() {
-  new Promise(function(resolve, reject) {
-    this.children = [new Taxode.Fake(this),
-                     new Taxode.Fake(this)]
+  var that = this
+
+  return new Promise(function(resolve, reject) {
+    that.children = [new Taxode.Fake(that),
+                     new Taxode.Fake(that)]
     resolve()
   })
 }

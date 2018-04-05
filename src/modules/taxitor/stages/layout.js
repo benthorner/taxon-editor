@@ -1,6 +1,6 @@
 Taxitor.Stages.Layout = function(editor) {
   this.editor = editor
-  this.layout = new Taxitor.Layouts.Tree(this.editor)
+  this.layout = new Taxitor.Layouts.Force(this.editor)
   this.editor.on("onLayout", this.onLayout, this)
 
   $(window)
