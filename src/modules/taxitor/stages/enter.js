@@ -12,14 +12,14 @@ Taxitor.Stages.Enter.prototype.onEnter = function() {
     .data(this.editor.data.descendants(), function(d) { return d.id })
     .enter()
     .append("g")
-    .attr("class", "node")
+    .classed("node", true)
 
   nodes.append("rect")
 
   nodes.append("foreignObject")
     .append("xhtml:div")
     .append("div")
-    .attr("class", "title")
+    .classed("title", true)
 
   this.editor.g
     .select(".links")
@@ -27,5 +27,5 @@ Taxitor.Stages.Enter.prototype.onEnter = function() {
     .data(this.editor.data.links(), function(d) { return d.target.id })
     .enter()
     .append("line")
-    .attr("class", "link")
+    .classed("link", true)
 }

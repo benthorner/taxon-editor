@@ -1,7 +1,12 @@
 function Taxitor(element) {
   _.extend(this, Backbone.Events)
   this.element = element
-  this.g = d3.select(element).append("svg").append("g")
+
+  this.g = d3
+    .select(element)
+    .append("svg")
+    .append("g")
+    .classed("taxitor", true)
 
   new Taxitor.Stages.Init(this)
   new Taxitor.Stages.Enter(this)

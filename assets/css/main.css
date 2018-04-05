@@ -1,4 +1,4 @@
-.node .title {
+.taxitor .node .title {
   color: white;
   font-family: arial, sans-serif;
   font-size: 20px;
@@ -7,10 +7,10 @@
   padding: 1px;
 }
 
-.node {
+.taxitor .node {
   cursor: hand;
 }
 
-.link {
+.taxitor .link {
   stroke: gray;
 }
