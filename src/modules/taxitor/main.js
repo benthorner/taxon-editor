@@ -10,6 +10,7 @@ function Taxitor(element) {
   new Taxitor.Stages.Update(this)
   new Taxitor.Handlers.Zoom(this)
   new Taxitor.Handlers.Expand(this)
+  new Taxitor.Handlers.Color(this)
   this.on("all", this._pipe, this)
 }
 

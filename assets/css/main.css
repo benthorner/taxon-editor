@@ -1,7 +1,3 @@
-.node rect {
-  fill: #005ea5;
-}
-
 .node .title {
   color: white;
   font-family: arial, sans-serif;
@@ -16,6 +12,5 @@
 }
 
 .link {
-  stroke-width: 1px;
   stroke: gray;
 }
