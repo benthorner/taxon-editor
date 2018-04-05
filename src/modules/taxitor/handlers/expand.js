@@ -6,11 +6,12 @@ Taxitor.Handlers.Expand = function(editor) {
 Taxitor.Handlers.Expand.prototype.afterEnter = function() {
   this.editor.g
     .selectAll(".node")
-    .on("click", this.onClick.bind(this))
+    .on("dblclick", this.onClick.bind(this))
 }
 
 Taxitor.Handlers.Expand.prototype.onClick = function(d) {
   var that = this
+  d3.event.stopPropagation()
 
   if (d.children) {
     d.children = null
