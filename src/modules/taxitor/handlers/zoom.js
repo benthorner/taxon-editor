@@ -1,5 +1,6 @@
 Taxitor.Handlers.Zoom = function(editor) {
   this.editor = editor
+  this.minScaleFactor = 2
   this.editor.on("afterUpdate", this.afterUpdate, this)
 
   d3.select(editor.element)
@@ -26,6 +27,6 @@ Taxitor.Handlers.Zoom.prototype._fillAndCenter = function() {
   // transforms are applied in reverse to what you specify
   return d3.zoomIdentity
     .translate(element.clientWidth/2, element.clientHeight/2)
-    .scale(_.min([xScale, yScale]))
+    .scale(_.min([xScale, yScale, this.minScaleFactor]))
     .translate(-box.x - box.width/2, -box.y - box.height/2)
 }

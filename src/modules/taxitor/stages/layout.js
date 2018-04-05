@@ -15,8 +15,8 @@ Taxitor.Stages.Layout.OPTIONS = ["Force", "Radial", "Tree"]
 Taxitor.Stages.Layout.prototype.onLayout = function() {
   d3.select(this.editor.element)
     .select("svg")
-    .attr("width", this.layout.bounds().width)
-    .attr("height", this.layout.bounds().height)
+    .attr("width", this.editor.element.clientWidth)
+    .attr("height", this.editor.element.clientHeight)
 
   var root = this.editor.g.select(".node").datum()
   this.layout.apply(root)

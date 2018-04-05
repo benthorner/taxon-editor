@@ -1,6 +1,10 @@
-.taxitor .node .title {
+body {
   color: white;
   font-family: arial, sans-serif;
+  margin: 0;
+}
+
+.taxitor .node .title {
   font-size: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -19,9 +23,7 @@
   display: inline-block;
   padding: 5px;
   background-color: #00823B;
-  color: white;
-  font-family: arial, sans-serif;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
   cursor: hand;
 }
 
