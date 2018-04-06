@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+td {
+  padding: 0;
+}
+
 .taxitor .node .title {
   font-size: 20px;
   overflow: hidden;

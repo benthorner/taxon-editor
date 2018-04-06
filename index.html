@@ -46,14 +46,28 @@
     </div>
 
     <div style="margin: 5px 5px 15px 15px">
-      <div style="width: 75%; display: inline-block">
-        <div style="margin-bottom: 15px; display: inline-block" id="layout-taxadio"></div>
-        <div id="data-taxadio" style="margin-bottom: 15px; float: right"></div>
-        <div id="taxitor" style="height: 75%"></div>
-      </div>
-      <div style="width: 25%; float: right">
-        <div id="taxplay" style="height: 75%"></div>
-      </div>
+      <table style="width: 100%; height: 75%; border-spacing: 0">
+        <td style="width: 75%">
+          <table style="width: 100%; height: 100%; border-spacing: 0">
+            <tr style="height: 0%">
+              <td style="width: 50%">
+                <div id="layout-taxadio" style="margin-bottom: 15px"></div>
+              </td>
+              <td style="width: 50%" align="right">
+                <div id="data-taxadio" style="margin-bottom: 15px"></div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div id="taxitor" style="width: 100%; height: 100%"></div>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <div id="taxplay" style="height: 100%"></div>
+        </td>
+      </table>
     </div>
 
     <div style="border-top: 10px solid #005ea5; margin-top: 15px"></div>
