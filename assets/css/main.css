@@ -49,6 +49,7 @@ td {
 }
 
 .taxplay .title {
+  color: #0B0C0C;
   font-size: 28px;
 }
 
@@ -57,7 +58,13 @@ td {
   color: #BFC1C3;
 }
 
+.taxplay .base-path {
+  font-size: 16px;
+  color: #BFC1C3;
+}
+
 .taxplay .description {
   font-size: 16px;
-  color: #6F777B
+  color: #6F777B;
+  margin-top: 10px;
 }

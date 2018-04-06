@@ -8,7 +8,9 @@ Taxode.Real = function(taxon, parent) {
 
 Taxode.Real.root = new Taxode.Real({
   content_id: "f3bbdec2-0e62-4520-a7fd-6ffd5d36e03a",
-  title: "GOV.UK"
+  title: "GOV.UK",
+  base_path: "/",
+  description: "The root of the taxonomy."
 })
 
 Taxode.Real.prototype.expand = function() {
