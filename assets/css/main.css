@@ -8,6 +8,30 @@ td {
   padding: 0;
 }
 
+#taxmenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#taxmenu .container {
+  background-color: #DEE0E2;
+  border: solid 1px #BFC1C3;
+  position: absolute;
+}
+
+#taxmenu .button {
+  padding: 10px 20px;
+  background-color: #00823B;
+  cursor: hand;
+}
+
+#taxmenu .button:hover {
+  background-color: #006435;
+}
+
 .taxitor .node .title {
   font-size: 20px;
   overflow: hidden;

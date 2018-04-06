@@ -16,6 +16,7 @@ function Taxitor(element) {
   new Taxitor.Handlers.Expand(this)
   new Taxitor.Handlers.Color(this)
   new Taxitor.Handlers.Select(this)
+  new Taxitor.Handlers.Menu(this)
   new Taxitor.Pipeline(this)
 
   this.on("dataReceived", function(data) {

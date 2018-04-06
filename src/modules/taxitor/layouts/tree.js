@@ -1,5 +1,6 @@
 Taxitor.Layouts.Tree = function(editor) {
   _.extend(this, new Taxitor.Layouts.Base(editor))
+  this.nodeBoundsScaleFactor = 15
 }
 
 Taxitor.Layouts.Tree.prototype.apply = function(root) {

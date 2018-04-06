@@ -14,3 +14,22 @@ Taxode.Fake.prototype.expand = function() {
     resolve()
   })
 }
+
+Taxode.Fake.prototype.contract = function() {
+  var that = this
+  that.children = null
+  return Promise.resolve()
+}
+
+Taxode.Fake.prototype.createChild = function() {
+  if (!this.children) this.children = []
+  var child = new Taxode.Fake(this)
+  this.children.push(child)
+  return Promise.resolve(child)
+}
+
+Taxode.Fake.prototype.delete = function() {
+  var children = _.without(this.parent.children, this)
+  this.parent.children = (children.length == 0) ? null : children
+  return Promise.resolve()
+}

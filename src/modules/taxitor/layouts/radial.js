@@ -1,5 +1,6 @@
 Taxitor.Layouts.Radial = function(editor) {
   _.extend(this, new Taxitor.Layouts.Base(editor))
+  this.nodeBoundsScaleFactor = 15
 }
 
 Taxitor.Layouts.Radial.prototype.apply = function(root) {

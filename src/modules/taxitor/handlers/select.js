@@ -3,6 +3,7 @@ Taxitor.Handlers.Select = function(editor) {
   this.editor.on("afterLayout", this.afterLayout, this)
   this.editor.on("dataReceived", this.dataReceived, this)
   this.editor.on("onUpdate", this.onUpdate, this)
+  this.editor.on("nodeSelected", this.nodeSelected, this)
 }
 
 Taxitor.Handlers.Select.prototype.afterLayout = function() {
@@ -23,4 +24,8 @@ Taxitor.Handlers.Select.prototype.onUpdate = function() {
   this.editor.g
     .selectAll(".node")
     .classed("selected", function(d) { return that.selected == d })
+}
+
+Taxitor.Handlers.Select.prototype.nodeSelected = function(d) {
+  this.selected = d
 }

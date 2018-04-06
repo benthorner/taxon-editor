@@ -14,8 +14,10 @@ Taxitor.Handlers.Expand.prototype.onClick = function(d) {
   d3.event.stopPropagation()
 
   if (d.children) {
-    d.children = null
-    that.editor.trigger("onEnter")
+    d.contract().then(function() {
+      that.editor.trigger("onEnter")
+    })
+
     return
   }
 

@@ -1,4 +1,3 @@
-const LINKS_URL = "http://publishing-api.dev.gov.uk/v2/expanded-links/"
 
 Taxode.Real = function(taxon, parent) {
   _.extend(this, new Taxode.Base(parent))
@@ -16,18 +15,42 @@ Taxode.Real.root = new Taxode.Real({
 Taxode.Real.prototype.expand = function() {
   var that = this
 
-  return new Promise(function(resolve, reject)  {
-    $.get(LINKS_URL + that.id, function(d) {
-      var links = d.expanded_links.level_one_taxons ||
-        d.expanded_links.child_taxons
+  return Taxapis.expand(that.id).then(function(d) {
+    var links = d.level_one_taxons || d.child_taxons
 
-      if (links) {
-        that.children = links.map(function(d2) {
-          return new Taxode.Real(d2, that)
-        })
-      }
+    if (links) {
+      that.children = links.map(function(d2) {
+        return new Taxode.Real(d2, that)
+      })
+    }
 
-      resolve()
-    })
+    return Promise.resolve(d)
+  })
+}
+
+Taxode.Real.prototype.contract = function() {
+  var that = this
+  that.children = null
+  return Promise.resolve()
+}
+
+Taxode.Real.prototype.createChild = function() {
+  var that = this
+
+  return Taxapis.create(that).then(function(taxon) {
+    if (!that.children) that.children = []
+    var child = new Taxode.Real(taxon, that)
+    that.children.push(child)
+    return Promise.resolve(child)
+  })
+}
+
+Taxode.Real.prototype.delete = function() {
+  var that = this
+
+  return Taxapis.delete(that).then(function() {
+    var children = _.without(that.parent.children, that)
+    that.parent.children = (children.length == 0) ? null : children
+    return Promise.resolve()
   })
 }
