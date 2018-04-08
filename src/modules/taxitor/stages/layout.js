@@ -18,8 +18,7 @@ Taxitor.Stages.Layout.prototype.onLayout = function() {
     .attr("width", this.editor.element.clientWidth)
     .attr("height", this.editor.element.clientHeight)
 
-  var root = this.editor.g.select(".node").datum()
-  this.layout.apply(root)
+  this.layout.apply(this.editor.data)
 }
 
 Taxitor.Stages.Layout.prototype.layoutSelected = function(arg) {
