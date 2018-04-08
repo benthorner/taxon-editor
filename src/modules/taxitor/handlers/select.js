@@ -1,12 +1,12 @@
 Taxitor.Handlers.Select = function(editor) {
   this.editor = editor
-  this.editor.on("afterLayout", this.afterLayout, this)
+  this.editor.on("afterEnter", this.afterEnter, this)
   this.editor.on("dataReceived", this.dataReceived, this)
   this.editor.on("onUpdate", this.onUpdate, this)
   this.editor.on("nodeSelected", this.nodeSelected, this)
 }
 
-Taxitor.Handlers.Select.prototype.afterLayout = function() {
+Taxitor.Handlers.Select.prototype.afterEnter = function() {
   var that = this
 
   this.editor.g
@@ -14,7 +14,7 @@ Taxitor.Handlers.Select.prototype.afterLayout = function() {
     .on("click", function(d) {
       that.selected = d
       that.editor.trigger("nodeSelected", d)
-      that.editor.trigger("onUpdate")
+      that.editor.trigger("beforeUpdate")
     })
 }
 

@@ -1,13 +1,13 @@
 Taxitor.Handlers.Menu = function(editor) {
   this.editor = editor
-  this.editor.on("afterLayout", this.afterLayout, this)
+  this.editor.on("afterEnter", this.afterEnter, this)
 }
 
 Taxitor.Handlers.Menu.prototype.OPTIONS = [
   "Create child", "Delete"
 ]
 
-Taxitor.Handlers.Menu.prototype.afterLayout = function() {
+Taxitor.Handlers.Menu.prototype.afterEnter = function() {
   var that = this
 
   this.editor.g
@@ -27,14 +27,14 @@ Taxitor.Handlers.Menu.prototype.onClick = function(d) {
       case that.OPTIONS[0]:
         d.createChild().then(function(child) {
           that.editor.trigger("nodeSelected", child)
-          that.editor.trigger("onEnter")
+          that.editor.trigger("beforeEnter")
         })
         break
       case that.OPTIONS[1]:
         if (d.depth == 0) break
         d.delete().then(function() {
           that.editor.trigger("nodeSelected", d.parent)
-          that.editor.trigger("onEnter")
+          that.editor.trigger("beforeEnter")
         })
         break
     }

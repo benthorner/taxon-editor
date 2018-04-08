@@ -15,13 +15,13 @@ Taxitor.Handlers.Expand.prototype.onClick = function(d) {
 
   if (d.children) {
     d.contract().then(function() {
-      that.editor.trigger("onEnter")
+      that.editor.trigger("beforeEnter")
     })
 
     return
   }
 
   d.expand().then(function() {
-    that.editor.trigger("onEnter")
+    that.editor.trigger("beforeEnter")
   })
 }
