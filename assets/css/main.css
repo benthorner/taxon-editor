@@ -39,21 +39,22 @@ td {
   padding: 1px;
 }
 
-.taxitor .node {
-  cursor: hand;
-}
+.taxitor .node.depth0 rect { fill: #005EA5; }
+.taxitor .node.depth1 rect { fill: #2E358B; }
+.taxitor .node.depth2 rect { fill: #912B88; }
+.taxitor .node.depth3 rect { fill: #D53880; }
+.taxitor .node.depth4 rect { fill: #DF3034; }
+.taxitor .node.depth5 rect { fill: #F47738; }
+.taxitor .node.depth6 rect { fill: #006435; }
+.taxitor .node.depth7 rect { fill: #85994B; }
+.taxitor .node.depth8 rect { fill: #28A197; }
+.taxitor .node.depth9 rect { fill: #2B8CC4; }
 
-.taxitor .link {
-  stroke: gray;
-}
+.taxitor .node.selected rect { fill: #FFBF47; }
+.taxitor .node:hover rect { fill: #FFBF47; }
 
-.taxitor .node.selected rect {
-  fill: #FFBF47;
-}
-
-.taxitor .node:hover rect {
-  fill: #FFBF47;
-}
+.taxitor .node { cursor: hand; }
+.taxitor .link { stroke: gray; }
 
 .taxadio .button {
   display: inline-block;
@@ -63,13 +64,8 @@ td {
   cursor: hand;
 }
 
-.taxadio .button:hover {
-  background-color: #006435;
-}
-
-.taxadio .button.selected {
-  background-color: #FFBF47;
-}
+.taxadio .button:hover { background-color: #006435; }
+.taxadio .button.selected { background-color: #FFBF47; }
 
 .taxplay {
   border-left: 1px solid #bfc1c3;

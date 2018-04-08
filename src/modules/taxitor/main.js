@@ -14,7 +14,7 @@ function Taxitor(element) {
   new Taxitor.Stages.Update(this)
   new Taxitor.Handlers.Zoom(this)
   new Taxitor.Handlers.Expand(this)
-  new Taxitor.Handlers.Color(this)
+  new Taxitor.Handlers.Depth(this)
   new Taxitor.Handlers.Select(this)
   new Taxitor.Handlers.Menu(this)
   new Taxitor.Pipeline(this)
@@ -24,4 +24,3 @@ function Taxitor(element) {
     this.trigger("beforeEnter")
   })
 }
-
