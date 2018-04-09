@@ -8,6 +8,7 @@ Taxitor.Stages.Update.prototype.onUpdate = function() {
 
   this.editor.g
     .selectAll(".link")
+    .transition()
     .attr("x1", function(d) { return d.source.x })
     .attr("y1", function(d) { return d.source.y })
     .attr("x2", function(d) { return d.target.x })
@@ -15,6 +16,7 @@ Taxitor.Stages.Update.prototype.onUpdate = function() {
 
   this.editor.g
     .selectAll(".node rect")
+    .transition()
     .attr("x", function(d) { return d.x })
     .attr("y", function(d) { return d.y })
     .attr("width", function(d) { return d.width })
@@ -22,10 +24,13 @@ Taxitor.Stages.Update.prototype.onUpdate = function() {
 
   this.editor.g
     .selectAll(".node foreignObject")
+    .transition()
     .attr("x", function(d) { return d.x })
     .attr("y", function(d) { return d.y })
     .attr("width", function(d) { return d.width })
     .attr("height", function(d) { return d.height })
-    .select(".title")
+
+  this.editor.g
+    .selectAll(".node foreignObject .title")
     .html(function(d) { return d.title })
 }

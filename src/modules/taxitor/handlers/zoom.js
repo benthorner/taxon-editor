@@ -10,11 +10,15 @@ Taxitor.Handlers.Zoom = function(editor) {
 }
 
 Taxitor.Handlers.Zoom.prototype.afterUpdate = function() {
-  var element = this.editor.element
-  var transform = this._fillAndCenter()
+  var that = this
 
-  d3.zoom().transform(d3.select(element), transform)
-  this.editor.g.transition().attr("transform", transform)
+  setTimeout(function() {
+    var element = that.editor.element
+    var transform = that._fillAndCenter()
+
+    d3.zoom().transform(d3.select(element), transform)
+    that.editor.g.transition().attr("transform", transform)
+  }, 500)
 }
 
 Taxitor.Handlers.Zoom.prototype._fillAndCenter = function() {
