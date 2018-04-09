@@ -36,7 +36,46 @@ If you look in the *layouts* and *handlers* directories, you'll see some example
 
 I had several issues using the GOV.UK publishing-api with a frontend-only app. To make progress I decided to make a few local changes.
 
-TODO
+```
+diff --git a/config/application.rb b/config/application.rb
+index 019ed9a..080fbe4 100644
+--- a/config/application.rb
++++ b/config/application.rb
+@@ -41,5 +41,11 @@ module PublishingAPI
+     )
+
+     config.debug_exception_response_format = :api
++
++    config.action_dispatch.default_headers = {
++      'Access-Control-Allow-Origin' => '*',
++      'Access-Control-Allow-Methods' => "POST, GET, OPTIONS, PUT",
++      'Access-Control-Allow-Headers' => '*'
++    }
+   end
+ end
+diff --git a/config/routes.rb b/config/routes.rb
+index c09607f..3723638 100644
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@ -15,7 +15,7 @@ Rails.application.routes.draw do
+     namespace :v2 do
+       get "/content", to: "content_items#index"
+       scope constraints: method(:content_id_constraint) do
+-        put "/content/:content_id", to: "content_items#put_content"
++        post "/content/:content_id", to: "content_items#put_content"
+         get "/content/:content_id", to: "content_items#show"
+         post "/content/:content_id/publish", to: "content_items#publish"
+         post "/content/:content_id/unpublish", to: "content_items#unpublish"
+@@ -24,7 +24,7 @@ Rails.application.routes.draw do
+
+         get "/links/:content_id", to: "link_sets#get_links"
+         get "/expanded-links/:content_id", to: "link_sets#expanded_links"
+-        patch "/links/:content_id", to: "link_sets#patch_links"
++        post "/links/:content_id", to: "link_sets#patch_links"
+         # put is provided for backwards compatibility.
+         put "/links/:content_id", to: "link_sets#patch_links"
+         get "/linked/:content_id", to: "link_sets#get_linked"
+```
 
 ## Roadmap
 
