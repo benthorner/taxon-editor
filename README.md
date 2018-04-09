@@ -2,6 +2,8 @@
 
 A prototype editor for the GOV.UK taxonomy.
 
+![screenshot](https://raw.githubusercontent.com/benthorner/taxonomy-editor/master/screenshot.png)
+
 ## Background
 
 The GOV.UK taxonomy is a hierarchy of topics ('taxons') used for tagging content. Examples include 'Defence' and 'HS2'. Each taxon is a type of document and all documents are managed using the [GOV.UK publishing-api](https://github.com/alphagov/publishing-api).
