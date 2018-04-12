@@ -1,6 +1,7 @@
 export function ZoomHandler(editor) {
   this.editor = editor
   this.minScaleFactor = 2
+  this.transformDelay = 500
   this.editor.on("afterUpdate", this.afterUpdate, this)
 
   d3.select(editor.element)
@@ -18,7 +19,7 @@ ZoomHandler.prototype.afterUpdate = function() {
 
     d3.zoom().transform(d3.select(element), transform)
     that.editor.g.transition().attr("transform", transform)
-  }, 500)
+  }, this.transformDelay)
 }
 
 ZoomHandler.prototype._fillAndCenter = function() {
