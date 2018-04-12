@@ -1,4 +1,4 @@
-Taxmenu = function(event, options) {
+export function Taxmenu(event, options) {
   _.extend(this, Backbone.Events)
 
   d3.select("body")

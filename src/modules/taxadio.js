@@ -1,4 +1,4 @@
-Taxadio = function(element, options) {
+export function Taxadio(element, options) {
   _.extend(this, Backbone.Events)
   this.element = d3.select(element)
   this.options = options

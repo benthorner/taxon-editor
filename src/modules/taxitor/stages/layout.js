@@ -1,18 +1,26 @@
-Taxitor.Stages.Layout = function(editor) {
+import {ForceLayout} from '../layouts/force.js'
+import {RadialLayout} from '../layouts/radial.js'
+import {TreeLayout} from '../layouts/tree.js'
+
+export function LayoutStage(editor) {
   this.editor = editor
   this.editor.on("onLayout", this.onLayout, this)
   this.editor.on("layoutSelected", this.layoutSelected, this)
 
-  var layout = Taxitor.Stages.Layout.OPTIONS[0]
-  this.layout = new Taxitor.Layouts[layout](this.editor)
+  var layout = _.keys(LayoutStage.OPTIONS)[0]
+  this.layout = new LayoutStage.OPTIONS[layout](this.editor)
 
   $(window)
     .resize(function() { editor.trigger("onLayout") })
 }
 
-Taxitor.Stages.Layout.OPTIONS = ["Force", "Radial", "Tree"]
+LayoutStage.OPTIONS = {
+  "Force": ForceLayout,
+  "Radial": RadialLayout,
+  "Tree": TreeLayout
+}
 
-Taxitor.Stages.Layout.prototype.onLayout = function() {
+LayoutStage.prototype.onLayout = function() {
   d3.select(this.editor.element)
     .select("svg")
     .attr("width", this.editor.element.clientWidth)
@@ -21,7 +29,7 @@ Taxitor.Stages.Layout.prototype.onLayout = function() {
   this.layout.apply(this.editor.data)
 }
 
-Taxitor.Stages.Layout.prototype.layoutSelected = function(arg) {
-  this.layout = new Taxitor.Layouts[arg](this.editor)
+LayoutStage.prototype.layoutSelected = function(arg) {
+  this.layout = new LayoutStage.OPTIONS[arg](this.editor)
   this.editor.trigger("beforeLayout")
 }

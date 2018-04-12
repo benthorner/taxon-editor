@@ -1,11 +1,11 @@
-Taxitor.Layouts.Base = function(editor) {
+export function BaseLayout(editor) {
   this.editor = editor
   this.nodeWidth = 100
   this.nodeHeight = 100
   this.nodeBoundsScaleFactor = 20
 }
 
-Taxitor.Layouts.Base.prototype.bounds = function() {
+BaseLayout.prototype.bounds = function() {
   var element = this.editor.element
   var nodes = this.editor.g.selectAll(".node").nodes()
 

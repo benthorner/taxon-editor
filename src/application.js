@@ -1,5 +1,13 @@
+import {Taxadio} from './modules/taxadio.js'
+import {Taxplay} from './modules/taxplay.js'
+import {RealTaxode} from './modules/taxodes/real.js'
+import {FakeTaxode} from './modules/taxodes/fake.js'
+import {Taxitor} from './modules/taxitor/taxitor.js'
+import {LayoutStage} from './modules/taxitor/stages/layout.js'
+import {Taxmenu} from './modules/taxmenu.js'
+
 $(document).ready(function() {
-  var layoutOptions = Taxitor.Stages.Layout.OPTIONS
+  var layoutOptions = _.keys(LayoutStage.OPTIONS)
   var layoutTaxadioNode = d3.select("#layout-taxadio").node()
   var layoutTaxadio = new Taxadio(layoutTaxadioNode, layoutOptions)
 
@@ -19,10 +27,10 @@ $(document).ready(function() {
   dataTaxadio.on("click", function(d) {
     switch(d) {
       case "Fake":
-        taxitor.trigger("dataReceived", new Taxode.Fake())
+        taxitor.trigger("dataReceived", new FakeTaxode())
         break
       case "Real":
-        taxitor.trigger("dataReceived", Taxode.Real.root)
+        taxitor.trigger("dataReceived", RealTaxode.root)
         break
     }
   })
@@ -31,5 +39,5 @@ $(document).ready(function() {
     taxplay.trigger("dataReceived", d)
   })
 
-  taxitor.trigger("dataReceived", new Taxode.Fake())
+  taxitor.trigger("dataReceived", new FakeTaxode())
 })

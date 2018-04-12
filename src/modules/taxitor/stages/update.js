@@ -1,9 +1,9 @@
-Taxitor.Stages.Update = function(editor) {
+export function UpdateStage(editor) {
   this.editor = editor
   this.editor.on("onUpdate", this.onUpdate, this)
 }
 
-Taxitor.Stages.Update.prototype.onUpdate = function() {
+UpdateStage.prototype.onUpdate = function() {
   var that = this
 
   this.editor.g

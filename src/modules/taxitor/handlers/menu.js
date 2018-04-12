@@ -1,13 +1,13 @@
-Taxitor.Handlers.Menu = function(editor) {
+export function MenuHandler(editor) {
   this.editor = editor
   this.editor.on("afterEnter", this.afterEnter, this)
 }
 
-Taxitor.Handlers.Menu.prototype.OPTIONS = [
+MenuHandler.prototype.OPTIONS = [
   "Create child", "Delete"
 ]
 
-Taxitor.Handlers.Menu.prototype.afterEnter = function() {
+MenuHandler.prototype.afterEnter = function() {
   var that = this
 
   this.editor.g
@@ -19,7 +19,7 @@ Taxitor.Handlers.Menu.prototype.afterEnter = function() {
     })
 }
 
-Taxitor.Handlers.Menu.prototype.onClick = function(d) {
+MenuHandler.prototype.onClick = function(d) {
   return function(option) {
     var that = this
 

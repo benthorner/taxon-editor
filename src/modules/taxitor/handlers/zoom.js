@@ -1,4 +1,4 @@
-Taxitor.Handlers.Zoom = function(editor) {
+export function ZoomHandler(editor) {
   this.editor = editor
   this.minScaleFactor = 2
   this.editor.on("afterUpdate", this.afterUpdate, this)
@@ -9,7 +9,7 @@ Taxitor.Handlers.Zoom = function(editor) {
     }))
 }
 
-Taxitor.Handlers.Zoom.prototype.afterUpdate = function() {
+ZoomHandler.prototype.afterUpdate = function() {
   var that = this
 
   setTimeout(function() {
@@ -21,7 +21,7 @@ Taxitor.Handlers.Zoom.prototype.afterUpdate = function() {
   }, 500)
 }
 
-Taxitor.Handlers.Zoom.prototype._fillAndCenter = function() {
+ZoomHandler.prototype._fillAndCenter = function() {
   var element = this.editor.element
   var box = this.editor.g.node().getBBox()
 

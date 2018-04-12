@@ -1,18 +1,20 @@
+import {BaseTaxode} from './base.js'
+import {Taxapis} from '../taxapis.js'
 
-Taxode.Real = function(taxon, parent) {
-  _.extend(this, new Taxode.Base(parent))
+export function RealTaxode(taxon, parent) {
+  _.extend(this, new BaseTaxode(parent))
   _.extend(this, taxon)
   this.id = this.content_id
 }
 
-Taxode.Real.root = new Taxode.Real({
+RealTaxode.root = new RealTaxode({
   content_id: "f3bbdec2-0e62-4520-a7fd-6ffd5d36e03a",
   title: "GOV.UK",
   base_path: "/",
   description: "The root of the taxonomy."
 })
 
-Taxode.Real.prototype.expand = function() {
+RealTaxode.prototype.expand = function() {
   var that = this
 
   return Taxapis.expand(that.id).then(function(d) {
@@ -20,7 +22,7 @@ Taxode.Real.prototype.expand = function() {
 
     if (links) {
       that.children = links.map(function(d2) {
-        return new Taxode.Real(d2, that)
+        return new RealTaxode(d2, that)
       })
     }
 
@@ -28,24 +30,24 @@ Taxode.Real.prototype.expand = function() {
   })
 }
 
-Taxode.Real.prototype.contract = function() {
+RealTaxode.prototype.contract = function() {
   var that = this
   that.children = null
   return Promise.resolve()
 }
 
-Taxode.Real.prototype.createChild = function() {
+RealTaxode.prototype.createChild = function() {
   var that = this
 
   return Taxapis.create(that).then(function(taxon) {
     if (!that.children) that.children = []
-    var child = new Taxode.Real(taxon, that)
+    var child = new RealTaxode(taxon, that)
     that.children.push(child)
     return Promise.resolve(child)
   })
 }
 
-Taxode.Real.prototype.delete = function() {
+RealTaxode.prototype.delete = function() {
   var that = this
 
   return Taxapis.delete(that).then(function() {

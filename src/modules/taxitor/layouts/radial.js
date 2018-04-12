@@ -1,9 +1,11 @@
-Taxitor.Layouts.Radial = function(editor) {
-  _.extend(this, new Taxitor.Layouts.Base(editor))
+import {BaseLayout} from './base.js'
+
+export function RadialLayout(editor) {
+  _.extend(this, new BaseLayout(editor))
   this.nodeBoundsScaleFactor = 15
 }
 
-Taxitor.Layouts.Radial.prototype.apply = function(root) {
+RadialLayout.prototype.apply = function(root) {
   var that = this
   d3.tree().size([2*Math.PI, this.bounds().height])(root)
 
@@ -13,7 +15,7 @@ Taxitor.Layouts.Radial.prototype.apply = function(root) {
   })
 }
 
-Taxitor.Layouts.Radial.prototype._coords = function(d) {
+RadialLayout.prototype._coords = function(d) {
   var radius = d.y / 2
   var angle = d.x
 

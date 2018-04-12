@@ -1,9 +1,11 @@
-Taxitor.Layouts.Tree = function(editor) {
-  _.extend(this, new Taxitor.Layouts.Base(editor))
+import {BaseLayout} from './base.js'
+
+export function TreeLayout(editor) {
+  _.extend(this, new BaseLayout(editor))
   this.nodeBoundsScaleFactor = 15
 }
 
-Taxitor.Layouts.Tree.prototype.apply = function(root) {
+TreeLayout.prototype.apply = function(root) {
   var that = this
   var bounds = this.bounds()
 

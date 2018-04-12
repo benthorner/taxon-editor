@@ -1,4 +1,4 @@
-Taxapis = {}
+export var Taxapis = {}
 
 Taxapis.EXPANDED_LINKS_URL = "http://publishing-api.dev.gov.uk/v2/expanded-links/"
 Taxapis.LINKS_URL = "http://publishing-api.dev.gov.uk/v2/links/"

@@ -1,11 +1,11 @@
-Taxitor.Stages.Enter = function(editor) {
+export function EnterStage(editor) {
   this.editor = editor
   this.editor.g.append("g").attr("class", "links")
   this.editor.g.append("g").attr("class", "nodes")
   this.editor.on("onEnter", this.onEnter, this)
 }
 
-Taxitor.Stages.Enter.prototype.onEnter = function() {
+EnterStage.prototype.onEnter = function() {
   var nodes = this.editor.g
     .select(".nodes")
     .selectAll(".node")

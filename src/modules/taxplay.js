@@ -1,4 +1,4 @@
-Taxplay = function(element) {
+export function Taxplay(element) {
   _.extend(this, Backbone.Events)
   this.element = d3.select(element)
   this.on("dataReceived", this.dataReceived, this)

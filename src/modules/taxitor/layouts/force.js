@@ -1,9 +1,11 @@
-Taxitor.Layouts.Force = function(editor) {
-  _.extend(this, new Taxitor.Layouts.Base(editor))
+import {BaseLayout} from './base.js'
+
+export function ForceLayout(editor) {
+  _.extend(this, new BaseLayout(editor))
   this.simulationTicks = 1000
 }
 
-Taxitor.Layouts.Force.prototype.apply = function(root) {
+ForceLayout.prototype.apply = function(root) {
   var that = this
 
   var sim = d3.forceSimulation(root.descendants())
