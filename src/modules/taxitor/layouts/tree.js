@@ -2,7 +2,6 @@ import {BaseLayout} from './base.js'
 
 export function TreeLayout(editor) {
   _.extend(this, new BaseLayout(editor))
-  this.nodeBoundsScaleFactor = 15
 }
 
 TreeLayout.prototype.apply = function(root) {
