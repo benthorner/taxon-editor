@@ -4,7 +4,6 @@ import {RealTaxode} from './modules/taxodes/real.js'
 import {FakeTaxode} from './modules/taxodes/fake.js'
 import {Taxitor} from './modules/taxitor/taxitor.js'
 import {LayoutStage} from './modules/taxitor/stages/layout.js'
-import {Taxmenu} from './modules/taxmenu.js'
 
 $(document).ready(function() {
   var layoutOptions = _.keys(LayoutStage.OPTIONS)

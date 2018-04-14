@@ -1,11 +1,10 @@
+import {Option} from '../../taxmenu/option.js'
+import {Taxmenu} from '../../taxmenu/taxmenu.js'
+
 export function ContextHandler(editor) {
   this.editor = editor
   this.editor.on("afterEnter", this.afterEnter, this)
 }
-
-ContextHandler.prototype.OPTIONS = [
-  "Create child", "Delete"
-]
 
 ContextHandler.prototype.afterEnter = function() {
   var that = this
@@ -14,29 +13,26 @@ ContextHandler.prototype.afterEnter = function() {
     .selectAll(".node")
     .on("contextmenu", function(d) {
       d3.event.preventDefault()
-      var menu = new Taxmenu(d3.event, that.OPTIONS)
-      menu.on("click", that.onClick(d).bind(that))
+      new Taxmenu(d3.event, that._options(d))
     })
 }
 
-ContextHandler.prototype.onClick = function(d) {
-  return function(option) {
-    var that = this
+ContextHandler.prototype._options = function(d) {
+  var that = this
 
-    switch(option) {
-      case that.OPTIONS[0]:
-        d.createChild().then(function(child) {
-          that.editor.trigger("nodeSelected", child)
-          that.editor.trigger("beforeEnter")
-        })
-        break
-      case that.OPTIONS[1]:
-        if (d.depth == 0) break
-        d.delete().then(function() {
-          that.editor.trigger("nodeSelected", d.parent)
-          that.editor.trigger("beforeEnter")
-        })
-        break
-    }
-  }
+  return [
+    new Option('Create child', function() {
+      d.createChild().then(function(child) {
+        that.editor.trigger("nodeSelected", child)
+        that.editor.trigger("beforeEnter")
+      })
+    }),
+    new Option('Delete', function() {
+      if (d.depth == 0) return
+      d.delete().then(function() {
+        that.editor.trigger("nodeSelected", d.parent)
+        that.editor.trigger("beforeEnter")
+      })
+    })
+  ]
 }

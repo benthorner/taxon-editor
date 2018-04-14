@@ -1,5 +1,5 @@
 export function Taxmenu(event, options) {
-  _.extend(this, Backbone.Events)
+  this.options = options
 
   d3.select("body")
     .append("div")
@@ -9,15 +9,14 @@ export function Taxmenu(event, options) {
     .style("top", event.pageY)
     .style("left", event.pageX)
     .selectAll("div")
-    .data(options)
+    .data(_.pluck(options, 'name'))
     .enter()
     .append("div")
     .classed("button", true)
     .html(function(d) { return d })
     .on("click", this.onClick.bind(this))
 
-  d3.select("#taxmenu")
-    .on("click", this._remove)
+  d3.select("#taxmenu").on("click", this._remove)
 }
 
 Taxmenu.prototype._remove = function() {
@@ -25,6 +24,6 @@ Taxmenu.prototype._remove = function() {
 }
 
 Taxmenu.prototype.onClick = function(d) {
-  this.trigger("click", d)
   this._remove()
+  _.findWhere(this.options, {name: d}).callback()
 }
