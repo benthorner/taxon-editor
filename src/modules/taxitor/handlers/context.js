@@ -1,13 +1,13 @@
-export function MenuHandler(editor) {
+export function ContextHandler(editor) {
   this.editor = editor
   this.editor.on("afterEnter", this.afterEnter, this)
 }
 
-MenuHandler.prototype.OPTIONS = [
+ContextHandler.prototype.OPTIONS = [
   "Create child", "Delete"
 ]
 
-MenuHandler.prototype.afterEnter = function() {
+ContextHandler.prototype.afterEnter = function() {
   var that = this
 
   this.editor.g
@@ -19,7 +19,7 @@ MenuHandler.prototype.afterEnter = function() {
     })
 }
 
-MenuHandler.prototype.onClick = function(d) {
+ContextHandler.prototype.onClick = function(d) {
   return function(option) {
     var that = this
 
