@@ -8,7 +8,7 @@ export function FakeTaxode(parent) {
 }
 
 FakeTaxode.prototype.expand = function() {
-  that.children = [new FakeTaxode(this),
+  this.children = [new FakeTaxode(this),
                    new FakeTaxode(this)]
 
   return Promise.resolve()
