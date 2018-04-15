@@ -8,9 +8,8 @@ export function Taxitor(element) {
 
   this.g = d3
     .select(element)
-    .append("svg")
-    .append("g")
     .classed("taxitor", true)
+    .append("g")
 
   new MainStage(this)
   new MainHandler(this)

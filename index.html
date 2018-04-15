@@ -1,6 +1,5 @@
 <html>
   <head>
-    <title>GOV.UK Taxonomy Editor</title>
     <link rel="stylesheet" type"text/css" href="assets/css/main.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -12,49 +11,23 @@
   </head>
 
   <body>
-    <div style="background-color: black; padding: 10px 15px">
-      <div style="font-size: 30px; font-weight: bold; display: inline-block">GOV.UK Taxonomy Editor</div>
-    </div>
-
-    <div style="padding: 10px 15px 8px; border-bottom: 1px solid #bfc1c3">
-      <strong style="background-color: #005ea5; padding: 5px; margin-right: 8px">ALPHA</strong>
-      <span style="color: black; font-size: 14px; display: inline-block">
-        This is a new service – your feedback will help us to improve it.
-      </span>
-    </div>
-
-    <div style="margin: 5px 5px 15px 15px">
-      <table style="width: 100%; height: 75%; border-spacing: 0">
-        <td style="width: 75%">
-          <table style="width: 100%; height: 100%; border-spacing: 0">
-            <tr style="height: 0%">
-              <td style="width: 50%">
-                <div id="layout-taxadio" style="margin-bottom: 15px"></div>
-              </td>
-              <td style="width: 50%" align="right">
-                <div id="data-taxadio" style="margin-bottom: 15px"></div>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <div id="taxitor" style="width: 100%; height: 100%"></div>
-              </td>
-            </tr>
-          </table>
-        </td>
+    <table style="width: 100%; height: 100%">
+      <tr style="height: 0">
         <td>
+          <div id="layout-taxadio" style="margin-bottom: 15px"></div>
+        </td>
+        <td align="right">
+          <div id="data-taxadio" style="margin-bottom: 15px"></div>
+        </td>
+        <td style="width: 25%" rowspan="2">
           <div id="taxplay" style="height: 100%"></div>
         </td>
-      </table>
-    </div>
-
-    <div style="border-top: 10px solid #005ea5; margin-top: 15px"></div>
-    <div style="padding: 50px 15px; background-color: #dee0e2">
-      <center>
-        <span style="color: #454a4c; font-size: 16px">
-          Built by Ben Thorner as a prototype for the Government Digital Service
-        </span>
-      </center>
-    </div>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <svg id="taxitor" width="100%" height="100%"></svg>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

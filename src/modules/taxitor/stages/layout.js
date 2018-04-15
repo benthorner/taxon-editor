@@ -7,15 +7,10 @@ export function LayoutStage(editor) {
   this.layout = new ForceLayout(this.editor)
 
   this.editor.on("onLayout", this.onLayout, this)
-  $(window).resize(() => editor.trigger("onLayout"))
+  $(window).resize(() => editor.trigger("beforeLayout"))
 }
 
 LayoutStage.prototype.onLayout = function() {
-  d3.select(this.editor.element)
-    .select("svg")
-    .attr("width", this.editor.element.clientWidth)
-    .attr("height", this.editor.element.clientHeight)
-
   this.layout.call(this.editor.data)
 }
 
