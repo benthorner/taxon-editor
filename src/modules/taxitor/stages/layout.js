@@ -1,23 +1,13 @@
 import {ForceLayout} from '../layouts/force.js'
-import {RadialLayout} from '../layouts/radial.js'
-import {TreeLayout} from '../layouts/tree.js'
 
 export function LayoutStage(editor) {
   this.editor = editor
   this.editor.on("onLayout", this.onLayout, this)
   this.editor.on("layoutSelected", this.layoutSelected, this)
-
-  var layout = _.keys(LayoutStage.OPTIONS)[0]
-  this.layout = new LayoutStage.OPTIONS[layout](this.editor)
+  this.layout = new ForceLayout(this.editor)
 
   $(window)
     .resize(function() { editor.trigger("onLayout") })
-}
-
-LayoutStage.OPTIONS = {
-  "Force": ForceLayout,
-  "Radial": RadialLayout,
-  "Tree": TreeLayout
 }
 
 LayoutStage.prototype.onLayout = function() {
@@ -29,7 +19,7 @@ LayoutStage.prototype.onLayout = function() {
   this.layout.apply(this.editor.data)
 }
 
-LayoutStage.prototype.layoutSelected = function(arg) {
-  this.layout = new LayoutStage.OPTIONS[arg](this.editor)
+LayoutStage.prototype.layoutSelected = function(d) {
+  this.layout = d
   this.editor.trigger("beforeLayout")
 }

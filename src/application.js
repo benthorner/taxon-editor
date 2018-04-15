@@ -1,38 +1,43 @@
-import {Taxadio} from './modules/taxadio.js'
+import {Taxadio} from './modules/taxadio/taxadio.js'
+import {Option} from './modules/taxadio/option.js'
 import {Taxplay} from './modules/taxplay.js'
 import {RealTaxode} from './modules/taxodes/real.js'
 import {FakeTaxode} from './modules/taxodes/fake.js'
 import {Taxitor} from './modules/taxitor/taxitor.js'
-import {LayoutStage} from './modules/taxitor/stages/layout.js'
+import {ForceLayout} from './modules/taxitor/layouts/force.js'
+import {RadialLayout} from './modules/taxitor/layouts/radial.js'
+import {TreeLayout} from './modules/taxitor/layouts/tree.js'
 
 $(document).ready(function() {
-  var layoutOptions = _.keys(LayoutStage.OPTIONS)
-  var layoutTaxadioNode = d3.select("#layout-taxadio").node()
-  var layoutTaxadio = new Taxadio(layoutTaxadioNode, layoutOptions)
-
   var dataTaxadioNode = d3.select("#data-taxadio").node()
-  var dataTaxadio = new Taxadio(dataTaxadioNode, ["Fake", "Real"])
+  var layoutTaxadioNode = d3.select("#layout-taxadio").node()
 
   var taxitorNode = d3.select("#taxitor").node()
   var taxitor = new Taxitor(taxitorNode)
 
+  var layoutTaxadio = new Taxadio(layoutTaxadioNode, [
+    new Option("Force", function() {
+      taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
+    }),
+    new Option("Radial", function() {
+      taxitor.trigger("layoutSelected", new RadialLayout(taxitor))
+    }),
+    new Option("Tree", function() {
+      taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
+    })
+  ])
+
+  var dataTaxadio = new Taxadio(dataTaxadioNode, [
+    new Option("Fake", function() {
+      taxitor.trigger("dataReceived", new FakeTqxode())
+    }),
+    new Option("Real", function() {
+      taxitor.trigger("dataReceived", RealTaxode.root)
+    })
+  ])
+
   var taxplayNode = d3.select("#taxplay").node()
   var taxplay = new Taxplay(taxplayNode)
-
-  layoutTaxadio.on("click", function(d) {
-    taxitor.trigger("layoutSelected", d)
-  })
-
-  dataTaxadio.on("click", function(d) {
-    switch(d) {
-      case "Fake":
-        taxitor.trigger("dataReceived", new FakeTaxode())
-        break
-      case "Real":
-        taxitor.trigger("dataReceived", RealTaxode.root)
-        break
-    }
-  })
 
   taxitor.on("nodeSelected", function(d) {
     taxplay.trigger("dataReceived", d)

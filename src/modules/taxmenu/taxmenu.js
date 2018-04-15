@@ -9,7 +9,7 @@ export function Taxmenu(event, options) {
     .style("top", event.pageY)
     .style("left", event.pageX)
     .selectAll("div")
-    .data(_.pluck(options, 'name'))
+    .data(_.pluck(options, "name"))
     .enter()
     .append("div")
     .classed("button", true)

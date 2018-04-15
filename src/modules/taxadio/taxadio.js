@@ -1,24 +1,22 @@
 export function Taxadio(element, options) {
-  _.extend(this, Backbone.Events)
   this.element = d3.select(element)
   this.options = options
-  this.selected = this.options[0]
-  this.on("click", this.update, this)
+  this.selected = this.options[0].name
 
   this.element
     .attr("class", "taxadio")
     .selectAll("div")
-    .data(this.options)
+    .data(_.pluck(this.options, "name"))
     .enter()
     .append("div")
     .classed("button", true)
     .html(function(d) { return d })
     .on("click", this.onClick.bind(this))
 
-  this.update()
+  this._update()
 }
 
-Taxadio.prototype.update = function() {
+Taxadio.prototype._update = function() {
   var that = this
 
   this.element
@@ -30,5 +28,6 @@ Taxadio.prototype.update = function() {
 
 Taxadio.prototype.onClick = function(d) {
   this.selected = d
-  this.trigger("click", d)
+  this._update()
+  _.findWhere(this.options, {name: d}).callback()
 }
