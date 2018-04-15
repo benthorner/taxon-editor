@@ -2,15 +2,17 @@ import {BaseLayout} from './base.js'
 
 export function ForceLayout(editor) {
   _.extend(this, new BaseLayout(editor))
-  this.simulationTicks = 1000
-  this.collisionRadius = 100
+  this.options = editor.options[this.constructor.name]
 }
 
 ForceLayout.prototype.call = function(root) {
+  var collisionRadius = this.options.collisionRadius
+  var simulationTicks = this.options.simulationTicks
+
   var sim = d3.forceSimulation(root.descendants())
-    .force("collision", d3.forceCollide(this.collisionRadius))
+    .force("collision", d3.forceCollide(collisionRadius))
     .force("link", d3.forceLink(root.links()))
     .force("x", d3.forceY())
 
-  for (var i=0; i < this.simulationTicks; i++) sim.tick()
+  for (var i=0; i < simulationTicks; i++) sim.tick()
 }

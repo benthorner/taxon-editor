@@ -4,6 +4,7 @@ import {MainHandler} from './handlers/main.js'
 export function Taxitor(element) {
   _.extend(this, Backbone.Events)
   this.element = element
+  this.options = Taxitor.OPTIONS
 
   this.g = d3
     .select(element)
@@ -18,4 +19,9 @@ export function Taxitor(element) {
     this.data = data
     this.trigger("beforeEnter")
   })
+}
+
+Taxitor.OPTIONS = {
+  ForceLayout: { simulationTicks: 1000, collisionRadius: 100 },
+  ZoomHandler: { maxScaleFactor: 2, transformDelay: 500 }
 }

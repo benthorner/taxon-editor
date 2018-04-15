@@ -1,7 +1,6 @@
 export function ZoomHandler(editor) {
   this.editor = editor
-  this.maxScaleFactor = 2
-  this.transformDelay = 500
+  this.options = editor.options[this.constructor.name]
   this.editor.on("afterUpdate", this.afterUpdate, this)
 
   d3.select(editor.element)
@@ -19,7 +18,7 @@ ZoomHandler.prototype.afterUpdate = function() {
 
     d3.zoom().transform(d3.select(element), transform)
     that.editor.g.transition().attr("transform", transform)
-  }, this.transformDelay)
+  }, this.options.transformDelay)
 }
 
 ZoomHandler.prototype._scaleAndCenter = function() {
@@ -33,7 +32,7 @@ ZoomHandler.prototype._scaleAndCenter = function() {
     // third move the origin to the center of the viewer
     .translate(element.clientWidth/2, element.clientHeight/2)
     // second scale the canvas about the origin
-    .scale(_.min([xScale, yScale, this.maxScaleFactor]))
+    .scale(_.min([xScale, yScale, this.options.maxScaleFactor]))
     // first center the whole canvas as the origin
     .translate(-box.x - box.width/2, -box.y - box.height/2)
 }

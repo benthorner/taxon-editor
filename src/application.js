@@ -29,7 +29,7 @@ $(document).ready(function() {
 
   var dataTaxadio = new Taxadio(dataTaxadioNode, [
     new Option("Fake", function() {
-      taxitor.trigger("dataReceived", new FakeTqxode())
+      taxitor.trigger("dataReceived", new FakeTaxode())
     }),
     new Option("Real", function() {
       taxitor.trigger("dataReceived", RealTaxode.root)
