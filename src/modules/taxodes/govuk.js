@@ -10,18 +10,18 @@ export function GOVUKTaxode(taxon, parent) {
     ? "" : taxon.base_path
 }
 
-GOVUKTaxode.host = "https://www.gov.uk/api/content"
+GOVUKTaxode.HOST = "https://www.gov.uk/api/content"
 
 GOVUKTaxode.root = function() {
   return new Promise((resolve, reject) => {
-    $.get(GOVUKTaxode.host)
+    $.get(GOVUKTaxode.HOST)
       .then((d) => resolve(new GOVUKTaxode(d)))
   })
 }
 
 GOVUKTaxode.prototype.expand = function() {
   var that = this
-  var path = GOVUKTaxode.host + this.base_path
+  var path = GOVUKTaxode.HOST + this.base_path
 
   return $.get(path).then((d) => {
     var links = d.links.level_one_taxons ||
@@ -35,12 +35,6 @@ GOVUKTaxode.prototype.expand = function() {
 
     return Promise.resolve()
   })
-}
-
-GOVUKTaxode.prototype.contract = function() {
-  var that = this
-  that.children = null
-  return Promise.resolve()
 }
 
 GOVUKTaxode.prototype.createChild = function() {
