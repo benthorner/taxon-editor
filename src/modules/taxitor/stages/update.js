@@ -19,16 +19,12 @@ UpdateStage.prototype.onUpdate = function() {
     .transition()
     .attr("x", function(d) { return d.x })
     .attr("y", function(d) { return d.y })
-    .attr("width", function(d) { return d.width })
-    .attr("height", function(d) { return d.height })
 
   this.editor.g
     .selectAll(".node foreignObject")
     .transition()
     .attr("x", function(d) { return d.x })
     .attr("y", function(d) { return d.y })
-    .attr("width", function(d) { return d.width })
-    .attr("height", function(d) { return d.height })
 
   this.editor.g
     .selectAll(".node foreignObject .title")

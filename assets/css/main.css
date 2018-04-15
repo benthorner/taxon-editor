@@ -39,6 +39,16 @@ td {
   padding: 1px;
 }
 
+.taxitor .node rect {
+  width: 100px;
+  height: 100px;
+}
+
+.taxitor .node foreignObject {
+  width: 100px;
+  height: 100px;
+}
+
 .taxitor .node.depth0 rect { fill: #005EA5; }
 .taxitor .node.depth1 rect { fill: #2E358B; }
 .taxitor .node.depth2 rect { fill: #912B88; }

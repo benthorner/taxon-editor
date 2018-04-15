@@ -1,7 +1,5 @@
 export function BaseLayout(editor) {
   this.editor = editor
-  this.nodeWidth = 100
-  this.nodeHeight = 100
   this.nodeBoundsScaleFactor = 20
 }
 

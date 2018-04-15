@@ -5,8 +5,8 @@ export function DepthHandler(editor) {
 }
 
 DepthHandler.prototype.onUpdate = function() {
-  this.maxDepth = _.max([this.maxDepth,
-                         this.editor.data.height])
+  var depths = _.pluck(this.editor.data.descendants(), 'depth')
+  this.maxDepth = _.max(depths + [this.maxDepth])
 
   for (var i=0; i<=this.maxDepth; i++) {
     this.editor.g
