@@ -4,7 +4,7 @@ export function RadialLayout(editor) {
   _.extend(this, new BaseLayout(editor))
 }
 
-RadialLayout.prototype.apply = function(root) {
+RadialLayout.prototype.call = function(root) {
   d3.tree().size([2*Math.PI, this.bounds().height])(root)
 
   root.descendants().forEach(function(d) {

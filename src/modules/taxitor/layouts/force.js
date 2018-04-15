@@ -6,7 +6,7 @@ export function ForceLayout(editor) {
   this.collisionRadius = 100
 }
 
-ForceLayout.prototype.apply = function(root) {
+ForceLayout.prototype.call = function(root) {
   var sim = d3.forceSimulation(root.descendants())
     .force("collision", d3.forceCollide(this.collisionRadius))
     .force("link", d3.forceLink(root.links()))
