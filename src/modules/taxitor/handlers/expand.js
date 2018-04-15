@@ -10,10 +10,11 @@ ExpandHandler.prototype.afterEnter = function() {
 }
 
 ExpandHandler.prototype.onClick = function(d) {
-  var that = this
   d3.event.stopPropagation()
+  var that = this
 
-  var promise = d.children ? d.contract() : d.expand()
+  var promise = d.children ?
+    d.contract() : d.expand()
 
   promise.then(() => {
     that.editor.trigger("beforeEnter")
