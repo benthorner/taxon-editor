@@ -8,13 +8,10 @@ export function FakeTaxode(parent) {
 }
 
 FakeTaxode.prototype.expand = function() {
-  var that = this
+  that.children = [new FakeTaxode(this),
+                   new FakeTaxode(this)]
 
-  return new Promise(function(resolve, reject) {
-    that.children = [new FakeTaxode(that),
-                     new FakeTaxode(that)]
-    resolve()
-  })
+  return Promise.resolve()
 }
 
 FakeTaxode.prototype.contract = function() {

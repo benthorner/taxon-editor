@@ -10,7 +10,7 @@ export function Taxadio(element, options) {
     .enter()
     .append("div")
     .classed("button", true)
-    .html(function(d) { return d })
+    .html((d) => d)
     .on("click", this.onClick.bind(this))
 
   this._update()
@@ -21,9 +21,7 @@ Taxadio.prototype._update = function() {
 
   this.element
     .selectAll(".button")
-    .classed("selected", function(d) {
-      return d == that.selected
-    })
+    .classed("selected", (d) => d == that.selected)
 }
 
 Taxadio.prototype.onClick = function(d) {

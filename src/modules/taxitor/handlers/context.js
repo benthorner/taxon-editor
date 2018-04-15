@@ -11,7 +11,7 @@ ContextHandler.prototype.afterEnter = function() {
 
   this.editor.g
     .selectAll(".node")
-    .on("contextmenu", function(d) {
+    .on("contextmenu", (d) => {
       d3.event.preventDefault()
       new Taxmenu(d3.event, that._options(d))
     })
@@ -21,15 +21,16 @@ ContextHandler.prototype._options = function(d) {
   var that = this
 
   return [
-    new Option('Create child', function() {
-      d.createChild().then(function(child) {
+    new Option('Create child', () => {
+      d.createChild().then((child) => {
         that.editor.trigger("nodeSelected", child)
         that.editor.trigger("beforeEnter")
       })
     }),
-    new Option('Delete', function() {
+    new Option('Delete', () => {
       if (d.depth == 0) return
-      d.delete().then(function() {
+
+      d.delete().then(() => {
         that.editor.trigger("nodeSelected", d.parent)
         that.editor.trigger("beforeEnter")
       })

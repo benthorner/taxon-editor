@@ -9,13 +9,11 @@ SelectHandler.prototype.afterEnter = function() {
 
   this.editor.g
     .selectAll(".node")
-    .on("click", function(d) {
-      that.editor.trigger("nodeSelected", d)
-    })
+    .on("click", (d) => that.editor.trigger("nodeSelected", d))
 }
 
 SelectHandler.prototype.nodeSelected = function(d) {
   this.editor.g
     .selectAll(".node")
-    .classed("selected", function(d2) { return d2 == d })
+    .classed("selected", (d2) => d2 == d)
 }

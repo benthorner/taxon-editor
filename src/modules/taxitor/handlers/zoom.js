@@ -4,7 +4,7 @@ export function ZoomHandler(editor) {
   this.editor.on("afterUpdate", this.afterUpdate, this)
 
   d3.select(editor.element)
-    .call(d3.zoom().on("zoom", function() {
+    .call(d3.zoom().on("zoom", () => {
       editor.g.attr("transform", d3.event.transform)
     }))
 }
@@ -12,7 +12,7 @@ export function ZoomHandler(editor) {
 ZoomHandler.prototype.afterUpdate = function() {
   var that = this
 
-  setTimeout(function() {
+  setTimeout(() => {
     var element = that.editor.element
     var transform = that._scaleAndCenter()
 

@@ -17,11 +17,11 @@ RealTaxode.root = new RealTaxode({
 RealTaxode.prototype.expand = function() {
   var that = this
 
-  return Taxapis.expand(that.id).then(function(d) {
+  return Taxapis.expand(that.id).then((d) => {
     var links = d.level_one_taxons || d.child_taxons
 
     if (links) {
-      that.children = links.map(function(d2) {
+      that.children = links.map((d2) => {
         return new RealTaxode(d2, that)
       })
     }
@@ -39,7 +39,7 @@ RealTaxode.prototype.contract = function() {
 RealTaxode.prototype.createChild = function() {
   var that = this
 
-  return Taxapis.create(that).then(function(taxon) {
+  return Taxapis.create(that).then((taxon) => {
     if (!that.children) that.children = []
     var child = new RealTaxode(taxon, that)
     that.children.push(child)
@@ -50,7 +50,7 @@ RealTaxode.prototype.createChild = function() {
 RealTaxode.prototype.delete = function() {
   var that = this
 
-  return Taxapis.delete(that).then(function() {
+  return Taxapis.delete(that).then(() => {
     var children = _.without(that.parent.children, that)
     that.parent.children = (children.length == 0) ? null : children
     return Promise.resolve()

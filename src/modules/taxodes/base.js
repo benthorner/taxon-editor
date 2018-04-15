@@ -5,7 +5,7 @@ export function BaseTaxode(parent) {
 
 BaseTaxode.prototype.descendants = function() {
   return d3.hierarchy(this).descendants()
-    .map(function(d) { return d.data })
+    .map((d) => d.data)
 }
 
 BaseTaxode.prototype.links = function() {
@@ -13,7 +13,7 @@ BaseTaxode.prototype.links = function() {
 }
 
 BaseTaxode.prototype.eachBefore = function(callback) {
-  return d3.hierarchy(this).eachBefore(function(d) {
+  return d3.hierarchy(this).eachBefore((d) => {
     callback(d.data)
   })
 }

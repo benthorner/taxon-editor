@@ -7,7 +7,7 @@ export function RadialLayout(editor) {
 RadialLayout.prototype.call = function(root) {
   d3.tree().size([2*Math.PI, this.bounds().height])(root)
 
-  root.descendants().forEach(function(d) {
+  root.descendants().forEach((d) => {
     var radius = d.y
     var angle = d.x
 

@@ -13,7 +13,7 @@ export function Taxmenu(event, options) {
     .enter()
     .append("div")
     .classed("button", true)
-    .html(function(d) { return d })
+    .html((d) => d)
     .on("click", this.onClick.bind(this))
 
   d3.select("#taxmenu").on("click", this._remove)

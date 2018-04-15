@@ -6,7 +6,7 @@ Taxapis.CONTENT_URL = "http://publishing-api.dev.gov.uk/v2/content/"
 
 Taxapis.expand = function(content_id) {
   return $.get(Taxapis.EXPANDED_LINKS_URL + content_id)
-    .then(function(d) { return Promise.resolve(d.expanded_links) })
+    .then((d) => Promise.resolve(d.expanded_links))
 }
 
 Taxapis.create = function(taxode) {
@@ -24,8 +24,8 @@ Taxapis.create = function(taxode) {
 
   return $.post(Taxapis.CONTENT_URL + content_id, JSON.stringify(contentParams)).then(function() {
     return $.post(Taxapis.LINKS_URL + content_id, JSON.stringify(linkParams))
-  }).then(function() {
-    return Promise.resolve(contentParams)
+  }).then(() => {
+    Promise.resolve(contentParams)
   })
 }
 

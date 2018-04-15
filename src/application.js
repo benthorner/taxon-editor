@@ -8,7 +8,7 @@ import {ForceLayout} from './modules/taxitor/layouts/force.js'
 import {RadialLayout} from './modules/taxitor/layouts/radial.js'
 import {TreeLayout} from './modules/taxitor/layouts/tree.js'
 
-$(document).ready(function() {
+$(document).ready(() => {
   var dataTaxadioNode = d3.select("#data-taxadio").node()
   var layoutTaxadioNode = d3.select("#layout-taxadio").node()
 
@@ -16,32 +16,25 @@ $(document).ready(function() {
   var taxitor = new Taxitor(taxitorNode)
 
   var layoutTaxadio = new Taxadio(layoutTaxadioNode, [
-    new Option("Force", function() {
+    new Option("Force", () =>
       taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
-    }),
-    new Option("Radial", function() {
+    ),
+    new Option("Radial", () =>
       taxitor.trigger("layoutSelected", new RadialLayout(taxitor))
-    }),
-    new Option("Tree", function() {
+    ),
+    new Option("Tree", () =>
       taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
-    })
+    )
   ])
 
   var dataTaxadio = new Taxadio(dataTaxadioNode, [
-    new Option("Fake", function() {
-      taxitor.trigger("dataReceived", new FakeTaxode())
-    }),
-    new Option("Real", function() {
-      taxitor.trigger("dataReceived", RealTaxode.root)
-    })
+    new Option("Fake", () => taxitor.trigger("dataReceived", new FakeTaxode())),
+    new Option("Real", () => taxitor.trigger("dataReceived", RealTaxode.root))
   ])
 
   var taxplayNode = d3.select("#taxplay").node()
   var taxplay = new Taxplay(taxplayNode)
 
-  taxitor.on("nodeSelected", function(d) {
-    taxplay.trigger("dataReceived", d)
-  })
-
+  taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
   taxitor.trigger("dataReceived", new FakeTaxode())
 })

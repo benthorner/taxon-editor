@@ -7,7 +7,7 @@ export function LayoutStage(editor) {
   this.layout = new ForceLayout(this.editor)
 
   this.editor.on("onLayout", this.onLayout, this)
-  $(window).resize(function() { editor.trigger("onLayout") })
+  $(window).resize(() => editor.trigger("onLayout"))
 }
 
 LayoutStage.prototype.onLayout = function() {
