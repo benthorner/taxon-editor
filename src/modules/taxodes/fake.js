@@ -14,6 +14,12 @@ FakeTaxode.prototype.expand = function() {
   return Promise.resolve()
 }
 
+FakeTaxode.prototype.contract = function() {
+  var that = this
+  that.children = null
+  return Promise.resolve()
+}
+
 FakeTaxode.prototype.createChild = function() {
   if (!this.children) this.children = []
   var child = new FakeTaxode(this)

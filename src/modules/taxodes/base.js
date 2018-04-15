@@ -3,12 +3,6 @@ export function BaseTaxode(parent) {
   this.depth = parent ? parent.depth + 1 : 0
 }
 
-BaseTaxode.prototype.contract = function() {
-  var that = this
-  that.children = null
-  return Promise.resolve()
-}
-
 BaseTaxode.prototype.descendants = function() {
   return d3.hierarchy(this).descendants()
     .map((d) => d.data)
