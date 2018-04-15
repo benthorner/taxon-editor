@@ -11,7 +11,7 @@ body {
   height: 100%;
 }
 
-#taxmenu .container {
+#taxmenu #container {
   background-color: #DEE0E2;
   border: solid 1px #BFC1C3;
   position: absolute;
