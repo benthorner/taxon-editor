@@ -25,6 +25,8 @@ ContextHandler.prototype._options = function(d) {
       d.createChild().then((child) => {
         that.editor.trigger("nodeSelected", child)
         that.editor.trigger("beforeEnter")
+      }).catch((e) => {
+        that.editor.trigger("error", e)
       })
     }),
     new Option('Delete', () => {
@@ -33,6 +35,8 @@ ContextHandler.prototype._options = function(d) {
       d.delete().then(() => {
         that.editor.trigger("nodeSelected", d.parent)
         that.editor.trigger("beforeEnter")
+      }).catch((e) => {
+        that.editor.trigger("error", e)
       })
     })
   ]

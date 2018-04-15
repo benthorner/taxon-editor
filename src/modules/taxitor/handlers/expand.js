@@ -14,5 +14,10 @@ ExpandHandler.prototype.onClick = function(d) {
   d3.event.stopPropagation()
 
   var promise = d.children ? d.contract() : d.expand()
-  promise.then(() => that.editor.trigger("beforeEnter"))
+
+  promise.then(() => {
+    that.editor.trigger("beforeEnter")
+  }).catch((e) => {
+    that.editor.trigger("error", e)
+  })
 }
