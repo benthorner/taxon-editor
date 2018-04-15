@@ -1,24 +1,31 @@
 import {BaseTaxode} from './base.js'
-import {Taxapis} from '../taxapis.js'
 
 export function RealTaxode(taxon, parent) {
   _.extend(this, new BaseTaxode(parent))
-  _.extend(this, taxon)
-  this.id = this.content_id
+  this.title = taxon.title
+  this.description = taxon.description
+  this.id = taxon.content_id
+
+  this.base_path = taxon.base_path == "/"
+    ? "" : taxon.base_path
 }
 
-RealTaxode.root = new RealTaxode({
-  content_id: "f3bbdec2-0e62-4520-a7fd-6ffd5d36e03a",
-  title: "GOV.UK",
-  base_path: "/",
-  description: "The root of the taxonomy."
-})
+RealTaxode.host = "https://www.gov.uk/api/content"
+
+RealTaxode.root = function() {
+  return new Promise((resolve, reject) => {
+    $.get(RealTaxode.host)
+      .then((d) => resolve(new RealTaxode(d)))
+  })
+}
 
 RealTaxode.prototype.expand = function() {
   var that = this
+  var path = RealTaxode.host + this.base_path
 
-  return Taxapis.expand(that.id).then((d) => {
-    var links = d.level_one_taxons || d.child_taxons
+  return $.get(path).then((d) => {
+    var links = d.links.level_one_taxons ||
+      d.links.child_taxons
 
     if (links) {
       that.children = links.map((d2) => {
@@ -26,7 +33,7 @@ RealTaxode.prototype.expand = function() {
       })
     }
 
-    return Promise.resolve(d)
+    return Promise.resolve()
   })
 }
 
@@ -38,21 +45,10 @@ RealTaxode.prototype.contract = function() {
 
 RealTaxode.prototype.createChild = function() {
   var that = this
-
-  return Taxapis.create(that).then((taxon) => {
-    if (!that.children) that.children = []
-    var child = new RealTaxode(taxon, that)
-    that.children.push(child)
-    return Promise.resolve(child)
-  })
+  return Promise.reject("Not supported")
 }
 
 RealTaxode.prototype.delete = function() {
   var that = this
-
-  return Taxapis.delete(that).then(() => {
-    var children = _.without(that.parent.children, that)
-    that.parent.children = (children.length == 0) ? null : children
-    return Promise.resolve()
-  })
+  return Promise.reject("Not supported")
 }

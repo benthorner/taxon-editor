@@ -16,20 +16,24 @@ $(document).ready(() => {
   var taxitor = new Taxitor(taxitorNode)
 
   var layoutTaxadio = new Taxadio(layoutTaxadioNode, [
-    new Option("Force", () =>
+    new Option("Force", () => {
       taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
-    ),
-    new Option("Radial", () =>
+    }),
+    new Option("Radial", () => {
       taxitor.trigger("layoutSelected", new RadialLayout(taxitor))
-    ),
-    new Option("Tree", () =>
+    }),
+    new Option("Tree", () => {
       taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
-    )
+    })
   ])
 
   var dataTaxadio = new Taxadio(dataTaxadioNode, [
-    new Option("Fake", () => taxitor.trigger("dataReceived", new FakeTaxode())),
-    new Option("Real", () => taxitor.trigger("dataReceived", RealTaxode.root))
+    new Option("Fake", () => {
+      taxitor.trigger("dataReceived", new FakeTaxode())
+    }),
+    new Option("Real", () => {
+      RealTaxode.root().then((d) => taxitor.trigger("dataReceived", d))
+    })
   ])
 
   var taxplayNode = d3.select("#taxplay").node()
