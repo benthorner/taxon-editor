@@ -1,7 +1,7 @@
 import {Taxadio} from './modules/taxadio/taxadio.js'
 import {Option} from './modules/taxadio/option.js'
 import {Taxplay} from './modules/taxplay.js'
-import {RealTaxode} from './modules/taxodes/real.js'
+import {GOVUKTaxode} from './modules/taxodes/govuk.js'
 import {FakeTaxode} from './modules/taxodes/fake.js'
 import {Taxitor} from './modules/taxitor/taxitor.js'
 import {ForceLayout} from './modules/taxitor/layouts/force.js'
@@ -31,8 +31,8 @@ $(document).ready(() => {
     new Option("Fake", () => {
       taxitor.trigger("dataReceived", new FakeTaxode())
     }),
-    new Option("Real", () => {
-      RealTaxode.root().then((d) => taxitor.trigger("dataReceived", d))
+    new Option("GOV.UK", () => {
+      GOVUKTaxode.root().then((d) => taxitor.trigger("dataReceived", d))
     })
   ])
 
