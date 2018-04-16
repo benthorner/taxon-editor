@@ -1,34 +1,31 @@
 import {BaseTaxode} from './base.js'
 
-export function FakeTaxode(parent) {
-  _.extend(this, new BaseTaxode(parent))
-  this.title = Math.random().toString(36).substring(5)
-  this.description = Math.random().toString(36)
-  this.id = this.title
-}
+export class FakeTaxode extends BaseTaxode {
+  constructor(parent) {
+    super(parent)
+    this.title = Math.random().toString(36).substring(5)
+    this.description = Math.random().toString(36)
+    this.id = this.title
+  }
 
-FakeTaxode.prototype.expand = function() {
-  this.children = [new FakeTaxode(this),
-                   new FakeTaxode(this)]
+  expand() {
+    this._children = [new FakeTaxode(this), new FakeTaxode(this)]
+    return Promise.resolve()
+  }
 
-  return Promise.resolve()
-}
+  contract() {
+    this._children = []
+    return Promise.resolve()
+  }
 
-FakeTaxode.prototype.contract = function() {
-  var that = this
-  that.children = null
-  return Promise.resolve()
-}
+  createChild() {
+    var child = new FakeTaxode(this)
+    this._children.push(child)
+    return Promise.resolve(child)
+  }
 
-FakeTaxode.prototype.createChild = function() {
-  if (!this.children) this.children = []
-  var child = new FakeTaxode(this)
-  this.children.push(child)
-  return Promise.resolve(child)
-}
-
-FakeTaxode.prototype.delete = function() {
-  var children = _.without(this.parent.children, this)
-  this.parent.children = (children.length == 0) ? null : children
-  return Promise.resolve()
+  delete() {
+    this.parent._children = _.without(this.parent._children, this)
+    return Promise.resolve()
+  }
 }

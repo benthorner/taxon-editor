@@ -1,54 +1,40 @@
 import {BaseTaxode} from './base.js'
+const host = "https://www.gov.uk/api/content"
 
-export function GOVUKTaxode(taxon, parent) {
-  _.extend(this, new BaseTaxode(parent))
-  this.title = taxon.title
-  this.description = taxon.description
-  this.id = taxon.content_id
+export class GOVUKTaxode extends BaseTaxode {
+  constructor(taxon, parent) {
+    super(parent)
+    this.title = taxon.title
+    this.description = taxon.description
+    this.id = taxon.content_id
+    this.base_path = taxon.base_path == "/" ? "" : taxon.base_path
+  }
 
-  this.base_path = taxon.base_path == "/"
-    ? "" : taxon.base_path
-}
+  static root() {
+    return $.get(host)
+      .then((d) => Promise.resolve(new GOVUKTaxode(d)))
+  }
 
-GOVUKTaxode.host = "https://www.gov.uk/api/content"
+  expand() {
+    return $.get(host + this.base_path).then((d) => {
+      var links = d.links.level_one_taxons ||
+                  d.links.child_taxons || []
 
-GOVUKTaxode.root = function() {
-  return new Promise((resolve, reject) => {
-    $.get(GOVUKTaxode.host)
-      .then((d) => resolve(new GOVUKTaxode(d)))
-  })
-}
+      this._children = links.map((d2) => new GOVUKTaxode(d2, this))
+      return Promise.resolve()
+    })
+  }
 
-GOVUKTaxode.prototype.expand = function() {
-  var that = this
-  var path = GOVUKTaxode.host + this.base_path
-
-  return $.get(path).then((d) => {
-    var links = d.links.level_one_taxons ||
-      d.links.child_taxons
-
-    if (links) {
-      that.children = links.map((d2) => {
-        return new GOVUKTaxode(d2, that)
-      })
-    }
-
+  contract() {
+    this._children = []
     return Promise.resolve()
-  })
-}
+  }
 
-GOVUKTaxode.prototype.contract = function() {
-  var that = this
-  that.children = null
-  return Promise.resolve()
-}
+  createChild() {
+    return Promise.reject("Not supported")
+  }
 
-GOVUKTaxode.prototype.createChild = function() {
-  var that = this
-  return Promise.reject("Not supported")
-}
-
-GOVUKTaxode.prototype.delete = function() {
-  var that = this
-  return Promise.reject("Not supported")
+  delete() {
+    return Promise.reject("Not supported")
+  }
 }

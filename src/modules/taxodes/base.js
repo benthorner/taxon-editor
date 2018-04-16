@@ -1,23 +1,37 @@
-export function BaseTaxode(parent) {
-  this.parent = parent
-  this.depth = parent ? parent.depth + 1 : 0
-}
+export class BaseTaxode {
+  constructor(parent) {
+    this.parent = parent
+    this._children = []
+    this.depth = parent ? parent.depth + 1 : 0
+  }
 
-BaseTaxode.prototype.descendants = function() {
-  return d3.hierarchy(this).descendants()
-    .map((d) => d.data)
-}
+  get children() {
+    var length = this._children.length
+    return (length == 0) ? null : this._children
+  }
 
-BaseTaxode.prototype.links = function() {
-  return d3.hierarchy(this).links().map(this._link)
-}
+  descendants() {
+    return d3.hierarchy(this).descendants()
+      .map((d) => d.data)
+  }
 
-BaseTaxode.prototype.eachBefore = function(callback) {
-  return d3.hierarchy(this).eachBefore((d) => {
-    callback(d.data)
-  })
-}
+  links() {
+    return d3.hierarchy(this).links().map(this._link)
+  }
 
-BaseTaxode.prototype._link = function(d) {
-  return { source: d.source.data, target: d.target.data }
+  eachBefore(callback) {
+    return d3.hierarchy(this).eachBefore((d) => {
+      callback(d.data)
+    })
+  }
+
+  eachAfter(callback) {
+    return d3.hierarchy(this).eachAfter((d) => {
+      callback(d.data)
+    })
+  }
+
+  _link(d) {
+    return { source: d.source.data, target: d.target.data }
+  }
 }

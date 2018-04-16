@@ -1,4 +1,6 @@
-export function Item(name, callback) {
-  this.name = name
-  this.callback = callback
+export class Item {
+  constructor(name, callback) {
+    this.name = name
+    this.callback = callback
+  }
 }

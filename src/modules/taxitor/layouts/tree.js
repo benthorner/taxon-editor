@@ -1,10 +1,12 @@
 import {BaseLayout} from './base.js'
 
-export function TreeLayout(editor) {
-  _.extend(this, new BaseLayout(editor))
-}
+export class TreeLayout extends BaseLayout {
+  constructor(editor) {
+    super(editor)
+  }
 
-TreeLayout.prototype.call = function(root) {
-  var bounds = this.bounds()
-  d3.tree().size([bounds.width, bounds.height])(root)
+  call(root) {
+    var bounds = this.bounds()
+    d3.tree().size([bounds.width, bounds.height])(root)
+  }
 }
