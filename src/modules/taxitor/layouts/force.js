@@ -1,7 +1,6 @@
 import {BaseLayout} from './base.js'
 
 export function ForceLayout(editor) {
-  _.extend(this, new BaseLayout(editor))
   this.options = editor.options[this.constructor.name]
 }
 
