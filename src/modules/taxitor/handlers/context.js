@@ -20,7 +20,7 @@ ContextHandler.prototype.afterEnter = function() {
 ContextHandler.prototype._options = function(d) {
   var that = this
 
-  return [
+  var options = [
     new Option('Create child', () => {
       d.createChild().then((child) => {
         that.editor.trigger("nodeSelected", child)
@@ -28,16 +28,19 @@ ContextHandler.prototype._options = function(d) {
       }).catch((e) => {
         that.editor.trigger("error", e)
       })
-    }),
-    new Option('Delete', () => {
-      if (d.depth == 0) return
+    })
+  ]
 
+  if (d.depth > 0) {
+    options.push(new Option('Delete', () => {
       d.delete().then(() => {
         that.editor.trigger("nodeSelected", d.parent)
         that.editor.trigger("beforeEnter")
       }).catch((e) => {
         that.editor.trigger("error", e)
       })
-    })
-  ]
+    }))
+  }
+
+  return options
 }
