@@ -1,5 +1,5 @@
 import {Taxadio} from './modules/taxadio/taxadio.js'
-import {Option} from './modules/taxadio/option.js'
+import {Item} from './modules/taxadio/item.js'
 import {Taxplay} from './modules/taxplay.js'
 import {GOVUKTaxode} from './modules/taxodes/govuk.js'
 import {FakeTaxode} from './modules/taxodes/fake.js'
@@ -16,22 +16,22 @@ $(document).ready(() => {
   var taxitor = new Taxitor(taxitorNode)
 
   var layoutTaxadio = new Taxadio(layoutTaxadioNode, [
-    new Option("Force", () => {
+    new Item("Force", () => {
       taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
     }),
-    new Option("Radial", () => {
+    new Item("Radial", () => {
       taxitor.trigger("layoutSelected", new RadialLayout(taxitor))
     }),
-    new Option("Tree", () => {
+    new Item("Tree", () => {
       taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
     })
   ])
 
   var dataTaxadio = new Taxadio(dataTaxadioNode, [
-    new Option("Fake", () => {
+    new Item("Fake", () => {
       taxitor.trigger("dataReceived", new FakeTaxode())
     }),
-    new Option("GOV.UK", () => {
+    new Item("GOV.UK", () => {
       GOVUKTaxode.root().then((d) => taxitor.trigger("dataReceived", d))
     })
   ])

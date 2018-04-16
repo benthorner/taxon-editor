@@ -1,4 +1,4 @@
-export function Option(name, callback) {
+export function Item(name, callback) {
   this.name = name
   this.callback = callback
 }

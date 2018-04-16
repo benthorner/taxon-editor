@@ -1,15 +1,15 @@
-export function Taxadio(element, options) {
+export function Taxadio(element, items) {
   this.element = d3.select(element)
-  this.options = options
-  this.selected = this.options[0].name
+  this.items = items
+  this.selected = this.items[0].name
 
   this.element
     .attr("class", "taxadio")
     .selectAll("div")
-    .data(_.pluck(this.options, "name"))
+    .data(_.pluck(this.items, "name"))
     .enter()
     .append("div")
-    .classed("button", true)
+    .classed("item", true)
     .html((d) => d)
     .on("click", this.onClick.bind(this))
 
@@ -20,12 +20,12 @@ Taxadio.prototype._update = function() {
   var that = this
 
   this.element
-    .selectAll(".button")
+    .selectAll(".item")
     .classed("selected", (d) => d == that.selected)
 }
 
 Taxadio.prototype.onClick = function(d) {
   this.selected = d
   this._update()
-  _.findWhere(this.options, {name: d}).callback()
+  _.findWhere(this.items, {name: d}).callback()
 }

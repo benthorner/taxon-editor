@@ -1,5 +1,5 @@
-export function Taxmenu(event, options) {
-  this.options = options
+export function Taxmenu(event, items) {
+  this.items = items
 
   d3.select("body")
     .append("div")
@@ -10,10 +10,10 @@ export function Taxmenu(event, options) {
     .style("top", event.pageY)
     .style("left", event.pageX)
     .selectAll("div")
-    .data(_.pluck(options, "name"))
+    .data(_.pluck(items, "name"))
     .enter()
     .append("div")
-    .classed("button", true)
+    .classed("item", true)
     .html((d) => d)
     .on("click", this.onClick.bind(this))
 
@@ -26,5 +26,5 @@ Taxmenu.prototype._remove = function() {
 
 Taxmenu.prototype.onClick = function(d) {
   this._remove()
-  _.findWhere(this.options, {name: d}).callback()
+  _.findWhere(this.items, {name: d}).callback()
 }

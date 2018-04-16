@@ -17,13 +17,13 @@ body {
   position: absolute;
 }
 
-#taxmenu .button {
+#taxmenu .item {
   padding: 10px 20px;
   background-color: #00823B;
   cursor: hand;
 }
 
-#taxmenu .button:hover {
+#taxmenu .item:hover {
   background-color: #006435;
 }
 
@@ -61,7 +61,7 @@ body {
 .taxitor .node { cursor: hand; }
 .taxitor .link { stroke: gray; }
 
-.taxadio .button {
+.taxadio .item {
   display: inline-block;
   padding: 5px;
   background-color: #00823B;
@@ -69,8 +69,8 @@ body {
   cursor: hand;
 }
 
-.taxadio .button:hover { background-color: #006435; }
-.taxadio .button.selected { background-color: #FFBF47; }
+.taxadio .item:hover { background-color: #006435; }
+.taxadio .item.selected { background-color: #FFBF47; }
 
 .taxplay {
   border-left: 1px solid #bfc1c3;

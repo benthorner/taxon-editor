@@ -1,4 +1,4 @@
-import {Option} from '../../taxmenu/option.js'
+import {Item} from '../../taxmenu/item.js'
 import {Taxmenu} from '../../taxmenu/taxmenu.js'
 
 export function ContextHandler(editor) {
@@ -21,7 +21,7 @@ ContextHandler.prototype._options = function(d) {
   var that = this
 
   var options = [
-    new Option('Create child', () => {
+    new Item('Create child', () => {
       d.createChild().then((child) => {
         that.editor.trigger("nodeSelected", child)
         that.editor.trigger("beforeEnter")
@@ -32,7 +32,7 @@ ContextHandler.prototype._options = function(d) {
   ]
 
   if (d.depth > 0) {
-    options.push(new Option('Delete', () => {
+    options.push(new Item('Delete', () => {
       d.delete().then(() => {
         that.editor.trigger("nodeSelected", d.parent)
         that.editor.trigger("beforeEnter")
