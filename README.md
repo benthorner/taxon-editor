@@ -41,7 +41,7 @@ There are lots of features to add to make the prototype better and showcase what
   * [taxplay] Show more of the properties for each taxon
   * [taxplay] Make the showing/editing of each property generic
   * [taxplay] Use generic properties to change phase / publish
-  * [generic] Use a javascript module library to require stuff
+  * ~~[generic] Use a javascript module library to require stuff~~
   * [taxitor] Show more details (e.g. phase) in each node
   * [taxitor] Support bulk actions for subtrees (e.g. publish)
   * [generic] Add authentication and authorisation capability
