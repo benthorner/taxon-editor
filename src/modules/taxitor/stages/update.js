@@ -14,16 +14,9 @@ export class UpdateStage {
       .attr("y2", (d) => d.target.y)
 
     this.editor.g
-      .selectAll(".node rect")
+      .selectAll(".node")
       .transition()
-      .attr("x", (d) => d.x)
-      .attr("y", (d) => d.y)
-
-    this.editor.g
-      .selectAll(".node foreignObject")
-      .transition()
-      .attr("x", (d) => d.x)
-      .attr("y", (d) => d.y)
+      .attr("transform", (d) => `translate(${d.x},${d.y})`)
 
     this.editor.g
       .selectAll(".node foreignObject .title")
