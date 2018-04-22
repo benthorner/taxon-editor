@@ -11,8 +11,12 @@ export class Taxadio {
       .enter()
       .append("div")
       .classed("item", true)
+      .attr("tabindex", 0)
       .html((d) => d)
       .on("click", this.onClick.bind(this))
+      .on("keydown", (d) => {
+        if (d3.event.key == "Enter") this.onClick(d)
+      })
 
     this._update()
   }

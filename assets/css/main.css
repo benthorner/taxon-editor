@@ -72,6 +72,12 @@ body {
 }
 
 .taxadio .item:hover { background-color: #006435; }
+
+.taxadio .item:focus {
+  outline: none;
+  background-color: #006435;
+}
+
 .taxadio .item.selected { background-color: #FFBF47; }
 
 .taxplay {
