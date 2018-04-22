@@ -8,14 +8,12 @@ export class SelectHandler {
   afterEnter() {
     this.editor.g
       .selectAll(".node")
+      .attr("tabindex", 0)
       .on("click", (d) => {
         this.editor.trigger("nodeSelected", d)
       })
-  }
-
-  nodeSelected(d) {
-    this.editor.g
-      .selectAll(".node")
-      .classed("selected", (d2) => d2 == d)
+      .on("focus", (d) => {
+        this.editor.trigger("nodeSelected", d)
+      })
   }
 }

@@ -56,8 +56,9 @@ body {
 .taxitor .node.depth8 rect { fill: #28A197; }
 .taxitor .node.depth9 rect { fill: #2B8CC4; }
 
-.taxitor .node.selected rect { fill: #FFBF47; }
 .taxitor .node:hover rect { fill: #FFBF47; }
+.taxitor .node:focus { outline: none; }
+.taxitor .node:focus rect { fill: #FFBF47; }
 
 .taxitor .node { cursor: hand; }
 .taxitor .link { stroke: gray; }
