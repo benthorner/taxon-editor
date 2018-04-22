@@ -42,6 +42,7 @@ body {
 .taxitor .node foreignObject {
   width: 100px;
   height: 100px;
+  overflow: hidden;
 }
 
 .taxitor .node.depth0 rect { fill: #005EA5; }
