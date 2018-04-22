@@ -1,12 +1,12 @@
-import {BaseLayout} from './base.js'
-
-export class TreeLayout extends BaseLayout {
+export class TreeLayout {
   constructor(editor) {
-    super(editor)
+    this.options = editor.options[this.constructor.name]
   }
 
   call(root) {
-    var bounds = this.bounds()
-    d3.tree().size([bounds.width, bounds.height])(root)
+    var bounds = [this.options.xSeparation,
+                  this.options.ySeparation]
+
+    d3.tree().nodeSize(bounds)(root)
   }
 }
