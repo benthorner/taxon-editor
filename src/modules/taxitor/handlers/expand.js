@@ -8,6 +8,9 @@ export class ExpandHandler {
     this.editor.g
       .selectAll(".node")
       .on("dblclick", this.onClick.bind(this))
+      .on("keydown", (d) => {
+        if (d3.event.key == "Enter") this.onClick(d)
+      })
   }
 
   onClick(d) {
