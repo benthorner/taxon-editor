@@ -37,6 +37,7 @@ There are lots of features to add to make the prototype better and showcase what
 
   * [taxitor] Drag support for nodes to change their parents
   * [taxitor] Drag support for nodes to merge them together
+  * ~~[taxitor] Improve existing layouts and add better ones~~
   * [taxplay] Add a button to edit (and save) the taxon content
   * [taxplay] Show more of the properties for each taxon
   * [taxplay] Make the showing/editing of each property generic
