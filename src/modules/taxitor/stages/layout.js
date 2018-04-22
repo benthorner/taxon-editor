@@ -1,11 +1,11 @@
-import {ForceLayout} from '../layouts/force.js'
+import {WrapLayout} from '../layouts/wrap.js'
 
 export class LayoutStage {
   constructor(editor) {
     this.editor = editor
 
     this.editor.on("layoutSelected", this.layoutSelected, this)
-    this.layout = new ForceLayout(this.editor)
+    this.layout = new WrapLayout(this.editor)
 
     this.editor.on("onLayout", this.onLayout, this)
     $(window).resize(() => editor.trigger("beforeLayout"))

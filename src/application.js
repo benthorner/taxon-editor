@@ -7,6 +7,7 @@ import {Taxitor} from './modules/taxitor/taxitor.js'
 import {ForceLayout} from './modules/taxitor/layouts/force.js'
 import {RadialLayout} from './modules/taxitor/layouts/radial.js'
 import {TreeLayout} from './modules/taxitor/layouts/tree.js'
+import {WrapLayout} from './modules/taxitor/layouts/wrap.js'
 
 $(document).ready(() => {
   var dataTaxadioNode = d3.select("#data-taxadio").node()
@@ -16,6 +17,9 @@ $(document).ready(() => {
   var taxitor = new Taxitor(taxitorNode)
 
   var layoutTaxadio = new Taxadio(layoutTaxadioNode, [
+    new Item("Wrap", () => {
+      taxitor.trigger("layoutSelected", new WrapLayout(taxitor))
+    }),
     new Item("Force", () => {
       taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
     }),
