@@ -1,14 +1,26 @@
 # taxonomy-editor
 
-A prototype editor for the GOV.UK taxonomy.
+A prototype editor for the [GOV.UK taxonomy](https://insidegovuk.blog.gov.uk/2015/11/02/developing-a-subject-based-taxonomy-for-gov-uk/).
 
 ![screenshot](https://raw.githubusercontent.com/benthorner/taxonomy-editor/master/screenshot.png)
 
-## Background
+## Prequisites
 
-The GOV.UK taxonomy is a hierarchy of topics ('taxons') used for tagging content. Examples include 'Defence' and 'HS2'. Each taxon is a type of document and all documents are managed using the [GOV.UK publishing-api](https://github.com/alphagov/publishing-api).
+You will need the following prerequisites installed locally.
 
-A taxonomy is a type of graph. The aim of this project is to explore different ways of visualising graphs like the GOV.UK taxonomy, as well as how to edit the taxons and manipulate the structure.
+  * [npx](https://www.npmjs.com/package/npx) to get a HTTP server
+
+Most of these can be installed using Homebrew on Mac.
+
+### Getting Started
+
+Run the following command in the top level directory.
+
+```
+npx http-server -c-1
+```
+
+The navigate to `http://localhost:8080` in your browser.
 
 ## Components
 
