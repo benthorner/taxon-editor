@@ -3,25 +3,26 @@ export class ZoomHandler {
     this.editor = editor
     this.options = editor.options[this.constructor.name]
     this.editor.on("afterUpdate", this.afterUpdate, this)
+    this.editor.on("attach", this.attach, this)
+  }
 
-    d3.select(editor.element)
+  attach() {
+    this.editor.element
       .call(d3.zoom().on("zoom", () => {
-        editor.g.attr("transform", d3.event.transform)
+        this.editor.g.attr("transform", d3.event.transform)
       }))
   }
 
   afterUpdate() {
     setTimeout(() => {
-      var element = this.editor.element
       var transform = this._scaleAndCenter()
-
-      d3.zoom().transform(d3.select(element), transform)
+      d3.zoom().transform(this.editor.element, transform)
       this.editor.g.transition().attr("transform", transform)
     }, this.options.transformDelay)
   }
 
   _scaleAndCenter() {
-    var element = this.editor.element
+    var element = this.editor.element.node()
     var box = this.editor.g.node().getBBox()
 
     var xScale = element.clientWidth / box.width

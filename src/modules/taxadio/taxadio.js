@@ -1,8 +1,11 @@
 export class Taxadio {
-  constructor(element, items) {
-    this.element = d3.select(element)
+  constructor(items) {
     this.items = items
     this.selected = this.items[0].name
+  }
+
+  attach(element) {
+    this.element = d3.select(element)
 
     this.element
       .attr("class", "taxadio")

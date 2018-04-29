@@ -10,13 +10,7 @@ import {TreeLayout} from './modules/taxitor/layouts/tree.js'
 import {WrapLayout} from './modules/taxitor/layouts/wrap.js'
 
 $(document).ready(() => {
-  var dataTaxadioNode = d3.select("#data-taxadio").node()
-  var layoutTaxadioNode = d3.select("#layout-taxadio").node()
-
-  var taxitorNode = d3.select("#taxitor").node()
-  var taxitor = new Taxitor(taxitorNode)
-
-  var layoutTaxadio = new Taxadio(layoutTaxadioNode, [
+  new Taxadio([
     new Item("Wrap", () => {
       taxitor.trigger("layoutSelected", new WrapLayout(taxitor))
     }),
@@ -29,19 +23,22 @@ $(document).ready(() => {
     new Item("Tree", () => {
       taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
     })
-  ])
+  ]).attach("#layout-taxadio")
 
-  var dataTaxadio = new Taxadio(dataTaxadioNode, [
+  new Taxadio([
     new Item("Fake", () => {
       taxitor.trigger("dataReceived", new FakeTaxode())
     }),
     new Item("GOV.UK", () => {
       GOVUKTaxode.root().then((d) => taxitor.trigger("dataReceived", d))
     })
-  ])
+  ]).attach("#taxode-taxadio")
 
-  var taxplayNode = d3.select("#taxplay").node()
-  var taxplay = new Taxplay(taxplayNode)
+  var taxitor = new Taxitor()
+  var taxplay = new Taxplay()
+
+  taxplay.attach("#taxplay")
+  taxitor.attach("#taxitor")
 
   taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
   taxitor.trigger("dataReceived", new FakeTaxode())

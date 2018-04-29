@@ -1,9 +1,13 @@
 export class EnterStage {
   constructor(editor) {
     this.editor = editor
+    this.editor.on("onEnter", this.onEnter, this)
+    this.editor.on("attach", this.attach, this)
+  }
+
+  attach() {
     this.editor.g.append("g").attr("class", "links")
     this.editor.g.append("g").attr("class", "nodes")
-    this.editor.on("onEnter", this.onEnter, this)
   }
 
   onEnter() {

@@ -1,8 +1,10 @@
 export class Taxmenu {
   constructor(event, items) {
     this.items = items
+  }
 
-    d3.select("body")
+  attach(element) {
+    d3.select(element)
       .append("div")
       .attr("id", "taxmenu")
       .on("contextmenu", () => d3.event.preventDefault())
@@ -11,7 +13,7 @@ export class Taxmenu {
       .style("top", event.pageY)
       .style("left", event.pageX)
       .selectAll("div")
-      .data(_.pluck(items, "name"))
+      .data(_.pluck(this.items, "name"))
       .enter()
       .append("div")
       .classed("item", true)

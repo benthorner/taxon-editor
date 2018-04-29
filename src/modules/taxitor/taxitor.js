@@ -9,15 +9,9 @@ const options = {
 }
 
 export class Taxitor {
-  constructor(element) {
+  constructor() {
     _.extend(this, Backbone.Events)
-    this.element = element
     this.options = options
-
-    this.g = d3
-      .select(element)
-      .classed("taxitor", true)
-      .append("g")
 
     new MainStage(this)
     new MainHandler(this)
@@ -26,6 +20,17 @@ export class Taxitor {
       this.data = data
       this.trigger("beforeEnter")
     })
+  }
+
+  attach(element) {
+    this.element = d3.select(element)
+
+    this.g = d3
+      .select(element)
+      .classed("taxitor", true)
+      .append("g")
+
+    this.trigger("attach")
   }
 }
 

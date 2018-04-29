@@ -1,9 +1,11 @@
 export class Taxplay {
-  constructor(element) {
+  constructor() {
     _.extend(this, Backbone.Events)
-    this.element = d3.select(element)
     this.on("dataReceived", this.dataReceived, this)
+  }
 
+  attach(element) {
+    this.element = d3.select(element)
     this.element.classed("taxplay", true)
     this.element.append("div").classed("title", true)
     this.element.append("div").classed("base-path", true)

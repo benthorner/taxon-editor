@@ -28,7 +28,7 @@ export class WrapLayout {
   }
 
   _maxWidth(root) {
-    var element = this.editor.element
+    var element = this.editor.element.node()
 
     var nodesPerRow = element.clientWidth / this.xSeparation
     var clientArea = element.clientWidth * element.clientHeight
