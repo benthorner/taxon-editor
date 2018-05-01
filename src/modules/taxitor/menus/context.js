@@ -5,7 +5,7 @@ export class ContextMenu {
     this.editor = editor
   }
 
-  call(d) {
+  items(d) {
     var options = [
       new Item('Create child', () => {
         d.createChild().then((child) => {
