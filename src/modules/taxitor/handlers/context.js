@@ -13,7 +13,10 @@ export class ContextHandler {
       .selectAll(".node")
       .on("contextmenu", (d) => {
         d3.event.preventDefault()
-        new Taxmenu(d3.event, this.menu.items(d)).attach("body")
+        var items = this.menu.items(d)
+
+        if (!items.length) return
+        new Taxmenu(d3.event, items).attach("body")
       })
   }
 }

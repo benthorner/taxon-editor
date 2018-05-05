@@ -1,15 +1,13 @@
-import {FakeTaxode} from '../fake.js'
-
 export class Node {
   constructor(node) {
     this.node = node
   }
 
   save() {
-    return Promise.resolve()
+    return Promise.reject("Not supported")
   }
 
   delete() {
-    return Promise.resolve()
+    return Promise.reject("Not supported")
   }
 }

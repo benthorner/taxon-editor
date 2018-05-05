@@ -17,12 +17,4 @@ export class GOVUKTaxode extends BaseTaxode {
     return $.get(host)
       .then((d) => Promise.resolve(new GOVUKTaxode(d)))
   }
-
-  createChild() {
-    return Promise.reject("Not supported")
-  }
-
-  delete() {
-    return Promise.reject("Not supported")
-  }
 }

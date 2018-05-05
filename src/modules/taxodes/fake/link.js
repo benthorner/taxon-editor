@@ -12,4 +12,8 @@ export class Link extends LinkBase {
 
     return Promise.resolve()
   }
+
+  save() {
+    return Promise.resolve()
+  }
 }

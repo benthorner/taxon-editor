@@ -16,10 +16,13 @@ export class ExpandHandler {
   onClick(d) {
     d3.event.stopPropagation()
 
-    var promise = d.children && d.children.length ?
-      d.link.reset() : d.link.fetch()
+    if (d.children) {
+      d.link.reset()
+      this.editor.trigger("beforeEnter")
+      return
+    }
 
-    promise
+    d.link.fetch()
       .then(() => this.editor.trigger("beforeEnter"))
       .catch((e) => this.editor.trigger("error", e))
   }

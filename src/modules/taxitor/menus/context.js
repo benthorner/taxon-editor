@@ -8,7 +8,7 @@ export class ContextMenu {
   items(d) {
     var options = []
 
-    if (d.children) {
+    if (!d.readonly && d.children) {
       options.push(new Item('Create child', () => {
         d.createChild().then((child) => {
           this.editor.trigger("beforeEnter")
@@ -19,10 +19,9 @@ export class ContextMenu {
       }))
     }
 
-    if (d.parent) {
+    if (!d.readonly && d.parent) {
       options.push(new Item('Delete', () => {
         d.delete().then(() => {
-          this.editor.trigger("nodeSelected", d.parent)
           this.editor.trigger("beforeEnter")
         }).catch((e) => {
           this.editor.trigger("error", e)
