@@ -1,40 +1,38 @@
 export class WrapLayout {
   constructor(editor) {
     this.editor = editor
-    this.xSeparation = 110
-    this.ySeparation = 110
+    this.options = editor.options[this.constructor.name]
   }
 
   call(root) {
-    var previous = null
-    var maxWidth = this._maxWidth(root)
-    root.x = 0, root.y = 0
+    var tree = d3.hierarchy(root)
+    var maxWidth = this._maxWidth(tree)
+    var previous = root
 
-    root.eachBefore((d) => {
-      if (previous == null) {
-        previous = d; return
+    tree.eachBefore((d) => {
+      if (d.data == root) {
+        root.x = 0, root.y = 0
+        return
       }
 
-      d.x = previous.x + this.xSeparation
-      d.y = previous.y
+      d.data.x = previous.x + this.options.xSeparation
+      d.data.y = previous.y
 
-      if (d.x > maxWidth) {
-        d.x = 0
-        d.y = d.y + this.ySeparation
+      if (d.data.x > maxWidth) {
+        d.data.x = 0
+        d.data.y = d.data.y + this.options.ySeparation
       }
 
-      previous = d
+      previous = d.data
     })
   }
 
-  _maxWidth(root) {
+  _maxWidth(tree) {
+    var nodeArea = this.options.xSeparation *
+      this.options.ySeparation * tree.descendants().length
+
     var element = this.editor.element.node()
-
-    var nodesPerRow = element.clientWidth / this.xSeparation
     var clientArea = element.clientWidth * element.clientHeight
-
-    var nodeArea = nodesPerRow * this.xSeparation *
-      root.descendants().length * this.ySeparation / nodesPerRow
 
     // new node box has the same area but client box aspect ratio
     return Math.sqrt(nodeArea / clientArea) * element.clientWidth

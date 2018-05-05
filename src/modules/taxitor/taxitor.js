@@ -5,7 +5,8 @@ const options = {
   ForceLayout: { simulationTicks: 1000, collisionRadius: 100 },
   ZoomHandler: { maxScaleFactor: 2, transformDelay: 500 },
   TreeLayout: { xSeparation: 110, ySeparation: 200 },
-  RadialLayout: { xSeparation: 110, ySeparation: 110 }
+  RadialLayout: { xSeparation: 110, ySeparation: 110 },
+  WrapLayout: { xSeparation: 110, ySeparation: 110 }
 }
 
 export class Taxitor {

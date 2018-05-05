@@ -5,25 +5,24 @@ export class RadialLayout {
   }
 
   call(root) {
-    d3.tree().size([2*Math.PI, this._maxRadius(root)*2])(root)
+    var tree = d3.hierarchy(root)
+    d3.tree().size([2*Math.PI, this._maxRadius(tree)*2])(tree)
 
-    root.descendants().forEach((d) => {
-      var radius = d.y
-      var angle = d.x
-
-      d.x = radius * Math.cos(angle)
-      d.y = radius * Math.sin(angle)
+    tree.descendants().forEach((d) => {
+      var radius = d.y, angle = d.x
+      d.data.x = radius * Math.cos(angle)
+      d.data.y = radius * Math.sin(angle)
     })
   }
 
-  _maxRadius(root) {
+  _maxRadius(tree) {
     var arcLength = this._diagonalSeparation() / 2
-    var minAngle = 2*Math.PI / this._sumDepths(root)
+    var minAngle = 2*Math.PI / this._sumDepthsFromOutside(tree)
     return arcLength / Math.sin(minAngle)
   }
 
-  _sumDepths(root) {
-    var depths = root.descendants().map((d) => d.depth)
+  _sumDepthsFromOutside(tree) {
+    var depths = tree.descendants().map((d) => d.depth)
     var maxDepth = _.max(depths)
     return depths.reduce((memo, d) => memo + 1 + maxDepth-d, 0)
   }

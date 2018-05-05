@@ -15,7 +15,9 @@ export class ExpandHandler {
 
   onClick(d) {
     d3.event.stopPropagation()
-    var promise = d.children ?  d.contract() : d.expand()
+
+    var promise = d.children && d.children.length ?
+      d.link.contract() : d.link.expand()
 
     promise
       .then(() => this.editor.trigger("beforeEnter"))

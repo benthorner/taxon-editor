@@ -6,18 +6,20 @@ export class ContextMenu {
   }
 
   items(d) {
-    var options = [
-      new Item('Create child', () => {
+    var options = []
+
+    if (d.children) {
+      options.push(new Item('Create child', () => {
         d.createChild().then((child) => {
           this.editor.trigger("beforeEnter")
           this.editor.trigger("nodeSelected", child)
         }).catch((e) => {
           this.editor.trigger("error", e)
         })
-      })
-    ]
+      }))
+    }
 
-    if (d.depth > 0) {
+    if (d.parent) {
       options.push(new Item('Delete', () => {
         d.delete().then(() => {
           this.editor.trigger("nodeSelected", d.parent)

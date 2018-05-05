@@ -4,9 +4,10 @@ export class TreeLayout {
   }
 
   call(root) {
-    var bounds = [this.options.xSeparation,
-                  this.options.ySeparation]
+    var bounds = [this.options.xSeparation, this.options.ySeparation]
+    var tree = d3.hierarchy(root)
 
-    d3.tree().nodeSize(bounds)(root)
+    d3.tree().nodeSize(bounds)(tree)
+    tree.eachBefore((d) => { d.data.x = d.x, d.data.y = d.y })
   }
 }
