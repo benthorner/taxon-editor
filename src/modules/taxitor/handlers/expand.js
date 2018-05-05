@@ -17,7 +17,7 @@ export class ExpandHandler {
     d3.event.stopPropagation()
 
     var promise = d.children && d.children.length ?
-      d.link.contract() : d.link.expand()
+      d.link.reset() : d.link.fetch()
 
     promise
       .then(() => this.editor.trigger("beforeEnter"))

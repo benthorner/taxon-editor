@@ -3,7 +3,7 @@ export class Link {
     this.node = node
   }
 
-  contract() {
+  reset() {
     this.node.children = null
     return Promise.resolve()
   }

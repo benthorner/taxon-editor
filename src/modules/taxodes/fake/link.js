@@ -6,7 +6,7 @@ export class Link extends LinkBase {
     super(node)
   }
 
-  expand() {
+  fetch() {
     this.node.children = [new FakeTaxode(this.node),
                           new FakeTaxode(this.node)]
 

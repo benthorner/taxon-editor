@@ -8,7 +8,7 @@ export class Link extends LinkBase {
     super(node)
   }
 
-  expand() {
+  fetch() {
     var path = host + this.node.base_path
 
     return $.get(path).then((d) => {
