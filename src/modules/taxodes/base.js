@@ -1,18 +1,10 @@
+import {Link} from './base/link.js'
+import {Tree} from './base/tree.js'
+
 export class BaseTaxode {
   constructor(parent) {
+    this.link = new Link(this)
+    this.tree = new Tree(this)
     this.parent = parent
-    this.children = null
-  }
-
-  descendants() {
-    return d3.hierarchy(this).descendants().map((d) => d.data)
-  }
-
-  links() {
-    return d3.hierarchy(this).links().map(this._link)
-  }
-
-  _link(d) {
-    return { source: d.source.data, target: d.target.data }
   }
 }

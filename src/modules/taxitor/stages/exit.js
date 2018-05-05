@@ -5,15 +5,17 @@ export class ExitStage {
   }
 
   onExit() {
+    var tree = this.editor.data.tree
+
     this.editor.g
       .selectAll(".node")
-      .data(this.editor.data.descendants(), (d) => d.id)
+      .data(tree.nodes(), (d) => d.id)
       .exit()
       .remove()
 
     this.editor.g
       .selectAll(".link")
-      .data(this.editor.data.links(), (d) => d.target.id)
+      .data(tree.links(), (d) => d.target.id)
       .exit()
       .remove()
   }

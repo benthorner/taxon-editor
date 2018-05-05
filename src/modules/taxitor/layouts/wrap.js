@@ -5,31 +5,30 @@ export class WrapLayout {
   }
 
   call(root) {
-    var tree = d3.hierarchy(root)
-    var maxWidth = this._maxWidth(tree)
+    var maxWidth = this._maxWidth(root)
     var previous = root
 
-    tree.eachBefore((d) => {
-      if (d.data == root) {
+    root.tree.eachBefore((d) => {
+      if (d == root) {
         root.x = 0, root.y = 0
         return
       }
 
-      d.data.x = previous.x + this.options.xSeparation
-      d.data.y = previous.y
+      d.x = previous.x + this.options.xSeparation
+      d.y = previous.y
 
-      if (d.data.x > maxWidth) {
-        d.data.x = 0
-        d.data.y = d.data.y + this.options.ySeparation
+      if (d.x > maxWidth) {
+        d.x = 0
+        d.y = d.y + this.options.ySeparation
       }
 
-      previous = d.data
+      previous = d
     })
   }
 
-  _maxWidth(tree) {
+  _maxWidth(root) {
     var nodeArea = this.options.xSeparation *
-      this.options.ySeparation * tree.descendants().length
+      this.options.ySeparation * root.tree.nodes().length
 
     var element = this.editor.element.node()
     var clientArea = element.clientWidth * element.clientHeight
