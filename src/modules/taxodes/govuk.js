@@ -5,12 +5,12 @@ const host = "https://www.gov.uk/api/content"
 
 export class GOVUKTaxode extends BaseTaxode {
   constructor(taxon, parent) {
-    super(parent)
+    super(taxon, parent)
     this.link = new Link(this)
-    this.title = taxon.title
-    this.description = taxon.description
-    this.id = taxon.content_id
-    this.base_path = taxon.base_path == "/" ? "" : taxon.base_path
+  }
+
+  get id() {
+    return this.node.get("content_id")
   }
 
   static root() {

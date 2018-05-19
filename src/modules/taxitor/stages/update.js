@@ -20,6 +20,6 @@ export class UpdateStage {
 
     this.editor.g
       .selectAll(".node foreignObject .title")
-      .html((d) => d.title)
+      .html((d) => d.node.get("title"))
   }
 }

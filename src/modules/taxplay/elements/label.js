@@ -1,6 +1,6 @@
 export class LabelElement {
   constructor(data, name) {
-    this.data = data
+    this.data = data.node
     this.name = name
   }
 
@@ -10,6 +10,7 @@ export class LabelElement {
   }
 
   update() {
-    this.element.html(this.data[this.name])
+    var value = this.data.get(this.name)
+    this.element.html(value)
   }
 }

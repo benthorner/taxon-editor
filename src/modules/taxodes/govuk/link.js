@@ -9,9 +9,7 @@ export class Link extends LinkBase {
   }
 
   fetch() {
-    var path = host + this.taxode.base_path
-
-    return $.get(path).then((d) => {
+    return $.get(this._path()).then((d) => {
       var links = d.links.level_one_taxons ||
                   d.links.child_taxons || []
 
@@ -21,5 +19,10 @@ export class Link extends LinkBase {
 
       return Promise.resolve()
     })
+  }
+
+  _path() {
+    var path = this.taxode.node.get("base_path")
+    return host + (path == "/" ? "" : path)
   }
 }
