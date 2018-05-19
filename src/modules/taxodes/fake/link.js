@@ -2,13 +2,13 @@ import {FakeTaxode} from '../fake.js'
 import {Link as LinkBase} from '../base/link.js'
 
 export class Link extends LinkBase {
-  constructor(node) {
-    super(node)
+  constructor(taxode) {
+    super(taxode)
   }
 
   fetch() {
-    this.node.children = [new FakeTaxode(this.node),
-                          new FakeTaxode(this.node)]
+    this.taxode.children = [new FakeTaxode(this.taxode),
+                            new FakeTaxode(this.taxode)]
 
     return Promise.resolve()
   }

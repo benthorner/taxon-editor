@@ -4,19 +4,19 @@ import {Link as LinkBase} from '../base/link.js'
 const host = "https://www.gov.uk/api/content"
 
 export class Link extends LinkBase {
-  constructor(node) {
-    super(node)
+  constructor(taxode) {
+    super(taxode)
   }
 
   fetch() {
-    var path = host + this.node.base_path
+    var path = host + this.taxode.base_path
 
     return $.get(path).then((d) => {
       var links = d.links.level_one_taxons ||
                   d.links.child_taxons || []
 
-      this.node.children = links.map((d2) => {
-        return new GOVUKTaxode(d2, this.node)
+      this.taxode.children = links.map((d2) => {
+        return new GOVUKTaxode(d2, this.taxode)
       })
 
       return Promise.resolve()

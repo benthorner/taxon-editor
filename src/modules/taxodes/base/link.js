@@ -1,10 +1,10 @@
 export class Link {
-  constructor(node) {
-    this.node = node
+  constructor(taxode) {
+    this.taxode = taxode
   }
 
   reset() {
-    this.node.children = null
+    this.taxode.children = null
   }
 
   fetch() {
@@ -15,25 +15,25 @@ export class Link {
     return Promise.reject("Not supported")
   }
 
-  remove(node) {
-    var children = this.node.children
-    this.node.children = _.without(children, node)
-    node.parent = null
+  remove(taxode) {
+    var children = this.taxode.children
+    this.taxode.children = _.without(children, taxode)
+    taxode.parent = null
   }
 
-  create(node) {
-    this.add(node)
+  create(taxode) {
+    this.add(taxode)
     return this.save()
   }
 
   delete() {
-    var parent = this.node.parent
-    parent.link.remove(this.node)
+    var parent = this.taxode.parent
+    parent.link.remove(this.taxode)
     return parent.link.save()
   }
 
-  add(node) {
-    node.parent = this.node
-    this.node.children.push(node)
+  add(taxode) {
+    taxode.parent = this.taxode
+    this.taxode.children.push(taxode)
   }
 }

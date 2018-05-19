@@ -1,18 +1,18 @@
 export class Tree {
-  constructor(node) {
-    this.node = node
+  constructor(taxode) {
+    this.taxode = taxode
   }
 
   eachBefore(callback) {
-    d3.hierarchy(this.node).eachBefore((d) => callback(d.data))
+    d3.hierarchy(this.taxode).eachBefore((d) => callback(d.data))
   }
 
   nodes() {
-    return d3.hierarchy(this.node).descendants().map((d) => d.data)
+    return d3.hierarchy(this.taxode).descendants().map((d) => d.data)
   }
 
   links() {
-    return d3.hierarchy(this.node).links().map(this._link)
+    return d3.hierarchy(this.taxode).links().map(this._link)
   }
 
   _link(d) {

@@ -1,6 +1,6 @@
 export class Node {
-  constructor(node) {
-    this.node = node
+  constructor(taxode) {
+    this.taxode = taxode
   }
 
   save() {
