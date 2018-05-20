@@ -1,13 +1,9 @@
 import {GOVUKTaxode} from '../govuk.js'
-import {Link as LinkBase} from '../base/link.js'
+import {Link as BaseLink} from '../base/link.js'
 
 const host = "https://www.gov.uk/api/content"
 
-export class Link extends LinkBase {
-  constructor(taxode) {
-    super(taxode)
-  }
-
+export class Link extends BaseLink {
   fetch() {
     return $.get(this._path()).then((d) => {
       var links = d.links.level_one_taxons ||

@@ -1,11 +1,7 @@
 import {FakeTaxode} from '../fake.js'
-import {Node as NodeBase} from '../base/node.js'
+import {Node as EditNode} from '../edit/node.js'
 
-export class Node extends NodeBase {
-  constructor(taxode, attributes) {
-    super(taxode, attributes)
-  }
-
+export class Node extends EditNode {
   save() {
     return Promise.resolve()
   }
