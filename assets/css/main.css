@@ -3,6 +3,29 @@ body {
   font-family: arial, sans-serif;
 }
 
+button.taxtton {
+  padding: 5px;
+  background-color: #00823B;
+  margin: 5px 5px 5px 0;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  cursor: hand;
+}
+
+button.taxtton:hover {
+  background-color: #006435;
+}
+
+button.taxtton:focus {
+  outline: none;
+  background-color: #006435;
+}
+
+button.taxtton.selected {
+  background-color: #FFBF47;
+}
+
 #taxmenu {
   position: absolute;
   top: 0;
@@ -62,23 +85,6 @@ body {
 
 .taxitor .node { cursor: hand; }
 .taxitor .link { stroke: gray; }
-
-.taxadio .item {
-  display: inline-block;
-  padding: 5px;
-  background-color: #00823B;
-  margin: 5px 5px 5px 0;
-  cursor: hand;
-}
-
-.taxadio .item:hover { background-color: #006435; }
-
-.taxadio .item:focus {
-  outline: none;
-  background-color: #006435;
-}
-
-.taxadio .item.selected { background-color: #FFBF47; }
 
 .taxplay {
   border-left: 1px solid #bfc1c3;

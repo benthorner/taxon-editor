@@ -9,24 +9,20 @@ export class Taxadio {
 
     this.element
       .attr("class", "taxadio")
-      .selectAll("div")
+      .selectAll(".taxtton")
       .data(_.pluck(this.items, "name"))
       .enter()
-      .append("div")
-      .classed("item", true)
-      .attr("tabindex", 0)
+      .append("button")
+      .classed("taxtton", true)
       .html((d) => d)
       .on("click", this.onClick.bind(this))
-      .on("keydown", (d) => {
-        if (d3.event.key == "Enter") this.onClick(d)
-      })
 
     this._update()
   }
 
   _update() {
     this.element
-      .selectAll(".item")
+      .selectAll(".taxtton")
       .classed("selected", (d) => d == this.selected)
   }
 
