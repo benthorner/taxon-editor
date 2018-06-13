@@ -12,7 +12,7 @@ export class FakeTaxode extends EditTaxode {
 
     super(attributes, parent)
     this.link = new Link(this)
-    this.node = new Node(this, attributes)
+    this.node = new Node(attributes)
   }
 
   build() {

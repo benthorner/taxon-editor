@@ -1,6 +1,5 @@
 export class Node {
-  constructor(taxode, attributes) {
-    this.taxode = taxode
+  constructor(attributes) {
     this.attributes = attributes
   }
 

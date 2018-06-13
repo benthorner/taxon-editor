@@ -6,7 +6,7 @@ export class BaseTaxode {
   constructor(attributes, parent) {
     this.link = new Link(this)
     this.tree = new Tree(this)
-    this.node = new Node(this, attributes)
+    this.node = new Node(attributes)
     this.parent = parent
   }
 

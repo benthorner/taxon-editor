@@ -91,8 +91,20 @@ button.taxtton.selected {
   color: #454a4c;
 }
 
-.taxplay div {
+.taxplay .element {
+  color: white;
   margin: 5px;
+}
+
+.taxplay:not(.dirty) .save {
+  display: none;
+}
+
+.taxplay .element input {
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+  border: none;
 }
 
 .taxplay .title {

@@ -17,7 +17,7 @@ export class EnterStage {
       .selectAll(".node")
       .data([this.editor.data], (d) => d.id)
       .enter()
-      .append("div")
+      .append("form")
       .classed("node", true)
       .each(this._initNode.bind(this))
   }
