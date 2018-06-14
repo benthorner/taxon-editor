@@ -1,10 +1,6 @@
 import {Link as BaseLink} from '../base/link.js'
 
 export class Link extends BaseLink {
-  reset() {
-    this.taxode.children = null
-  }
-
   save() {
     return Promise.reject("Not supported")
   }

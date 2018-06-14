@@ -6,4 +6,8 @@ export class Link {
   fetch() {
     return Promise.reject("Not supported")
   }
+
+  reset() {
+    this.taxode.children = null
+  }
 }
