@@ -27,7 +27,7 @@ The navigate to `http://localhost:8080` in your browser.
 The prototype has several custom components. All of them use the Backbone.Events API to communicate between each other, as well as internally.
 
   * taxitor - this is the main component that visualises the graph
-  * taxadio - a custom control for choosing an option (radio button)
+  * taxeles - a set of controls for display and use in edit forms
   * taxmenu - a context (right-click) menu control used by the taxitor
   * taxodes - the hierarchical models used to represent the taxonomy
   * taxplay - a details view to show more properties of a tacode
@@ -51,9 +51,9 @@ There are lots of features to add to make the prototype better and showcase what
   * [taxitor] Drag support for nodes to merge them together
   * ~~[taxitor] Improve existing layouts and add better ones~~
   * [taxplay] Add a button to edit (and save) the taxon content
-  * [taxplay] Show more of the properties for each taxon
+  * ~~[taxplay] Show more of the properties for each taxon~~
   * [taxplay] Make the showing/editing of each property generic
-  * [taxplay] Use generic properties to change phase / publish
+  * ~~[taxplay] Use generic properties to change phase / publish~~
   * ~~[generic] Use a javascript module library to require stuff~~
   * [taxitor] Show more details (e.g. phase) in each node
   * [taxitor] Support bulk actions for subtrees (e.g. publish)
