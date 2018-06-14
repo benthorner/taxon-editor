@@ -5,8 +5,8 @@ import {UpdateStage} from './update.js'
 
 export class MainStage {
   constructor(editor) {
-    new EnterStage(editor)
     new ExitStage(editor)
+    new EnterStage(editor)
     new LayoutStage(editor)
     new UpdateStage(editor)
 
@@ -15,8 +15,8 @@ export class MainStage {
   }
 
   _all(name, args) {
-    var pipe = ["beforeEnter", "onEnter", "afterEnter",
-                "beforeExit", "onExit", "afterExit",
+    var pipe = ["beforeExit", "onExit", "afterExit",
+                "beforeEnter", "onEnter", "afterEnter",
                 "beforeLayout", "onLayout", "afterLayout",
                 "beforeUpdate", "onUpdate", "afterUpdate"]
 

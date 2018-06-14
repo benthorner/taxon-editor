@@ -18,7 +18,7 @@ export class ExpandHandler {
 
     if (d.children) {
       d.link.reset()
-      this.editor.trigger("beforeEnter")
+      this.editor.trigger("beforeExit")
       return
     }
 

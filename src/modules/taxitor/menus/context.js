@@ -22,7 +22,7 @@ export class ContextMenu {
     if (!d.readonly && d.parent) {
       options.push(new Item('Delete', () => {
         d.delete().then(() => {
-          this.editor.trigger("beforeEnter")
+          this.editor.trigger("beforeExit")
         }).catch((e) => {
           this.editor.trigger("error", e)
         })

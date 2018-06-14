@@ -10,7 +10,7 @@ export class Taxplay {
 
     this.on("dataReceived", (d) => {
       this.data = d
-      this.trigger("beforeEnter")
+      this.trigger("beforeExit")
     })
   }
 

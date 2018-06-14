@@ -14,10 +14,6 @@ export class EnterStage {
 
   onEnter() {
     this.editor.element
-      .selectAll("*")
-      .remove()
-
-    this.editor.element
       .selectAll(".element")
       .data(this.schema.elements(this.editor.data))
       .enter()

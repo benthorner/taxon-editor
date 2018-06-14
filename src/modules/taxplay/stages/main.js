@@ -13,8 +13,8 @@ export class MainStage {
   }
 
   _all(name, args) {
-    var pipe = ["beforeEnter", "onEnter", "afterEnter",
-                "beforeExit", "onExit", "afterExit",
+    var pipe = ["beforeExit", "onExit", "afterExit",
+                "beforeEnter", "onEnter", "afterEnter",
                 "beforeUpdate", "onUpdate", "afterUpdate"]
 
     var index = pipe.indexOf(name)

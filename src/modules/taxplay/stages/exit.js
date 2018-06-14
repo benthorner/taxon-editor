@@ -6,9 +6,7 @@ export class ExitStage {
 
   onExit() {
     this.editor.element
-      .selectAll(".node")
-      .data([this.editor.data], (d) => d.id)
-      .exit()
+      .selectAll("*")
       .remove()
   }
 }

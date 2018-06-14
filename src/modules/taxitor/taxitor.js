@@ -19,7 +19,7 @@ export class Taxitor {
 
     this.on("dataReceived", function(data) {
       this.data = data
-      this.trigger("beforeEnter")
+      this.trigger("beforeExit")
     })
   }
 
