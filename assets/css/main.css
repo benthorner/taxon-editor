@@ -6,11 +6,15 @@ body {
 button.taxtton {
   padding: 5px;
   background-color: #00823B;
-  margin: 5px 5px 5px 0;
+  margin: 5px 0 5px 0;
   font-size: inherit;
   color: inherit;
   border: none;
   cursor: hand;
+}
+
+button.taxtton+button.taxtton {
+  margin-left: 5px;
 }
 
 button.taxtton:hover {
@@ -55,6 +59,7 @@ button.taxtton.selected {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 1px;
+  width: 100px;
 }
 
 .taxitor .node rect {
