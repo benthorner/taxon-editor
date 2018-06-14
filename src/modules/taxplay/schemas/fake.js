@@ -1,8 +1,8 @@
-import {LabelElement} from '../elements/label.js'
-import {TextBoxElement} from '../elements/textbox.js'
-import {GroupElement} from '../elements/group.js'
-import {ButtonElement} from '../elements/button.js'
-import {RadioElement} from '../elements/radio.js'
+import {LabelTaxele} from '../../taxeles/label.js'
+import {TextBoxTaxele} from '../../taxeles/textbox.js'
+import {GroupTaxele} from '../../taxeles/group.js'
+import {ButtonTaxele} from '../../taxeles/button.js'
+import {RadioTaxele} from '../../taxeles/radio.js'
 
 export class FakeSchema {
   constructor(editor) {
@@ -10,16 +10,15 @@ export class FakeSchema {
   }
 
   elements(d) {
-    return [new TextBoxElement(d.node, "title"),
-            new LabelElement(d.node, "id"),
-            new TextBoxElement(d.node, "description"),
-            new RadioElement(d.node, "phase", ["alpha", "beta", "live"]),
-            new GroupElement("save", [
-              new ButtonElement("Save", () => {
+    return [new TextBoxTaxele(d.node, "title"),
+            new LabelTaxele(d.node, "id"),
+            new TextBoxTaxele(d.node, "description"),
+            new GroupTaxele("save", [
+              new ButtonTaxele("Save", () => {
                 this.editor.trigger("onSave", d)
 
               }),
-              new ButtonElement("Reset", () => {
+              new ButtonTaxele("Reset", () => {
                 this.editor.trigger("onReset")
               })
             ])]

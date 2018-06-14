@@ -3,30 +3,35 @@ body {
   font-family: arial, sans-serif;
 }
 
-button.taxtton {
+input.taxeles {
+  width: 100%;
+  border: none;
+}
+
+button.taxeles {
   padding: 5px;
   background-color: #00823B;
   margin: 5px 0 5px 0;
   font-size: inherit;
-  color: inherit;
+  color: white;
   border: none;
   cursor: hand;
 }
 
-button.taxtton+button.taxtton {
+button.taxeles+button.taxeles {
   margin-left: 5px;
 }
 
-button.taxtton:hover {
+button.taxeles:hover {
   background-color: #006435;
 }
 
-button.taxtton:focus {
+button.taxeles:focus {
   outline: none;
   background-color: #006435;
 }
 
-button.taxtton.selected {
+button.taxeles.selected {
   background-color: #FFBF47;
 }
 
@@ -94,40 +99,30 @@ button.taxtton.selected {
 .taxplay {
   border-left: 1px solid #bfc1c3;
   color: #454a4c;
+  padding-left: 5px;
+  height: 100%;
 }
 
-.taxplay .element {
-  color: white;
-  margin: 5px;
-}
-
-.taxplay:not(.dirty) .save {
+.taxplay:not(.dirty) #save {
   display: none;
 }
 
-.taxplay .element input {
-  font-size: inherit;
-  color: inherit;
-  width: 100%;
-  border: none;
-}
-
-.taxplay .title {
+.taxplay #title {
   color: #0B0C0C;
   font-size: 28px;
 }
 
-.taxplay .id {
+.taxplay #id {
   font-size: 10px;
   color: #BFC1C3;
 }
 
-.taxplay .base_path {
+.taxplay #base_path {
   font-size: 16px;
   color: #BFC1C3;
 }
 
-.taxplay .description {
+.taxplay #description {
   font-size: 16px;
   color: #6F777B;
   margin-top: 10px;

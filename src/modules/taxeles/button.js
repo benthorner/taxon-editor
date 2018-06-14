@@ -1,4 +1,4 @@
-export class ButtonElement {
+export class ButtonTaxele {
   constructor(name, callback) {
     this.name = name
     this.callback = callback
@@ -8,7 +8,7 @@ export class ButtonElement {
     this.element = d3.select(element)
       .append("button")
       .attr("type", "button")
-      .classed("taxtton", true)
+      .classed("taxeles", true)
       .html(this.name)
       .on("click", this.callback.bind(this))
   }

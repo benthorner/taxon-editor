@@ -1,4 +1,4 @@
-import {LabelElement} from '../elements/label.js'
+import {LabelTaxele} from '../../taxeles/label.js'
 
 export class GOVUKSchema {
   constructor(editor) {
@@ -6,9 +6,9 @@ export class GOVUKSchema {
   }
 
   elements(d) {
-    return [new LabelElement(d.node, "title"),
-            new LabelElement(d.node, "id"),
-            new LabelElement(d.node, "base_path"),
-            new LabelElement(d.node, "description")]
+    return [new LabelTaxele(d.node, "title"),
+            new LabelTaxele(d.node, "id"),
+            new LabelTaxele(d.node, "base_path"),
+            new LabelTaxele(d.node, "description")]
   }
 }

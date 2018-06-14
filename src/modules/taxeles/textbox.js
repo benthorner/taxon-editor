@@ -1,4 +1,4 @@
-export class LabelElement {
+export class TextBoxTaxele {
   constructor(data, name) {
     this.data = data
     this.name = name
@@ -6,11 +6,14 @@ export class LabelElement {
 
   attach(element) {
     this.element = d3.select(element)
-      .classed(this.name, true)
+      .append("input")
+      .attr("id", this.name)
+      .attr("name", this.name)
+      .classed("taxeles", true)
   }
 
   update() {
     var value = this.data.get(this.name)
-    this.element.html(value)
+    this.element.node().value = value
   }
 }

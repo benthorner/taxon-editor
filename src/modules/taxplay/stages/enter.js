@@ -14,18 +14,12 @@ export class EnterStage {
 
   onEnter() {
     this.editor.element
-      .selectAll(".node")
-      .data([this.editor.data], (d) => d.id)
-      .enter()
-      .append("form")
-      .classed("node", true)
-      .each(this._initNode.bind(this))
-  }
+      .selectAll("*")
+      .remove()
 
-  _initNode(d, i, nodes) {
-    d3.select(nodes[i])
+    this.editor.element
       .selectAll(".element")
-      .data(this.schema.elements(d))
+      .data(this.schema.elements(this.editor.data))
       .enter()
       .append("div")
       .classed("element", true)

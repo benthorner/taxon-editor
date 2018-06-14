@@ -18,11 +18,8 @@ export class EditHandler {
   }
 
   onSave(d) {
-    var form = this.editor.element
-      .select("form")
-
     var node = this.editor.data.node
-    var data = new FormData(form.node())
+    var data = new FormData(this.editor.element.node())
 
     for (var entry of data.entries()) {
       node.set(entry[0], entry[1])
