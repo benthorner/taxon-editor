@@ -3,6 +3,10 @@ body {
   font-family: arial, sans-serif;
 }
 
+label.taxeles {
+  display: block;
+}
+
 input.taxeles {
   width: 100%;
   border: none;
