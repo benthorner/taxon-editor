@@ -6,7 +6,7 @@ export class SelectHandler {
   }
 
   afterEnter() {
-    this.editor.g
+    this.editor.element
       .selectAll(".node")
       .attr("tabindex", 0)
       .on("click", (d) => {

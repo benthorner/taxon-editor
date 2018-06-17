@@ -1,12 +1,12 @@
 export class EditHandler {
   constructor(editor) {
     this.editor = editor
-    this.editor.on("beforeEnter", this.beforeEnter, this)
+    this.editor.on("onAttach", this.onAttach, this)
     this.editor.on("onReset", this.onReset, this)
     this.editor.on("onSave", this.onSave, this)
   }
 
-  beforeEnter() {
+  onAttach() {
     this.editor.element.on("change", () => {
       this.editor.element.classed("dirty", true)
     })

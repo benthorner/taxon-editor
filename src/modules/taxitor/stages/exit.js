@@ -7,13 +7,13 @@ export class ExitStage {
   onExit() {
     var tree = this.editor.data.tree
 
-    this.editor.g
+    this.editor.element
       .selectAll(".node")
       .data(tree.nodes(), (d) => d.id)
       .exit()
       .remove()
 
-    this.editor.g
+    this.editor.element
       .selectAll(".link")
       .data(tree.links(), (d) => d.target.id)
       .exit()

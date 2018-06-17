@@ -9,7 +9,7 @@ export class ContextHandler {
   }
 
   afterEnter() {
-    this.editor.g
+    this.editor.element
       .selectAll(".node")
       .on("contextmenu", (d) => {
         d3.event.preventDefault()

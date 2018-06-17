@@ -24,14 +24,14 @@ export class Taxitor {
   }
 
   attach(element) {
-    this.element = d3.select(element)
+    this.container = d3.select(element)
 
-    this.g = d3
+    this.element = d3
       .select(element)
       .classed("taxitor", true)
       .append("g")
 
-    this.trigger("attach")
+    this.trigger("onAttach")
   }
 }
 

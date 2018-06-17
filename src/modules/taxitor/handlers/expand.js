@@ -5,7 +5,7 @@ export class ExpandHandler {
   }
 
   afterEnter() {
-    this.editor.g
+    this.editor.element
       .selectAll(".node")
       .on("dblclick", this.onClick.bind(this))
       .on("keydown", (d) => {

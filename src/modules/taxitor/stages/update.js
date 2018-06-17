@@ -1,11 +1,14 @@
+import {DefaultSchema} from '../schemas/default.js'
+
 export class UpdateStage {
   constructor(editor) {
     this.editor = editor
+    this.schema = new DefaultSchema()
     this.editor.on("onUpdate", this.onUpdate, this)
   }
 
   onUpdate() {
-    this.editor.g
+    this.editor.element
       .selectAll(".link")
       .transition()
       .attr("x1", (d) => d.source.x)
@@ -13,13 +16,14 @@ export class UpdateStage {
       .attr("x2", (d) => d.target.x)
       .attr("y2", (d) => d.target.y)
 
-    this.editor.g
+    this.editor.element
+      .selectAll(".node *")
+      .remove()
+
+    this.editor.element
       .selectAll(".node")
       .transition()
       .attr("transform", (d) => `translate(${d.x},${d.y})`)
-
-    this.editor.g
-      .selectAll(".node foreignObject .title")
-      .html((d) => d.node.get("title"))
+      .each((d, i, nodes) => this.schema.node(nodes[i], d))
   }
 }

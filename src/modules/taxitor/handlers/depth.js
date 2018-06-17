@@ -6,7 +6,7 @@ export class DepthHandler {
   }
 
   onUpdate() {
-    var nodes = this.editor.g
+    var nodes = this.editor.element
       .selectAll(".node")
       .data()
 
@@ -14,7 +14,7 @@ export class DepthHandler {
     this.maxDepth = _.max(depths + [this.maxDepth])
 
     for (var i=0; i<=this.maxDepth; i++) {
-      this.editor.g
+      this.editor.element
         .selectAll(".node")
         .classed("depth"+i, (d) => this._depth(d) == i)
     }

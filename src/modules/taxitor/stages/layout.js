@@ -3,12 +3,15 @@ import {WrapLayout} from '../layouts/wrap.js'
 export class LayoutStage {
   constructor(editor) {
     this.editor = editor
-
-    this.editor.on("layoutSelected", this.layoutSelected, this)
     this.layout = new WrapLayout(this.editor)
 
+    this.editor.on("layoutSelected", this.layoutSelected, this)
     this.editor.on("onLayout", this.onLayout, this)
-    $(window).resize(() => editor.trigger("beforeLayout"))
+    this.editor.on("onAttach", this.onAttach, this)
+  }
+
+  onAttach() {
+    $(window).resize(() => this.editor.trigger("beforeLayout"))
   }
 
   onLayout() {

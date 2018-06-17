@@ -30,10 +30,10 @@ export class WrapLayout {
     var nodeArea = this.options.xSeparation *
       this.options.ySeparation * root.tree.nodes().length
 
-    var element = this.editor.element.node()
-    var clientArea = element.clientWidth * element.clientHeight
+    var container = this.editor.container.node()
+    var clientArea = container.clientWidth * container.clientHeight
 
     // new node box has the same area but client box aspect ratio
-    return Math.sqrt(nodeArea / clientArea) * element.clientWidth
+    return Math.sqrt(nodeArea / clientArea) * container.clientWidth
   }
 }
