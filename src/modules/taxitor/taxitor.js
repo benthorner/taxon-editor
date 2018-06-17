@@ -20,6 +20,7 @@ export class Taxitor {
     this.on("dataReceived", function(data) {
       this.data = data
       this.trigger("beforeExit")
+      this.trigger("nodeSelected", data)
     })
   }
 
