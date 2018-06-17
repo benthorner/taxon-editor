@@ -10,9 +10,7 @@ export class TextBoxTaxele {
       .attr("id", this.name)
       .attr("name", this.name)
       .classed("taxeles", true)
-  }
 
-  update() {
     var value = this.data.get(this.name)
     this.element.node().value = value
   }

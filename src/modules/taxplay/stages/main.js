@@ -1,11 +1,7 @@
-import {ExitStage} from './exit.js'
-import {EnterStage} from './enter.js'
 import {UpdateStage} from './update.js'
 
 export class MainStage {
   constructor(editor) {
-    new ExitStage(editor)
-    new EnterStage(editor)
     new UpdateStage(editor)
 
     this.editor = editor
@@ -13,9 +9,7 @@ export class MainStage {
   }
 
   _all(name, args) {
-    var pipe = ["beforeExit", "onExit", "afterExit",
-                "beforeEnter", "onEnter", "afterEnter",
-                "beforeUpdate", "onUpdate", "afterUpdate"]
+    var pipe = ["beforeUpdate", "onUpdate", "afterUpdate"]
 
     var index = pipe.indexOf(name)
     if (index < 0 || index == pipe.length-1) return

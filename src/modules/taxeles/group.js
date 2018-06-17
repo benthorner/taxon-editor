@@ -14,6 +14,4 @@ export class GroupTaxele {
       d.attach(this.element.node())
     })
   }
-
-  update() { }
 }

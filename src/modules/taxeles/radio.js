@@ -30,10 +30,6 @@ export class RadioTaxele {
     new GroupTaxele(this.name, items)
       .attach(this.element.node())
 
-    this.update()
-  }
-
-  update() {
     this.onSelect(this.data.get(this.name))
   }
 

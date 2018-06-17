@@ -9,10 +9,6 @@ export class LabelTaxele {
       .append("label")
       .attr("id", this.name)
       .classed("taxeles", true)
-  }
-
-  update() {
-    var value = this.data.get(this.name)
-    this.element.html(value)
+      .html(this.data.get(this.name))
   }
 }
