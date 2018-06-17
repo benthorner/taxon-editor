@@ -68,7 +68,8 @@ button.taxeles.selected {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 1px;
-  width: 100px;
+  width: 98px;
+  height: 98px;
 }
 
 .taxitor .node rect {
