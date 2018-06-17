@@ -28,23 +28,23 @@ $(document).ready(() => {
   taxplay.attach("#taxplay")
   taxitor.attach("#taxitor")
 
-  taxplay.on("onSave", (d) => taxitor.trigger("beforeEnter"))
-  taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
-  taxitor.trigger("dataReceived", new FakeTaxode())
-
   layoutRadio.on("onSelect", (d) => {
     switch(d) {
       case "Wrap":
         taxitor.trigger("layoutSelected", new WrapLayout(taxitor))
+        taxitor.trigger("beforeLayout")
         break
       case "Force":
         taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
+        taxitor.trigger("beforeLayout")
         break
       case "Radial":
         taxitor.trigger("layoutSelected", new RadialLayout(taxitor))
+        taxitor.trigger("beforeLayout")
         break
       case "Tree":
         taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
+        taxitor.trigger("beforeLayout")
         break
     }
   })
@@ -61,4 +61,9 @@ $(document).ready(() => {
         break
     }
   })
+
+  taxplay.on("onSave", (d) => taxitor.trigger("beforeUpdate"))
+  taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
+  schemaRadio.trigger("onSelect", options.get("schema"))
+  layoutRadio.trigger("onSelect", options.get("layout"))
 })

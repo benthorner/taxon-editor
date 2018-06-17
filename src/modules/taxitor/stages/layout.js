@@ -17,6 +17,5 @@ export class LayoutStage {
 
   layoutSelected(d) {
     this.layout = d
-    this.editor.trigger("beforeLayout")
   }
 }
