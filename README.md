@@ -50,13 +50,12 @@ There are lots of features to add to make the prototype better and showcase what
   * [taxitor] Drag support for nodes to change their parents
   * [taxitor] Drag support for nodes to merge them together
   * ~~[taxitor] Improve existing layouts and add better ones~~
-  * [taxplay] Add a button to edit (and save) the taxon content
+  * ~~[taxplay] Add a button to edit (and save) the taxon content~~
   * ~~[taxplay] Show more of the properties for each taxon~~
-  * [taxplay] Make the showing/editing of each property generic
+  * ~~[taxplay] Make the showing/editing of each property generic~~
   * ~~[taxplay] Use generic properties to change phase / publish~~
   * ~~[generic] Use a javascript module library to require stuff~~
   * [taxitor] Show more details (e.g. phase) in each node
   * [taxitor] Support bulk actions for subtrees (e.g. publish)
-  * [generic] Add authentication and authorisation capability
 
 And much more - feel free to suggest some ideas. As some of the components are quite generic, it may also be good to extract them.
