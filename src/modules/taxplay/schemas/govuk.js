@@ -6,8 +6,8 @@ export class GOVUKSchema {
   }
 
   elements(d) {
-    return [new LabelTaxele(d.node, "title"),
-            new LabelTaxele(d.node, "content_id"),
+    return [new LabelTaxele(d.node, "content_id"),
+            new LabelTaxele(d.node, "title"),
             new LabelTaxele(d.node, "base_path"),
             new LabelTaxele(d.node, "description")]
   }

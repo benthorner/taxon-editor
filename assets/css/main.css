@@ -10,8 +10,12 @@ label.taxeles {
 input.taxeles {
   width: 100%;
   border: none;
+  border-bottom: dashed #BFC1C3 1px;
   background: none;
   color: white;
+  outline-width: 0;
+  font-size: inherit;
+  text-overflow: ellipsis
 }
 
 button.taxeles {
@@ -117,20 +121,14 @@ button.taxeles.selected {
   display: none;
 }
 
+.taxplay .taxeles {
+  margin-top: 10px;
+}
+
 .taxplay #title {
   font-size: 28px;
 }
 
 .taxplay #id,#content_id {
   font-size: 10px;
-}
-
-.taxplay #base_path {
-  margin-top: 5px;
-  font-size: 14px;
-}
-
-.taxplay #description {
-  margin-top: 20px;
-  font-size: 16px;
 }
