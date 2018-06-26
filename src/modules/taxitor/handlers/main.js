@@ -4,6 +4,7 @@ import {ContextHandler} from './context.js'
 import {SelectHandler} from './select.js'
 import {ZoomHandler} from './zoom.js'
 import {ErrorHandler} from './error.js'
+import {DragHandler} from './drag.js'
 
 export class MainHandler {
   constructor(editor) {
@@ -13,5 +14,6 @@ export class MainHandler {
     new SelectHandler(editor)
     new ZoomHandler(editor)
     new ErrorHandler(editor)
+    new DragHandler(editor)
   }
 }

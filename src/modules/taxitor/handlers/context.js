@@ -16,7 +16,7 @@ export class ContextHandler {
         var items = this.menu.items(d)
 
         if (!items.length) return
-        new Taxmenu(d3.event, items).attach("body")
+        new Taxmenu(items).attach("body")
       })
   }
 }

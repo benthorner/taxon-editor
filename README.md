@@ -47,8 +47,7 @@ If you look in the *layouts* and *handlers* directories, you'll see some example
 
 There are lots of features to add to make the prototype better and showcase what is possible with these kinds of visualisations.
 
-  * [taxitor] Drag support for nodes to change their parents
-  * [taxitor] Drag support for nodes to merge them together
+  * ~~[taxitor] Drag support for nodes to change their parents~~
   * ~~[taxitor] Improve existing layouts and add better ones~~
   * ~~[taxplay] Add a button to edit (and save) the taxon content~~
   * ~~[taxplay] Show more of the properties for each taxon~~

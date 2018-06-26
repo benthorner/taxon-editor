@@ -1,6 +1,7 @@
 export class Taxmenu {
-  constructor(event, items) {
+  constructor(items, cancel = () => {}) {
     this.items = items
+    this.cancel = cancel
   }
 
   attach(element) {
@@ -20,11 +21,13 @@ export class Taxmenu {
       .html((d) => d)
       .on("click", this.onClick.bind(this))
 
-    d3.select("#taxmenu").on("click", this._remove)
+    d3.select("#taxmenu")
+      .on("click", this._remove.bind(this))
   }
 
   _remove() {
-     d3.select("#taxmenu").remove()
+    d3.select("#taxmenu").remove()
+    this.cancel()
   }
 
   onClick(d) {

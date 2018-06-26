@@ -16,6 +16,13 @@ export class Link extends BaseLink {
     return this.save()
   }
 
+  adopt(taxode) {
+    return taxode.link.delete().then(() => {
+      this.add(taxode)
+      return this.save()
+    })
+  }
+
   delete() {
     var parent = this.taxode.parent
     parent.link.remove(this.taxode)
@@ -25,5 +32,6 @@ export class Link extends BaseLink {
   add(taxode) {
     taxode.parent = this.taxode
     this.taxode.children.push(taxode)
+    return this.save()
   }
 }
