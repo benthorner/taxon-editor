@@ -39,7 +39,7 @@ export class DragHandler {
 
   _onDragEnd(d) {
     if (d == this.dragObject) return
-    var cancel = () => this.editor.trigger("beforeLayout")
+    var cancel = () => this.editor.trigger("beforeExit")
     var items = this.menu.items(d, this.dragObject)
     if (!items.length) { cancel(); return }
     new Taxmenu(items, cancel).attach("body")
