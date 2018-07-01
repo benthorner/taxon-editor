@@ -3,14 +3,26 @@ export class DefaultSchema {
     d3.select(g)
       .append("rect")
 
-    d3.select(g)
+    var foreignObject = d3.select(g)
       .append("foreignObject")
       .attr("height", "1px")
       .attr("width", "1px")
       .style("overflow", "visible")
-      .append("xhtml:div")
+
+    foreignObject.append("xhtml:div")
       .append("div")
       .classed("title", true)
       .html((d) => d.node.get("title"))
+
+    var count = foreignObject.datum()
+      .docs
+      .count()
+
+    count.then((d) => {
+      foreignObject.append("xhtml:div")
+        .append("div")
+        .classed("count", true)
+        .html(d)
+    })
   }
 }

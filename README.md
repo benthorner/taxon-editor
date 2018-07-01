@@ -54,7 +54,7 @@ There are lots of features to add to make the prototype better and showcase what
   * ~~[taxplay] Make the showing/editing of each property generic~~
   * ~~[taxplay] Use generic properties to change phase / publish~~
   * ~~[generic] Use a javascript module library to require stuff~~
-  * [taxitor] Show more details (e.g. phase) in each node
+  * ~~[taxitor] Show more details (e.g. phase) in each node~~§
   * [taxitor] Support bulk actions for subtrees (e.g. publish)
 
 And much more - feel free to suggest some ideas. As some of the components are quite generic, it may also be good to extract them.

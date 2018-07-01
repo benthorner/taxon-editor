@@ -1,7 +1,7 @@
 import {GOVUKTaxode} from '../govuk.js'
 import {Link as BaseLink} from '../base/link.js'
 
-const host = "https://www.gov.uk/api/content"
+const base_url = "https://www.gov.uk/api/content"
 
 export class Link extends BaseLink {
   fetch() {
@@ -19,6 +19,6 @@ export class Link extends BaseLink {
 
   _path() {
     var path = this.taxode.node.get("base_path")
-    return host + (path == "/" ? "" : path)
+    return base_url + (path == "/" ? "" : path)
   }
 }

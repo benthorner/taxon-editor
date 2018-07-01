@@ -1,6 +1,7 @@
 import {EditTaxode} from './edit.js'
 import {Link} from './fake/link.js'
 import {Node} from './fake/node.js'
+import {Docs} from './fake/docs.js'
 
 export class FakeTaxode extends EditTaxode {
   constructor(parent) {
@@ -12,6 +13,7 @@ export class FakeTaxode extends EditTaxode {
 
     super(attributes, parent)
     this.link = new Link(this)
+    this.docs = new Docs(this)
     this.node = new Node(attributes)
   }
 

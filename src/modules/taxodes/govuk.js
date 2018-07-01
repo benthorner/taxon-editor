@@ -1,12 +1,14 @@
 import {BaseTaxode} from './base.js'
 import {Link} from './govuk/link.js'
+import {Docs} from './govuk/docs.js'
 
-const host = "https://www.gov.uk/api/content"
+const base_url = "https://www.gov.uk/api/content"
 
 export class GOVUKTaxode extends BaseTaxode {
   constructor(taxon, parent) {
     super(taxon, parent)
     this.link = new Link(this)
+    this.docs = new Docs(this)
   }
 
   get id() {
@@ -14,7 +16,7 @@ export class GOVUKTaxode extends BaseTaxode {
   }
 
   static root() {
-    return $.get(host)
+    return $.get(base_url)
       .then((d) => Promise.resolve(new GOVUKTaxode(d)))
   }
 }
