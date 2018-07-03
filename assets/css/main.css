@@ -44,10 +44,6 @@ button.taxeles.selected {
   background-color: #FFBF47;
 }
 
-#taxnavi {
-  border: 5px solid #BFC1C3;
-}
-
 #taxmenu {
   position: absolute;
   top: 0;
@@ -120,7 +116,6 @@ button.taxeles.selected {
 
 .taxplay {
   margin: 5px 0;
-  overflow: visible;
   padding: 10px;
   background: #005EA5;
 }
@@ -139,4 +134,16 @@ button.taxeles.selected {
 
 .taxplay #id,#content_id {
   font-size: 10px;
+}
+
+#taxitor-container {
+  padding: 10px;
+  border: 2px solid #BFC1C3;
+}
+
+#taxitor-options-container {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+  background: #005EA5;
 }
