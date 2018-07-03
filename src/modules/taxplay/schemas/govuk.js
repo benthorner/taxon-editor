@@ -1,4 +1,5 @@
 import {LabelTaxele} from '../../taxeles/label.js'
+import {ButtonTaxele} from '../../taxeles/button.js'
 
 export class GOVUKSchema {
   constructor(editor) {
@@ -9,6 +10,10 @@ export class GOVUKSchema {
     return [new LabelTaxele(d.node, "content_id"),
             new LabelTaxele(d.node, "title"),
             new LabelTaxele(d.node, "base_path"),
-            new LabelTaxele(d.node, "description")]
+            new LabelTaxele(d.node, "description"),
+            new ButtonTaxele("View on GOV.UK", () => {
+              var path = d.node.get("base_path")
+              window.open("https://www.gov.uk" + path, "_blank")
+            })]
   }
 }
