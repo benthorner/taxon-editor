@@ -154,14 +154,6 @@ button.taxeles.selected {
   font-size: 10px;
 }
 
-#taxnavi {
-  background: #F8F8F8;
-}
-
-#taxnavi td {
-  padding: 10px;
-}
-
 .doclist .doc {
   padding: 10px;
   background: #FFFFFF;
@@ -185,4 +177,35 @@ button.taxeles.selected {
 
 .doclist #description {
   font-size: 12px;
+}
+
+#taxnavi {
+  background: #F8F8F8;
+}
+
+#taxnavi td {
+  padding: 10px;
+}
+
+#taxhead {
+  background: #000000;
+  padding: 10px;
+  font-size: 26px;
+}
+
+#taxfoot {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  background: #BFC1C3;
+  color: #0B0C0C;
+  border-top: 5px solid #005EA5;
+}
+
+#taxfoot a:hover {
+  color: #171819;
+}
+
+#taxfoot a {
+  color: #454A4C;
 }
