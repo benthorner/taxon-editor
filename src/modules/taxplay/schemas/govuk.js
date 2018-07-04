@@ -12,8 +12,7 @@ export class GOVUKSchema {
             new LabelTaxele(d.node, "base_path"),
             new LabelTaxele(d.node, "description"),
             new ButtonTaxele("View on GOV.UK", () => {
-              var path = d.node.get("base_path")
-              window.open("https://www.gov.uk" + path, "_blank")
+              window.open(d.url, "_blank")
             })]
   }
 }

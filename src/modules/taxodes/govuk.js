@@ -15,6 +15,10 @@ export class GOVUKTaxode extends BaseTaxode {
     return this.node.get("content_id")
   }
 
+  get url() {
+    return "https://www.gov.uk" + this.node.get("base_path")
+  }
+
   static root() {
     return $.get(base_url)
       .then((d) => Promise.resolve(new GOVUKTaxode(d)))
