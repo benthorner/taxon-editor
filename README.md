@@ -31,6 +31,8 @@ The prototype has several custom components. All of them use the Backbone.Events
   * taxmenu - a context (right-click) menu control used by the taxitor
   * taxodes - the hierarchical models used to represent the taxonomy
   * taxplay - a details view to show more properties of a tacode
+  * taxdocs - the flat models used to represent an item of content
+  * doclist - a list view for a collection of taxdocs under a taxode
 
 ### Taxitor
 
@@ -55,6 +57,7 @@ There are lots of features to add to make the prototype better and showcase what
   * ~~[taxplay] Use generic properties to change phase / publish~~
   * ~~[generic] Use a javascript module library to require stuff~~
   * ~~[taxitor] Show more details (e.g. phase) in each node~~§
-  * [taxitor] Support bulk actions for subtrees (e.g. publish)
+  * [generic] Add feature tests to check each component works
+  * [generic] Loom into packaging to distribute components
 
 And much more - feel free to suggest some ideas. As some of the components are quite generic, it may also be good to extract them.
