@@ -157,7 +157,7 @@ button.taxeles.selected {
 .doclist .doc {
   padding: 10px;
   background: #FFFFFF;
-  border: 2px solid #BFC1C3;
+  border: 1px solid #BFC1C3;
   margin: 5px;
   color: black;
   cursor: hand;
@@ -197,7 +197,7 @@ button.taxeles.selected {
   padding: 10px;
   text-align: center;
   font-size: 14px;
-  background: #BFC1C3;
+  background: #DEE0E2;
   color: #0B0C0C;
   border-top: 5px solid #005EA5;
 }
