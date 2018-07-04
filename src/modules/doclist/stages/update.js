@@ -14,6 +14,12 @@ export class UpdateStage {
 
     this.list.element
       .selectAll(".doc")
-      .each((d, i, docs) => this.schema.doc(docs[i], d))
+      .each(this._attachDoc.bind(this))
+  }
+
+  _attachDoc(d, i, docs) {
+    for (var element of this.schema.doc(d)) {
+      element.attach(docs[i])
+    }
   }
 }
