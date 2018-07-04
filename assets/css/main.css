@@ -98,6 +98,7 @@ button.taxeles.selected {
 .taxitor .node rect {
   width: 100px;
   height: 100px;
+  opacity: 0.95;
 }
 
 .taxitor .node foreignObject {
@@ -145,4 +146,29 @@ button.taxeles.selected {
 
 #taxnavi td {
   padding: 10px;
+}
+
+.doclist .doc {
+  padding: 10px;
+  background: #FFFFFF;
+  border: 2px solid #BFC1C3;
+  margin: 5px;
+  color: black;
+  cursor: hand;
+}
+
+.doclist .doc:hover {
+  background: #F8F8F8;
+}
+
+.doclist .taxeles {
+  margin-top: 10px;
+}
+
+.doclist #title {
+  font-size: 16px;
+}
+
+.doclist #description {
+  font-size: 12px;
 }
