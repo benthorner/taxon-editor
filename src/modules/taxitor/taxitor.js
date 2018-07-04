@@ -17,18 +17,17 @@ export class Taxitor {
     new MainStage(this)
     new MainHandler(this)
 
-    this.on("dataReceived", function(data) {
-      this.data = data
+    this.on("dataReceived", (d) => {
+      this.data = d
       this.trigger("beforeExit")
-      this.trigger("nodeSelected", data)
+      this.trigger("nodeSelected", d)
     })
   }
 
   attach(element) {
     this.container = d3.select(element)
 
-    this.element = d3
-      .select(element)
+    this.element = this.container
       .classed("taxitor", true)
       .append("g")
 
