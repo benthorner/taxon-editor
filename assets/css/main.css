@@ -1,6 +1,15 @@
 body {
   color: white;
   font-family: arial, sans-serif;
+  margin: 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 0;
 }
 
 label.taxeles {
@@ -97,15 +106,10 @@ button.taxeles.selected {
 }
 
 .taxitor .node.depth0 rect { fill: #005EA5; }
-.taxitor .node.depth1 rect { fill: #2E358B; }
-.taxitor .node.depth2 rect { fill: #912B88; }
-.taxitor .node.depth3 rect { fill: #D53880; }
-.taxitor .node.depth4 rect { fill: #DF3034; }
-.taxitor .node.depth5 rect { fill: #F47738; }
-.taxitor .node.depth6 rect { fill: #006435; }
-.taxitor .node.depth7 rect { fill: #85994B; }
-.taxitor .node.depth8 rect { fill: #28A197; }
-.taxitor .node.depth9 rect { fill: #2B8CC4; }
+.taxitor .node.depth1 rect { fill: #2B8CC4; }
+.taxitor .node.depth2 rect { fill: #D53880; }
+.taxitor .node.depth3 rect { fill: #006435; }
+.taxitor .node.depth4 rect { fill: #85994B; }
 
 .taxitor .node:hover rect { fill: #FFBF47; }
 .taxitor .node:focus { outline: none; }
@@ -115,7 +119,6 @@ button.taxeles.selected {
 .taxitor .link { stroke: #4C2C92; }
 
 .taxplay {
-  margin: 5px 0;
   padding: 10px;
   background: #005EA5;
 }
@@ -136,14 +139,10 @@ button.taxeles.selected {
   font-size: 10px;
 }
 
-#taxitor-container {
-  padding: 10px;
-  border: 2px solid #BFC1C3;
+#taxnavi {
+  background: #F8F8F8;
 }
 
-#taxitor-options-container {
-  width: 100%;
-  margin: 5px 0;
-  padding: 5px;
-  background: #005EA5;
+#taxnavi td {
+  padding: 10px;
 }
