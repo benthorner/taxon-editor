@@ -4,6 +4,6 @@ export class ErrorHandler {
   }
 
   error(d) {
-    alert(d)
+    console.log(d)
   }
 }

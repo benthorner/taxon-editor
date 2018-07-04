@@ -68,7 +68,7 @@ $(document).ready(() => {
   taxitor.on("nodeSelected", (d) => {
     d.docs.fetch()
       .then((d2) => doclist.trigger("dataReceived", d2))
-      .catch((d2) => alert(d2))
+      .catch((d2) => console.log(d2))
   })
 
   taxplay.on("onSave", (d) => taxitor.trigger("beforeUpdate"))
