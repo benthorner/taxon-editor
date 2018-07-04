@@ -3,7 +3,7 @@ import {DefaultSchema} from '../schemas/default.js'
 export class UpdateStage {
   constructor(editor) {
     this.editor = editor
-    this.schema = new DefaultSchema()
+    this.schema = new DefaultSchema(this.editor)
     this.editor.on("onUpdate", this.onUpdate, this)
   }
 

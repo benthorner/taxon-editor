@@ -1,4 +1,8 @@
 export class DefaultSchema {
+  constructor(editor) {
+    this.editor = editor
+  }
+
   node(g, d) {
     d3.select(g)
       .append("rect")
@@ -23,6 +27,8 @@ export class DefaultSchema {
         .append("div")
         .classed("count", true)
         .html(d)
+    }).catch((e) => {
+      this.editor.trigger("error", e)
     })
   }
 }
