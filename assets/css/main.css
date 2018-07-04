@@ -8,12 +8,26 @@ table {
   border-spacing: 0;
 }
 
+form {
+  margin: 0;
+}
+
 td {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #BFC1C3;
+}
+
 label.taxeles {
   display: block;
+  cursor: inherit;
 }
 
 input.taxeles {
@@ -78,7 +92,7 @@ button.taxeles.selected {
 }
 
 .taxitor .node .title {
-  font-size: 16px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 1px;

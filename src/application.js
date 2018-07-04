@@ -10,12 +10,14 @@ import {TreeLayout} from './modules/taxitor/layouts/tree.js'
 import {WrapLayout} from './modules/taxitor/layouts/wrap.js'
 import {FakeSchema} from './modules/taxplay/schemas/fake.js'
 import {GOVUKSchema} from './modules/taxplay/schemas/govuk.js'
+import {Doclist} from './modules/doclist/doclist.js'
 
 const options = new Node({ "layout": "Wrap", "schema": "Fake" })
 
 $(document).ready(() => {
   var taxitor = new Taxitor()
   var taxplay = new Taxplay()
+  var doclist = new Doclist()
 
   var layoutRadio = new RadioTaxele(options, "layout",
     ["Wrap", "Force", "Radial", "Tree"])
@@ -27,6 +29,7 @@ $(document).ready(() => {
   schemaRadio.attach("#schema-taxadio")
   taxplay.attach("#taxplay")
   taxitor.attach("#taxitor")
+  doclist.attach("#doclist")
 
   layoutRadio.on("onSelect", (d) => {
     switch(d) {
@@ -60,6 +63,12 @@ $(document).ready(() => {
         GOVUKTaxode.root().then((d) => taxitor.trigger("dataReceived", d))
         break
     }
+  })
+
+  taxitor.on("nodeSelected", (d) => {
+    d.docs.fetch()
+      .then((d2) => doclist.trigger("dataReceived", d2))
+      .catch((d2) => alert(d2))
   })
 
   taxplay.on("onSave", (d) => taxitor.trigger("beforeUpdate"))
