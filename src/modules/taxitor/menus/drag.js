@@ -11,7 +11,7 @@ export class DragMenu {
     if (!dObject.readonly && !dSubject.readonly) {
       if (dObject.children) {
         if (!dObject.children.includes(dSubject)) {
-          options.push(new Item("Make child node", () => {
+          options.push(new Item("Make child", () => {
             dObject.link.adopt(dSubject).catch((e) => {
               this.editor.trigger("error", e)
             })

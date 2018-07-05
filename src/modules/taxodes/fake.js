@@ -6,9 +6,9 @@ import {Docs} from './fake/docs.js'
 export class FakeTaxode extends EditTaxode {
   constructor(parent) {
     var attributes = {
-      title: Math.random().toString(36).substring(5),
-      description: Math.random().toString(36),
-      id: Math.random().toString(36).substring(5)
+      title: "title-" + Math.random().toString(36).substring(5),
+      description: "descr-" + Math.random().toString(36),
+      id: "id-" + Math.random().toString(36).substring(5)
     }
 
     super(attributes, parent)

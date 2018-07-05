@@ -3,7 +3,8 @@ import {FakeTaxdoc} from '../../taxdocs/fake.js'
 
 export class Docs extends BaseDocs {
   count() {
-    return Promise.resolve(Math.floor(Math.random() * 10**6))
+    var result = "count-" + Math.floor(Math.random() * 10**6)
+    return Promise.resolve(result)
   }
 
   fetch() {
