@@ -14,7 +14,7 @@ import {Doclist} from './modules/doclist/doclist.js'
 
 const options = new Node({ "layout": "Wrap", "schema": "Fake" })
 
-$(document).ready(() => {
+document.addEventListener("DOMContentLoaded", () => {
   var taxitor = new Taxitor()
   var taxplay = new Taxplay()
   var doclist = new Doclist()

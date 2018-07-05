@@ -11,7 +11,7 @@ export class LayoutStage {
   }
 
   onAttach() {
-    $(window).resize(() => this.editor.trigger("beforeLayout"))
+    window.onresize = () => this.editor.trigger("beforeLayout")
   }
 
   onLayout() {

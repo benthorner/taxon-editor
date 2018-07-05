@@ -8,8 +8,8 @@ export class Doclist {
     new MainStage(this)
     new MainHandler(this)
 
-    this.on("dataReceived", function(data) {
-      this.data = data
+    this.on("dataReceived", (d) => {
+      this.data = d
       this.trigger("beforeExit")
     })
   }

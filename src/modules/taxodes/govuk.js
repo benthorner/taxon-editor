@@ -20,7 +20,7 @@ export class GOVUKTaxode extends BaseTaxode {
   }
 
   static root() {
-    return $.get(base_url)
+    return fetch(base_url).then((d) => d.json())
       .then((d) => Promise.resolve(new GOVUKTaxode(d)))
   }
 }

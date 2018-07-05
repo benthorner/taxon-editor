@@ -18,7 +18,7 @@ export class Docs extends BaseDocs {
   }
 
   _search() {
-    var params = { filter_taxons: this.taxode.id }
-    return $.get(base_url + $.param(params))
+    var url = base_url + `filter_taxons=${this.taxode.id}`
+    return fetch(url).then((d) => d.json())
   }
 }
