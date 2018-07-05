@@ -96,7 +96,6 @@ button.taxeles.selected {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 1px;
-  width: 98px;
   height: 86px;
 }
 
@@ -104,20 +103,12 @@ button.taxeles.selected {
   font-size: 8px;
   padding: 2px;
   background: #0B0C0C;
-  width: 96px;
   height: 8px;
   text-align: right;
 }
 
 .taxitor .node rect {
-  width: 100px;
-  height: 100px;
   opacity: 0.95;
-}
-
-.taxitor .node foreignObject {
-  width: 100px;
-  height: 100px;
 }
 
 .taxitor .node.depth0 rect { fill: #005EA5; }

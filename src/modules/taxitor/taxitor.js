@@ -6,7 +6,8 @@ const options = {
   ZoomHandler: { maxScaleFactor: 2, transformDelay: 500 },
   TreeLayout: { xSeparation: 110, ySeparation: 200 },
   RadialLayout: { xSeparation: 110, ySeparation: 110 },
-  WrapLayout: { xSeparation: 110, ySeparation: 110 }
+  WrapLayout: { xSeparation: 110, ySeparation: 110 },
+  DefaultSchema: { nodeHeight: 100, nodeWidth: 100 }
 }
 
 export class Taxitor {
