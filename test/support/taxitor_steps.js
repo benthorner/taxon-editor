@@ -19,11 +19,6 @@ When("I right click on the {int}{word} level {int} node", async function (number
   }, number, level)
 })
 
-When("I click on the {string} {word} button", async function (item, _word) {
-  var items = await this.page.$x(`//*[contains(text(), '${item}')]`)
-  await items[0].click()
-})
-
 When("I drag a level {int} node over a level {int} node", async function (childLevel, parentLevel) {
   var childBox = await this.page.evaluate(function (level) {
     return $(`.node.depth${level}`).first().offset()
@@ -68,20 +63,7 @@ Then("I should see {int} nodes on line {int}", async function (count, line) {
   assert.equal(lines[keys[line]].length, count)
 })
 
-Then("I should see {int} menu items", async function (count) {
-  var items = await this.page.$$("#taxmenu .item")
-  assert.equal(items.length, count)
-})
-
 Then("I should see {int} level {int} nodes", async function (count, level) {
   var nodes = await this.page.$$(`.node.depth${level}`)
   assert.equal(nodes.length, count)
-
-  for(var node in nodes) {
-    var textHandle = await nodes[0].getProperty("textContent")
-    var text = await textHandle.jsonValue()
-
-    assert(text.includes("title"))
-    assert(text.includes("count"))
-  }
 })

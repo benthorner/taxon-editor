@@ -1,6 +1,7 @@
 Feature: Taxitor
   Scenario: Viewing the root node
     Then I should see 1 level 0 nodes
+    And I should see the 1st node contains "title"
 
   Scenario: Expanding a node
     When I double click on the 1st level 0 node
@@ -13,17 +14,17 @@ Feature: Taxitor
 
   Scenario: Adding a child node
     When I right click on the 1st level 0 node
-    Then I should see 0 menu items
+    Then I should not see a taxmenu
     When I double click on the 1st level 0 node
     And I right click on the 1st level 0 node
-    Then I should see 1 menu items
+    Then I should see a taxmenu with 1 items
     When I click on the "Create child" menu button
     Then I should see 3 level 1 nodes
 
   Scenario: Deleting a child node
     When I double click on the 1st level 0 node
     And I right click on the 1st level 1 node
-    Then I should see 1 menu items
+    Then I should see a taxmenu with 1 items
     When I click on the "Delete" menu button
     Then I should see 1 level 1 nodes
 
@@ -31,7 +32,7 @@ Feature: Taxitor
     When I double click on the 1st level 0 node
     And I double click on the 1st level 1 node
     And I drag a level 1 node over a level 0 node
-    Then I should see 1 menu items
+    Then I should see a taxmenu with 1 items
     When I click on the "Make child" menu button
     Then I should see 3 level 1 nodes
     And I should see 1 level 2 nodes
