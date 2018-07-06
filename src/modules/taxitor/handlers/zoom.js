@@ -15,13 +15,20 @@ export class ZoomHandler {
   }
 
   afterUpdate() {
-    var transformDelay = Config.get("Taxitor.ZoomHandler.transformDelay")
+    var delay = Config.get("Taxitor.ZoomHandler.transformDelay")
+    var duration = Config.get("Taxitor.ZoomHandler.transformDuration")
 
     setTimeout(() => {
       var transform = this._scaleAndCenter()
-      d3.zoom().transform(this.editor.container, transform)
-      this.editor.element.transition().attr("transform", transform)
-    }, transformDelay)
+
+      d3.zoom()
+        .transform(this.editor.container, transform)
+
+      this.editor.element
+        .transition()
+        .duration(duration)
+        .attr("transform", transform)
+    }, delay)
   }
 
   _scaleAndCenter() {

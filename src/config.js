@@ -4,6 +4,7 @@ const CONFIG = {
     "Taxitor.ForceLayout.collisionRadius": 100,
     "Taxitor.ZoomHandler.maxScaleFactor": 2,
     "Taxitor.ZoomHandler.transformDelay": 500,
+    "Taxitor.ZoomHandler.transformDuration": 250,
     "Taxitor.TreeLayout.xSeparation": 110,
     "Taxitor.TreeLayout.ySeparation": 200,
     "Taxitor.RadialLayout.xSeparation": 110,
@@ -12,12 +13,16 @@ const CONFIG = {
     "Taxitor.WrapLayout.ySeparation": 110,
     "Taxitor.DefaultSchema.nodeHeight": 100,
     "Taxitor.DefaultSchema.nodeWidth": 100,
+    "Taxitor.UpdateStage.duration": 250,
     "Taxodes.GOVUKTaxode.baseURL": "https://www.gov.uk",
     "Taxdocs.GOVUKTaxdoc.baseURL": "https://www.gov.uk"
   },
   test: {
     "Taxodes.GOVUKTaxode.baseURL": "http://localhost:8080/test/fixture",
-    "Taxdocs.GOVUKTaxdoc.baseURL": "http://localhost:8080/test/fixture"
+    "Taxdocs.GOVUKTaxdoc.baseURL": "http://localhost:8080/test/fixture",
+    "Taxitor.UpdateStage.duration": 0,
+    "Taxitor.ZoomHandler.transformDuration": 0,
+    "Taxitor.ZoomHandler.transformDelay": 100,
   }
 }
 

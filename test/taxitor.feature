@@ -32,7 +32,8 @@ Feature: Taxitor
   Scenario: Changing a node parent
     When I double click on the 1st level 0 node
     And I double click on the 1st level 1 node
-    And I drag a level 1 node over a level 0 node
+    Then I should see 2 lines of nodes
+    When I drag a level 2 node over a level 0 node
     Then I should see a taxmenu with 1 items
     When I click on the "Make child" menu button
     Then I should see 3 level 1 nodes

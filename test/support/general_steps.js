@@ -7,6 +7,7 @@ When("I click on the {string} {word} button", async function (text, _word) {
 })
 
 When("I click on the {int}{word} {word}", async function (number, _word, klass) {
+  await this.page.waitFor(`.${klass}`)
   var elements = await this.page.$$(`.${klass}`)
   await elements[number-1].click()
 })
@@ -32,6 +33,7 @@ Then("I should see the {word} field contains {string}", async function (id, text
 })
 
 Then("I should see the {int}{word} {word} contains {string}", async function (number, _word, klass, text) {
+  await this.page.waitFor(`.${klass}`)
   var elements = await this.page.$$(`.${klass}`)
   var handle = await elements[number-1].getProperty("textContent")
   var content = await handle.jsonValue()
@@ -39,6 +41,7 @@ Then("I should see the {int}{word} {word} contains {string}", async function (nu
 })
 
 Then("I should see a {word} with {int} {word}s", async function (id, count, klass) {
+  await this.page.waitFor(`.${klass}`)
   var elements = await this.page.$$(`#${id} .${klass}`)
   assert.equal(elements.length, count)
 })

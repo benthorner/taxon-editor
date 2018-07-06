@@ -4,6 +4,8 @@ var _ = require("lodash")
 var {When, Then} = require("cucumber")
 
 When("I double click on the {int}{word} level {int} node", async function (number, _word, level) {
+  await this.page.waitFor(`.node.depth${level}`)
+
   await this.page.evaluate(function (number, level) {
     var evObj = document.createEvent('MouseEvents');
     evObj.initMouseEvent('dblclick', true, true, window);
@@ -12,6 +14,8 @@ When("I double click on the {int}{word} level {int} node", async function (numbe
 })
 
 When("I click on the {int}{word} level {int} node", async function (number, _word, level) {
+  await this.page.waitFor(`.node.depth${level}`)
+
   await this.page.evaluate(function (number, level) {
     var evObj = document.createEvent('MouseEvents');
     evObj.initMouseEvent('click', true, true, window);
@@ -20,6 +24,8 @@ When("I click on the {int}{word} level {int} node", async function (number, _wor
 })
 
 When("I right click on the {int}{word} level {int} node", async function (number, _word, level) {
+  await this.page.waitFor(`.node.depth${level}`)
+
   await this.page.evaluate(function (number, level) {
     var evObj = document.createEvent('MouseEvents');
     evObj.initMouseEvent('contextmenu', true, true, window);
@@ -28,6 +34,8 @@ When("I right click on the {int}{word} level {int} node", async function (number
 })
 
 When("I drag a level {int} node over a level {int} node", async function (childLevel, parentLevel) {
+  await this.page.waitFor(`.node.depth${childLevel}`)
+
   var childBox = await this.page.evaluate(function (level) {
     return $(`.node.depth${level}`).first().offset()
 
@@ -45,16 +53,13 @@ When("I drag a level {int} node over a level {int} node", async function (childL
 })
 
 Then("I should see {int} lines of nodes", async function (count) {
-  await this.page.waitFor(500)
+  await this.page.waitFor(200)
 
   var boxes = await this.page.evaluate(function () {
     return $(".node").toArray().map((node) => $(node).position())
   })
 
-  var lines = _.groupBy(boxes, function (box) {
-    return Math.floor(box.top / 100)
-  })
-
+  var lines = _.groupBy(boxes, function (box) { return box.top })
   assert.equal(_.keys(lines).length, count)
 })
 
@@ -63,15 +68,16 @@ Then("I should see {int} nodes on line {int}", async function (count, line) {
     return $(".node").toArray().map((node) => $(node).position())
   })
 
-  var lines = _.groupBy(boxes, function (box) {
-    return Math.floor(box.top / 100)
-  })
-
+  var lines = _.groupBy(boxes, function (box) { return box.top })
   var keys = _.keys(lines).sort()
   assert.equal(lines[keys[line]].length, count)
 })
 
 Then("I should see {int} level {int} nodes", async function (count, level) {
+  if (count > 0) {
+    await this.page.waitFor(`.node.depth${level}`)
+  }
+
   var nodes = await this.page.$$(`.node.depth${level}`)
   assert.equal(nodes.length, count)
 })

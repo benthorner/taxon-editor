@@ -5,6 +5,7 @@ import {SelectHandler} from './select.js'
 import {ZoomHandler} from './zoom.js'
 import {ErrorHandler} from './error.js'
 import {DragHandler} from './drag.js'
+import {ClearHandler} from './clear.js'
 
 export class MainHandler {
   constructor(editor) {
