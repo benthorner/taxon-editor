@@ -11,6 +11,14 @@ When("I double click on the {int}{word} level {int} node", async function (numbe
   }, number, level)
 })
 
+When("I click on the {int}{word} level {int} node", async function (number, _word, level) {
+  await this.page.evaluate(function (number, level) {
+    var evObj = document.createEvent('MouseEvents');
+    evObj.initMouseEvent('click', true, true, window);
+    $(`.node.depth${level}`)[number-1].dispatchEvent(evObj);
+  }, number, level)
+})
+
 When("I right click on the {int}{word} level {int} node", async function (number, _word, level) {
   await this.page.evaluate(function (number, level) {
     var evObj = document.createEvent('MouseEvents');

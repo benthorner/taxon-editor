@@ -2,7 +2,7 @@ var {When, Then} = require("cucumber")
 var assert = require("assert")
 
 When("I click on the {string} {word} button", async function (text, _word) {
-  var elements = await this.page.$x(`//*[contains(text(), '${text}')]`)
+  var elements = await this.page.$x(`//*[(text()='${text}')]`)
   await elements[0].click()
 })
 

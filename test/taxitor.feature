@@ -2,6 +2,7 @@ Feature: Taxitor
   Scenario: Viewing the root node
     Then I should see 1 level 0 nodes
     And I should see the 1st node contains "title"
+    And I should see the 1st node contains "count"
 
   Scenario: Expanding a node
     When I double click on the 1st level 0 node
