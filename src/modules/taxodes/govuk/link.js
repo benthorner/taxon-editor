@@ -1,7 +1,6 @@
 import {GOVUKTaxode} from '../govuk.js'
 import {Link as BaseLink} from '../base/link.js'
-
-const base_url = "https://www.gov.uk/api/content"
+import {Config} from '../../../config.js'
 
 export class Link extends BaseLink {
   fetch() {
@@ -19,7 +18,12 @@ export class Link extends BaseLink {
 
   _get() {
     var path = this.taxode.node.get("base_path")
-    var url = base_url + (path == "/" ? "" : path)
+    var url = this._api() + (path == "/" ? "" : path)
     return fetch(url).then((d) => d.json())
+  }
+
+  _api() {
+    return Config.get("Taxodes.GOVUKTaxode.baseURL") +
+      "/api/content"
   }
 }

@@ -1,7 +1,6 @@
 import {Docs as BaseDocs} from '../base/docs.js'
 import {GOVUKTaxdoc} from '../../taxdocs/govuk.js'
-
-const base_url = "https://www.gov.uk/api/search.json?"
+import {Config} from '../../../config.js'
 
 export class Docs extends BaseDocs {
   count() {
@@ -18,7 +17,12 @@ export class Docs extends BaseDocs {
   }
 
   _search() {
-    var url = base_url + `filter_taxons=${this.taxode.id}`
+    var url = this._api() + `filter_taxons=${this.taxode.id}`
     return fetch(url).then((d) => d.json())
+  }
+
+  _api() {
+    return Config.get("Taxodes.GOVUKTaxode.baseURL") +
+      "/api/search.json?"
   }
 }

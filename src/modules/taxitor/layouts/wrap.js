@@ -1,10 +1,14 @@
+import {Config} from '../../../config.js'
+
 export class WrapLayout {
   constructor(editor) {
     this.editor = editor
-    this.options = editor.options[this.constructor.name]
   }
 
   call(root) {
+    var xSeparation = Config.get("Taxitor.WrapLayout.xSeparation")
+    var ySeparation = Config.get("Taxitor.WrapLayout.ySeparation")
+
     var maxWidth = this._maxWidth(root)
     var previous = root
 
@@ -14,12 +18,12 @@ export class WrapLayout {
         return
       }
 
-      d.x = previous.x + this.options.xSeparation
+      d.x = previous.x + xSeparation
       d.y = previous.y
 
       if (d.x > maxWidth) {
         d.x = 0
-        d.y = d.y + this.options.ySeparation
+        d.y = d.y + ySeparation
       }
 
       previous = d
@@ -27,8 +31,9 @@ export class WrapLayout {
   }
 
   _maxWidth(root) {
-    var nodeArea = this.options.xSeparation *
-      this.options.ySeparation * root.tree.nodes().length
+    var xSeparation = Config.get("Taxitor.WrapLayout.xSeparation")
+    var ySeparation = Config.get("Taxitor.WrapLayout.ySeparation")
+    var nodeArea = xSeparation * ySeparation * root.tree.nodes().length
 
     var container = this.editor.container.node()
     var clientArea = container.clientWidth * container.clientHeight

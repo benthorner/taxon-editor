@@ -1,8 +1,7 @@
 import {BaseTaxode} from './base.js'
 import {Link} from './govuk/link.js'
 import {Docs} from './govuk/docs.js'
-
-const base_url = "https://www.gov.uk/api/content"
+import {Config} from '../../config.js'
 
 export class GOVUKTaxode extends BaseTaxode {
   constructor(taxon, parent) {
@@ -16,11 +15,17 @@ export class GOVUKTaxode extends BaseTaxode {
   }
 
   get url() {
-    return "https://www.gov.uk" + this.node.get("base_path")
+    return Config.get("Taxodes.GOVUKTaxode.baseURL") +
+      this.node.get("base_path")
   }
 
   static root() {
-    return fetch(base_url).then((d) => d.json())
+    return fetch(this._api()).then((d) => d.json())
       .then((d) => Promise.resolve(new GOVUKTaxode(d)))
+  }
+
+  static _api() {
+    return Config.get("Taxodes.GOVUKTaxode.baseURL") +
+      "/api/content"
   }
 }

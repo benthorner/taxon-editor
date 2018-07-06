@@ -1,4 +1,5 @@
 import {BaseTaxdoc} from './base.js'
+import {Config} from '../../config.js'
 
 export class GOVUKTaxdoc extends BaseTaxdoc {
   get id() {
@@ -6,6 +7,7 @@ export class GOVUKTaxdoc extends BaseTaxdoc {
   }
 
   get url() {
-    return "https://www.gov.uk" + this.get("link")
+    return Config.get("Taxdocs.GOVUKTaxdoc.baseURL") +
+      this.get("link")
   }
 }

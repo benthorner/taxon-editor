@@ -1,19 +1,9 @@
 import {MainStage} from './stages/main.js'
 import {MainHandler} from './handlers/main.js'
 
-const options = {
-  ForceLayout: { simulationTicks: 1000, collisionRadius: 100 },
-  ZoomHandler: { maxScaleFactor: 2, transformDelay: 500 },
-  TreeLayout: { xSeparation: 110, ySeparation: 200 },
-  RadialLayout: { xSeparation: 110, ySeparation: 110 },
-  WrapLayout: { xSeparation: 110, ySeparation: 110 },
-  DefaultSchema: { nodeHeight: 100, nodeWidth: 100 }
-}
-
 export class Taxitor {
   constructor() {
     _.extend(this, Backbone.Events)
-    this.options = options
 
     new MainStage(this)
     new MainHandler(this)

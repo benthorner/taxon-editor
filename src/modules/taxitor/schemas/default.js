@@ -1,19 +1,24 @@
+import {Config} from '../../../config.js'
+
 export class DefaultSchema {
   constructor(editor) {
     this.editor = editor
-    this.options = editor.options[this.constructor.name]
+    this.context = this.constructor.name
   }
 
   node(g, d) {
+    var nodeWidth = Config.get("Taxitor.DefaultSchema.nodeWidth")
+    var nodeHeight = Config.get("Taxitor.DefaultSchema.nodeHeight")
+
     d3.select(g)
       .append("rect")
-      .attr("height", `${this.options.nodeHeight}px`)
-      .attr("width", `${this.options.nodeWidth}px`)
+      .attr("height", `${nodeHeight}px`)
+      .attr("width", `${nodeWidth}px`)
 
     var foreignObject = d3.select(g)
       .append("foreignObject")
-      .attr("height", `${this.options.nodeHeight}px`)
-      .attr("width", `${this.options.nodeWidth}px`)
+      .attr("height", `${nodeHeight}px`)
+      .attr("width", `${nodeWidth}px`)
       .style("overflow", "visible")
 
     foreignObject.append("xhtml:div")

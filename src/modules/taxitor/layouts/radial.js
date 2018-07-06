@@ -1,7 +1,8 @@
+import {Config} from '../../../config.js'
+
 export class RadialLayout {
   constructor(editor) {
     this.editor = editor
-    this.options = editor.options[this.constructor.name]
   }
 
   call(root) {
@@ -28,7 +29,10 @@ export class RadialLayout {
   }
 
   _diagonalSeparation() {
-    return Math.sqrt(Math.pow(this.options.xSeparation, 2) +
-                     Math.pow(this.options.ySeparation, 2))
+    var xSeparation = Config.get("Taxitor.RadialLayout.xSeparation")
+    var ySeparation = Config.get("Taxitor.RadialLayout.ySeparation")
+
+    return Math.sqrt(Math.pow(xSeparation, 2) +
+                     Math.pow(ySeparation, 2))
   }
 }

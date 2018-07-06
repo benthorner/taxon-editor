@@ -1,11 +1,9 @@
-export class ForceLayout {
-  constructor(editor) {
-    this.options = editor.options[this.constructor.name]
-  }
+import {Config} from '../../../config.js'
 
+export class ForceLayout {
   call(root) {
-    var collisionRadius = this.options.collisionRadius
-    var simulationTicks = this.options.simulationTicks
+    var collisionRadius = Config.get("Taxitor.ForceLayout.collisionRadius")
+    var simulationTicks = Config.get("Taxitor.ForceLayout.simulationTicks")
 
     var sim = d3.forceSimulation(root.tree.nodes())
       .force("collision", d3.forceCollide(collisionRadius))
