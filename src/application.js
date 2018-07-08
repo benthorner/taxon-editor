@@ -53,6 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   schemaRadio.on("onSelect", (d) => {
+    taxplay.trigger("onClear")
+    taxitor.trigger("onClear")
+    doclist.trigger("onClear")
+
     switch(d) {
       case "Fake":
         taxplay.trigger("schemaSelected", new FakeSchema(taxplay))

@@ -1,0 +1,1234 @@
+{
+  "results": [
+    {
+      "description": "If you're a parent registered for Tax-Free Childcare or 30 hours childcare, sign in to pay into your account, reconfirm your eligibility, update your details",
+      "format": "transaction",
+      "link": "/sign-in-childcare-account",
+      "organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "hmrc",
+          "superseded_organisations": [
+            "department-of-inland-revenue"
+          ],
+          "acronym": "HMRC",
+          "link": "/government/organisations/hm-revenue-customs",
+          "analytics_identifier": "D25",
+          "public_timestamp": "2015-05-13T11:09:06.000+01:00",
+          "child_organisations": [
+            "valuation-office-agency",
+            "the-adjudicator-s-office"
+          ],
+          "organisation_brand": "hm-revenue-customs",
+          "logo_formatted_title": "HM Revenue\r\n& Customs",
+          "title": "HM Revenue & Customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "slug": "hm-revenue-customs",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2017-08-29T14:29:08Z",
+      "title": "Sign in to your childcare account",
+      "organisation_content_ids": [
+        "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+        "6667cce2-e809-4e21-ae09-cb0bdc1ddda3"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "hmrc",
+          "superseded_organisations": [
+            "department-of-inland-revenue"
+          ],
+          "acronym": "HMRC",
+          "link": "/government/organisations/hm-revenue-customs",
+          "analytics_identifier": "D25",
+          "public_timestamp": "2015-05-13T11:09:06.000+01:00",
+          "child_organisations": [
+            "valuation-office-agency",
+            "the-adjudicator-s-office"
+          ],
+          "organisation_brand": "hm-revenue-customs",
+          "logo_formatted_title": "HM Revenue\r\n& Customs",
+          "title": "HM Revenue & Customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "slug": "hm-revenue-customs",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "govuk",
+      "es_score": null,
+      "_id": "/sign-in-childcare-account",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Ten things to know about the new Tax-Free Childcare scheme. ",
+      "display_type": "News story",
+      "format": "news_article",
+      "link": "/government/news/tax-free-childcare-10-things-parents-should-know",
+      "organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "single-identity",
+          "acronym": "HMT",
+          "link": "/government/organisations/hm-treasury",
+          "analytics_identifier": "D15",
+          "public_timestamp": "2018-05-15T15:56:49.000+01:00",
+          "child_organisations": [
+            "uk-debt-management-office",
+            "uk-financial-investments-limited",
+            "office-for-budget-responsibility",
+            "royal-mint",
+            "ns-i",
+            "royal-mint-advisory-committee",
+            "the-crown-estate",
+            "infrastructure-uk",
+            "government-internal-audit-agency",
+            "financial-conduct-authority",
+            "payment-systems-regulator",
+            "national-infrastructure-commission",
+            "financial-services-trade-and-investment-board",
+            "uk-government-investments",
+            "office-of-financial-sanctions-implementation",
+            "infrastructure-and-projects-authority"
+          ],
+          "organisation_brand": "hm-treasury",
+          "logo_formatted_title": "HM Treasury",
+          "title": "HM Treasury",
+          "content_id": "1994e0e4-bd19-4966-bbd7-f293d6e90a6b",
+          "slug": "hm-treasury",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "hmrc",
+          "superseded_organisations": [
+            "department-of-inland-revenue"
+          ],
+          "acronym": "HMRC",
+          "link": "/government/organisations/hm-revenue-customs",
+          "analytics_identifier": "D25",
+          "public_timestamp": "2015-05-13T11:09:06.000+01:00",
+          "child_organisations": [
+            "valuation-office-agency",
+            "the-adjudicator-s-office"
+          ],
+          "organisation_brand": "hm-revenue-customs",
+          "logo_formatted_title": "HM Revenue\r\n& Customs",
+          "title": "HM Revenue & Customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "slug": "hm-revenue-customs",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_brand": "cabinet-office",
+          "logo_formatted_title": "Prime Minister's Office, 10 Downing Street",
+          "organisation_crest": "eo",
+          "title": "Prime Minister's Office, 10 Downing Street",
+          "content_id": "705dbea4-8bd7-422e-ba9c-254557f77f81",
+          "acronym": "Number 10",
+          "link": "/government/organisations/prime-ministers-office-10-downing-street",
+          "slug": "prime-ministers-office-10-downing-street",
+          "analytics_identifier": "OT532",
+          "parent_organisations": [
+            "cabinet-office"
+          ],
+          "public_timestamp": "2015-03-09T20:00:54.000+00:00",
+          "organisation_type": "executive_office",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2016-03-18T13:42:21.000+00:00",
+      "title": "Tax-Free Childcare: 10 things parents should know",
+      "policy_areas": [
+        {
+          "slug": "children-and-young-people",
+          "title": "Children and young people",
+          "content_id": "89a2270a-8c81-4336-b68c-3e4fb5ac319c",
+          "link": "/government/topics/children-and-young-people"
+        },
+        {
+          "slug": "tax-and-revenue",
+          "title": "Tax and revenue",
+          "content_id": "8034be95-4ac2-4fff-93c5-e7514ed9504a",
+          "link": "/government/topics/tax-and-revenue"
+        },
+        {
+          "slug": "uk-economy",
+          "title": "UK economy",
+          "content_id": "f10df7ae-e3a6-4f9c-b764-541f62c8e6cf",
+          "link": "/government/topics/uk-economy"
+        }
+      ],
+      "organisation_content_ids": [
+        "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+        "1994e0e4-bd19-4966-bbd7-f293d6e90a6b",
+        "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+        "705dbea4-8bd7-422e-ba9c-254557f77f81"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "single-identity",
+          "acronym": "HMT",
+          "link": "/government/organisations/hm-treasury",
+          "analytics_identifier": "D15",
+          "public_timestamp": "2018-05-15T15:56:49.000+01:00",
+          "child_organisations": [
+            "uk-debt-management-office",
+            "uk-financial-investments-limited",
+            "office-for-budget-responsibility",
+            "royal-mint",
+            "ns-i",
+            "royal-mint-advisory-committee",
+            "the-crown-estate",
+            "infrastructure-uk",
+            "government-internal-audit-agency",
+            "financial-conduct-authority",
+            "payment-systems-regulator",
+            "national-infrastructure-commission",
+            "financial-services-trade-and-investment-board",
+            "uk-government-investments",
+            "office-of-financial-sanctions-implementation",
+            "infrastructure-and-projects-authority"
+          ],
+          "organisation_brand": "hm-treasury",
+          "logo_formatted_title": "HM Treasury",
+          "title": "HM Treasury",
+          "content_id": "1994e0e4-bd19-4966-bbd7-f293d6e90a6b",
+          "slug": "hm-treasury",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "hmrc",
+          "superseded_organisations": [
+            "department-of-inland-revenue"
+          ],
+          "acronym": "HMRC",
+          "link": "/government/organisations/hm-revenue-customs",
+          "analytics_identifier": "D25",
+          "public_timestamp": "2015-05-13T11:09:06.000+01:00",
+          "child_organisations": [
+            "valuation-office-agency",
+            "the-adjudicator-s-office"
+          ],
+          "organisation_brand": "hm-revenue-customs",
+          "logo_formatted_title": "HM Revenue\r\n& Customs",
+          "title": "HM Revenue & Customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "slug": "hm-revenue-customs",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_brand": "cabinet-office",
+          "logo_formatted_title": "Prime Minister's Office, 10 Downing Street",
+          "organisation_crest": "eo",
+          "title": "Prime Minister's Office, 10 Downing Street",
+          "content_id": "705dbea4-8bd7-422e-ba9c-254557f77f81",
+          "acronym": "Number 10",
+          "link": "/government/organisations/prime-ministers-office-10-downing-street",
+          "slug": "prime-ministers-office-10-downing-street",
+          "analytics_identifier": "OT532",
+          "parent_organisations": [
+            "cabinet-office"
+          ],
+          "public_timestamp": "2015-03-09T20:00:54.000+00:00",
+          "organisation_type": "executive_office",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/news/tax-free-childcare-10-things-parents-should-know",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Childcare support now available for parents.",
+      "display_type": "News story",
+      "format": "news_article",
+      "link": "/government/news/tax-free-childcare-launches-today-for-children-under-four",
+      "organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "single-identity",
+          "acronym": "HMT",
+          "link": "/government/organisations/hm-treasury",
+          "analytics_identifier": "D15",
+          "public_timestamp": "2018-05-15T15:56:49.000+01:00",
+          "child_organisations": [
+            "uk-debt-management-office",
+            "uk-financial-investments-limited",
+            "office-for-budget-responsibility",
+            "royal-mint",
+            "ns-i",
+            "royal-mint-advisory-committee",
+            "the-crown-estate",
+            "infrastructure-uk",
+            "government-internal-audit-agency",
+            "financial-conduct-authority",
+            "payment-systems-regulator",
+            "national-infrastructure-commission",
+            "financial-services-trade-and-investment-board",
+            "uk-government-investments",
+            "office-of-financial-sanctions-implementation",
+            "infrastructure-and-projects-authority"
+          ],
+          "organisation_brand": "hm-treasury",
+          "logo_formatted_title": "HM Treasury",
+          "title": "HM Treasury",
+          "content_id": "1994e0e4-bd19-4966-bbd7-f293d6e90a6b",
+          "slug": "hm-treasury",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "hmrc",
+          "superseded_organisations": [
+            "department-of-inland-revenue"
+          ],
+          "acronym": "HMRC",
+          "link": "/government/organisations/hm-revenue-customs",
+          "analytics_identifier": "D25",
+          "public_timestamp": "2015-05-13T11:09:06.000+01:00",
+          "child_organisations": [
+            "valuation-office-agency",
+            "the-adjudicator-s-office"
+          ],
+          "organisation_brand": "hm-revenue-customs",
+          "logo_formatted_title": "HM Revenue\r\n& Customs",
+          "title": "HM Revenue & Customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "slug": "hm-revenue-customs",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2017-04-21T17:01:00.000+01:00",
+      "title": "Tax-Free Childcare launches today for children under four",
+      "policy_areas": [
+        {
+          "slug": "children-and-young-people",
+          "title": "Children and young people",
+          "content_id": "89a2270a-8c81-4336-b68c-3e4fb5ac319c",
+          "link": "/government/topics/children-and-young-people"
+        },
+        {
+          "slug": "tax-and-revenue",
+          "title": "Tax and revenue",
+          "content_id": "8034be95-4ac2-4fff-93c5-e7514ed9504a",
+          "link": "/government/topics/tax-and-revenue"
+        }
+      ],
+      "organisation_content_ids": [
+        "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+        "1994e0e4-bd19-4966-bbd7-f293d6e90a6b",
+        "6667cce2-e809-4e21-ae09-cb0bdc1ddda3"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "single-identity",
+          "acronym": "HMT",
+          "link": "/government/organisations/hm-treasury",
+          "analytics_identifier": "D15",
+          "public_timestamp": "2018-05-15T15:56:49.000+01:00",
+          "child_organisations": [
+            "uk-debt-management-office",
+            "uk-financial-investments-limited",
+            "office-for-budget-responsibility",
+            "royal-mint",
+            "ns-i",
+            "royal-mint-advisory-committee",
+            "the-crown-estate",
+            "infrastructure-uk",
+            "government-internal-audit-agency",
+            "financial-conduct-authority",
+            "payment-systems-regulator",
+            "national-infrastructure-commission",
+            "financial-services-trade-and-investment-board",
+            "uk-government-investments",
+            "office-of-financial-sanctions-implementation",
+            "infrastructure-and-projects-authority"
+          ],
+          "organisation_brand": "hm-treasury",
+          "logo_formatted_title": "HM Treasury",
+          "title": "HM Treasury",
+          "content_id": "1994e0e4-bd19-4966-bbd7-f293d6e90a6b",
+          "slug": "hm-treasury",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_crest": "hmrc",
+          "superseded_organisations": [
+            "department-of-inland-revenue"
+          ],
+          "acronym": "HMRC",
+          "link": "/government/organisations/hm-revenue-customs",
+          "analytics_identifier": "D25",
+          "public_timestamp": "2015-05-13T11:09:06.000+01:00",
+          "child_organisations": [
+            "valuation-office-agency",
+            "the-adjudicator-s-office"
+          ],
+          "organisation_brand": "hm-revenue-customs",
+          "logo_formatted_title": "HM Revenue\r\n& Customs",
+          "title": "HM Revenue & Customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "slug": "hm-revenue-customs",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/news/tax-free-childcare-launches-today-for-children-under-four",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Ofsted's National Director, Social Care, Eleanor Schooling, discusses what makes a good 'front-door' service that fully protects children.",
+      "display_type": "Speech",
+      "format": "speech",
+      "link": "/government/speeches/social-care-monthly-commentary-march-2017",
+      "organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2017-03-28T09:57:00.000+01:00",
+      "title": "Social care commentary: creating an effective 'front-door'",
+      "policy_areas": [
+        {
+          "slug": "social-care",
+          "title": "Social care",
+          "content_id": "a90d4fac-5656-4745-9c16-08542f42c3ac",
+          "link": "/government/topics/social-care"
+        }
+      ],
+      "organisation_content_ids": [
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/speeches/social-care-monthly-commentary-march-2017",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Local authority allocations to deliver 15 hours a week early education for 130,000 two-year-olds have been published.",
+      "display_type": "Press release",
+      "format": "news_article",
+      "link": "/government/news/top-providers-urged-to-get-ready-for-two-year-old-education-offer",
+      "organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2012-11-27T00:00:00.000+00:00",
+      "title": "Top providers urged to get ready for two-year-old education offer",
+      "policy_areas": [
+        {
+          "slug": "children-and-young-people",
+          "title": "Children and young people",
+          "content_id": "89a2270a-8c81-4336-b68c-3e4fb5ac319c",
+          "link": "/government/topics/children-and-young-people"
+        }
+      ],
+      "organisation_content_ids": [
+        "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_crest": "single-identity",
+          "superseded_organisations": [
+            "department-for-children-schools-and-families",
+            "national-college-for-teaching-and-leadership"
+          ],
+          "acronym": "DfE",
+          "link": "/government/organisations/department-for-education",
+          "analytics_identifier": "D6",
+          "public_timestamp": "2018-01-09T10:08:01.000+00:00",
+          "child_organisations": [
+            "education-funding-agency",
+            "standards-and-testing-agency",
+            "ofqual",
+            "ofsted",
+            "office-of-the-children-s-commissioner",
+            "school-teachers-review-body",
+            "social-mobility-and-child-poverty-commission",
+            "national-college-for-teaching-and-leadership",
+            "national-college-for-school-leadership",
+            "office-of-the-schools-adjudicator",
+            "schools-commissioners-group",
+            "equality-and-human-rights-commission",
+            "skills-funding-agency",
+            "higher-education-funding-council-for-england",
+            "office-for-fair-access",
+            "student-loans-company",
+            "uk-commission-for-employment-and-skills",
+            "construction-industry-training-board",
+            "engineering-construction-industry-training-board",
+            "social-mobility-commission",
+            "education-and-skills-funding-agency",
+            "institute-for-apprenticeships",
+            "located",
+            "office-for-students",
+            "teaching-regulation-agency",
+            "independent-review-mechanism"
+          ],
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Department \r\nfor Education",
+          "title": "Department for Education",
+          "content_id": "ebd15ade-73b2-4eaf-b1c3-43034a42eb37",
+          "slug": "department-for-education",
+          "organisation_type": "ministerial_department",
+          "organisation_state": "live"
+        },
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/news/top-providers-urged-to-get-ready-for-two-year-old-education-offer",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "This Ofsted good practice example shows how youth workers in social work pods are having a positive impact on young people’s outcomes.",
+      "display_type": "Research and analysis",
+      "format": "publication",
+      "link": "/government/publications/youth-workers-improving-young-peoples-outcomes",
+      "organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2015-11-06T11:51:34.000+00:00",
+      "title": "Youth workers improving young people’s outcomes",
+      "policy_areas": [
+        {
+          "slug": "social-care",
+          "title": "Social care",
+          "content_id": "a90d4fac-5656-4745-9c16-08542f42c3ac",
+          "link": "/government/topics/social-care"
+        }
+      ],
+      "organisation_content_ids": [
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/publications/youth-workers-improving-young-peoples-outcomes",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Ofsted's annual report for the academic year 1995 to 1996.",
+      "display_type": "Corporate report",
+      "format": "publication",
+      "link": "/government/publications/the-annual-report-of-her-majestys-chief-inspector-of-schools-199596",
+      "organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "1997-02-04T00:00:00.000+00:00",
+      "title": "The annual report of Her Majesty's Chief Inspector of Schools 1995 to 1996",
+      "policy_areas": [
+        {
+          "slug": "schools",
+          "title": "Schools",
+          "content_id": "88d627cb-0ae5-4fc9-b5ac-bb7eb6fddf72",
+          "link": "/government/topics/schools"
+        }
+      ],
+      "organisation_content_ids": [
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/publications/the-annual-report-of-her-majestys-chief-inspector-of-schools-199596",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Ofsted's National Director, Social Care, Eleanor Schooling, on driving improvement in tackling child sexual exploitation.",
+      "display_type": "Speech",
+      "format": "speech",
+      "link": "/government/speeches/social-care-monthly-commentary-january-2017",
+      "organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2017-01-26T11:00:00.000+00:00",
+      "title": "Social care commentary: preventing child sexual exploitation",
+      "policy_areas": [
+        {
+          "slug": "children-and-young-people",
+          "title": "Children and young people",
+          "content_id": "89a2270a-8c81-4336-b68c-3e4fb5ac319c",
+          "link": "/government/topics/children-and-young-people"
+        },
+        {
+          "slug": "social-care",
+          "title": "Social care",
+          "content_id": "a90d4fac-5656-4745-9c16-08542f42c3ac",
+          "link": "/government/topics/social-care"
+        }
+      ],
+      "organisation_content_ids": [
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/speeches/social-care-monthly-commentary-january-2017",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Ofsted's annual report for the academic year 1996 to 1997.",
+      "display_type": "Corporate report",
+      "format": "publication",
+      "link": "/government/publications/the-annual-report-of-her-majestys-chief-inspector-of-schools-1996-to-1997",
+      "organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "1998-02-03T00:00:00.000+00:00",
+      "title": "The annual report of Her Majesty's Chief Inspector of Schools 1996 to 1997",
+      "policy_areas": [
+        {
+          "slug": "schools",
+          "title": "Schools",
+          "content_id": "88d627cb-0ae5-4fc9-b5ac-bb7eb6fddf72",
+          "link": "/government/topics/schools"
+        },
+        {
+          "slug": "government-efficiency-transparency-and-accountability",
+          "title": "Government efficiency, transparency and accountability",
+          "content_id": "0a12a282-10eb-4c83-9db4-16540ae5ab01",
+          "link": "/government/topics/government-efficiency-transparency-and-accountability"
+        }
+      ],
+      "organisation_content_ids": [
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/publications/the-annual-report-of-her-majestys-chief-inspector-of-schools-1996-to-1997",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    },
+    {
+      "description": "Proposals for framework changes to the inspection of children's homes",
+      "display_type": "Consultation outcome",
+      "format": "consultation",
+      "link": "/government/consultations/childrens-homes-framework",
+      "organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "public_timestamp": "2015-02-27T09:30:28.000+00:00",
+      "title": "Children's homes framework",
+      "policy_areas": [
+        {
+          "slug": "children-and-young-people",
+          "title": "Children and young people",
+          "content_id": "89a2270a-8c81-4336-b68c-3e4fb5ac319c",
+          "link": "/government/topics/children-and-young-people"
+        },
+        {
+          "slug": "social-care",
+          "title": "Social care",
+          "content_id": "a90d4fac-5656-4745-9c16-08542f42c3ac",
+          "link": "/government/topics/social-care"
+        }
+      ],
+      "organisation_content_ids": [
+        "ad5f6169-ac7b-4382-9eb6-e58af71a2f00"
+      ],
+      "expanded_organisations": [
+        {
+          "organisation_brand": "department-for-education",
+          "logo_formatted_title": "Ofsted",
+          "organisation_crest": "custom",
+          "title": "Ofsted",
+          "content_id": "ad5f6169-ac7b-4382-9eb6-e58af71a2f00",
+          "acronym": "Ofsted",
+          "link": "/government/organisations/ofsted",
+          "slug": "ofsted",
+          "analytics_identifier": "D106",
+          "parent_organisations": [
+            "department-for-education"
+          ],
+          "public_timestamp": "2017-07-04T15:35:36.000+01:00",
+          "logo_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/106/Ofsted-logo-gov.uk.png",
+          "organisation_type": "non_ministerial_department",
+          "organisation_state": "live"
+        }
+      ],
+      "index": "government",
+      "es_score": null,
+      "_id": "/government/consultations/childrens-homes-framework",
+      "elasticsearch_type": "edition",
+      "document_type": "edition"
+    }
+  ],
+  "total": 25,
+  "start": 0,
+  "aggregates": {
+
+  },
+  "suggested_queries": [
+
+  ]
+}
