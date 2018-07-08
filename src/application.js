@@ -10,9 +10,9 @@ import {WrapLayout} from './modules/taxitor/layouts/wrap.js'
 import {FakeSchema} from './modules/taxplay/schemas/fake.js'
 import {GOVUKSchema} from './modules/taxplay/schemas/govuk.js'
 import {Doclist} from './modules/doclist/doclist.js'
-import {Node} from './modules/taxodes/edit/node.js'
+import {Session} from './session.js'
 
-const node = new Node({ })
+const session = new Session({ })
 
 const sources = { "Fake": { "schema": FakeSchema, "taxode": FakeTaxode },
                   "GOV.UK": { "schema": GOVUKSchema, "taxode": GOVUKTaxode } }
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   var taxplay = new Taxplay()
   var doclist = new Doclist()
 
-  var layoutRadio = new RadioTaxele("layout", _.keys(layouts), node)
-  var sourceRadio = new RadioTaxele("source", _.keys(sources), node)
+  var layoutRadio = new RadioTaxele("layout", _.keys(layouts), session)
+  var sourceRadio = new RadioTaxele("source", _.keys(sources), session)
 
   layoutRadio.attach("#layout-taxadio")
   sourceRadio.attach("#source-taxadio")
