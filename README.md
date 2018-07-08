@@ -8,7 +8,8 @@ A prototype editor for the [GOV.UK taxonomy](https://insidegovuk.blog.gov.uk/201
 
 You will need the following prerequisites installed locally.
 
-  * [npx](https://www.npmjs.com/package/npx) to get a HTTP server
+  * [npm](https://www.npmjs.com/) to manage the dev dependencies
+  * [npx](https://www.npmjs.com/package/npx) to run npx binaries
 
 Most of these can be installed using Homebrew on Mac.
 
@@ -17,7 +18,9 @@ Most of these can be installed using Homebrew on Mac.
 Run the following command in the top level directory.
 
 ```
+npm install
 npx http-server -c-1
+npx cucumber-js tes
 ```
 
 The navigate to `http://localhost:8080` in your browser.
@@ -56,8 +59,8 @@ There are lots of features to add to make the prototype better and showcase what
   * ~~[taxplay] Make the showing/editing of each property generic~~
   * ~~[taxplay] Use generic properties to change phase / publish~~
   * ~~[generic] Use a javascript module library to require stuff~~
-  * ~~[taxitor] Show more details (e.g. phase) in each node~~§
-  * [generic] Add feature tests to check each component works
+  * ~~[taxitor] Show more details (e.g. phase) in each node~~
+  * ~~[generic] Add feature tests to check each component works~~
   * [generic] Loom into packaging to distribute components
 
 And much more - feel free to suggest some ideas. As some of the components are quite generic, it may also be good to extract them.
