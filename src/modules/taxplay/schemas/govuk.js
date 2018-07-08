@@ -7,10 +7,10 @@ export class GOVUKSchema {
   }
 
   elements(d) {
-    return [new LabelTaxele(d.node, "content_id"),
-            new LabelTaxele(d.node, "title"),
-            new LabelTaxele(d.node, "base_path"),
-            new LabelTaxele(d.node, "description"),
+    return [new LabelTaxele("content_id", d.node),
+            new LabelTaxele("title", d.node),
+            new LabelTaxele("base_path", d.node),
+            new LabelTaxele("description", d.node),
             new ButtonTaxele("View on GOV.UK", () => {
               window.open(d.url, "_blank")
             })]

@@ -1,7 +1,7 @@
 export class TextBoxTaxele {
-  constructor(data, name) {
-    this.data = data
+  constructor(name, data) {
     this.name = name
+    this.data = data
   }
 
   attach(element) {
@@ -10,6 +10,11 @@ export class TextBoxTaxele {
       .attr("id", this.name)
       .attr("name", this.name)
       .classed("taxeles", true)
+
+    this.element.on("change", () => {
+      var value = this.element.node().value
+      this.data.set(this.name, value)
+    })
 
     var value = this.data.get(this.name)
     this.element.node().value = value

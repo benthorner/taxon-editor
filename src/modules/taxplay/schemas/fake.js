@@ -9,9 +9,9 @@ export class FakeSchema {
   }
 
   elements(d) {
-    return [new LabelTaxele(d.node, "id"),
-            new TextBoxTaxele(d.node, "title"),
-            new TextBoxTaxele(d.node, "description"),
+    return [new LabelTaxele("id", d.node),
+            new TextBoxTaxele("title", d.node),
+            new TextBoxTaxele("description", d.node),
             new GroupTaxele("save", [
               new ButtonTaxele("Save", () => {
                 this.editor.trigger("onSave", d)

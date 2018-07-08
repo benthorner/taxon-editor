@@ -13,19 +13,14 @@ export class EditHandler {
   }
 
   onReset() {
+    this.editor.data.node.reset()
     this.editor.trigger("beforeUpdate")
     this.editor.element.classed("dirty", false)
   }
 
   onSave(d) {
-    var node = this.editor.data.node
-    var data = new FormData(this.editor.element.node())
-
-    for (var entry of data.entries()) {
-      node.set(entry[0], entry[1])
-    }
-
-    this.editor.element.classed("dirty", false)
+    this.editor.data.node.save()
     this.editor.trigger("beforeUpdate")
+    this.editor.element.classed("dirty", false)
   }
 }

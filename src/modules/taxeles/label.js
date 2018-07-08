@@ -1,7 +1,7 @@
 export class LabelTaxele {
-  constructor(data, name) {
-    this.data = data
+  constructor(name, data) {
     this.name = name
+    this.data = data
   }
 
   attach(element) {

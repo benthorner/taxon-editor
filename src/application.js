@@ -1,5 +1,4 @@
 import {RadioTaxele} from './modules/taxeles/radio.js'
-import {Node} from './modules/taxodes/base/node.js'
 import {Taxplay} from './modules/taxplay/taxplay.js'
 import {GOVUKTaxode} from './modules/taxodes/govuk.js'
 import {FakeTaxode} from './modules/taxodes/fake.js'
@@ -11,8 +10,9 @@ import {WrapLayout} from './modules/taxitor/layouts/wrap.js'
 import {FakeSchema} from './modules/taxplay/schemas/fake.js'
 import {GOVUKSchema} from './modules/taxplay/schemas/govuk.js'
 import {Doclist} from './modules/doclist/doclist.js'
+import {Node} from './modules/taxodes/edit/node.js'
 
-const options = new Node({ "layout": "Wrap", "source": "Fake" })
+const node = new Node({ })
 
 const sources = { "Fake": { "schema": FakeSchema, "taxode": FakeTaxode },
                   "GOV.UK": { "schema": GOVUKSchema, "taxode": GOVUKTaxode } }
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   var taxplay = new Taxplay()
   var doclist = new Doclist()
 
-  var layoutRadio = new RadioTaxele(options, "layout", _.keys(layouts))
-  var sourceRadio = new RadioTaxele(options, "source", _.keys(sources))
+  var layoutRadio = new RadioTaxele("layout", _.keys(layouts), node)
+  var sourceRadio = new RadioTaxele("source", _.keys(sources), node)
 
   layoutRadio.attach("#layout-taxadio")
   sourceRadio.attach("#source-taxadio")
@@ -53,6 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   taxplay.on("onSave", (d) => taxitor.trigger("beforeUpdate"))
   taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
-  sourceRadio.trigger("onSelect", options.get("source"))
-  layoutRadio.trigger("onSelect", options.get("layout"))
+  sourceRadio.trigger("onSelect", "Fake")
+  layoutRadio.trigger("onSelect", "Wrap")
 })

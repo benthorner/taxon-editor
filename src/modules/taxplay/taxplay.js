@@ -16,7 +16,6 @@ export class Taxplay {
 
   attach(element) {
     this.element = d3.select(element)
-      .append("form")
       .classed("taxplay", true)
 
     this.trigger("onAttach")

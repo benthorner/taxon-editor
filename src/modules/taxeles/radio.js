@@ -2,24 +2,20 @@ import {GroupTaxele} from './group.js'
 import {ButtonTaxele} from './button.js'
 
 export class RadioTaxele {
-  constructor(data, name, items) {
+  constructor(name, items, data) {
     _.extend(this, Backbone.Events)
     this.on("onSelect", this.onSelect)
+    this.on("onUpdate", this.onUpdate)
 
-    this.data = data
     this.name = name
     this.items = items
+    this.data = data
   }
 
   attach(element) {
     this.element = d3.select(element)
       .append("div")
       .classed("taxeles", true)
-
-    this.element
-      .append("input")
-      .attr("type", "hidden")
-      .attr("name", this.name)
 
     var items = this.items.map((d) => {
       return new ButtonTaxele(d, () => {
@@ -30,17 +26,19 @@ export class RadioTaxele {
     new GroupTaxele(this.name, items)
       .attach(this.element.node())
 
-    this.onSelect(this.data.get(this.name))
+    var value = this.data.get(this.name)
+    this.trigger("onUpdate", value)
   }
 
   onSelect(d = "") {
-    var input = this.element.select("input").node()
-    if (input.value == d) return
-
     var event = new Event("change", { "bubbles": true })
-    input.dispatchEvent(event)
+    this.element.node().dispatchEvent(event)
 
-    input.value = d
+    this.data.set(this.name, d)
+    this.trigger("onUpdate", d)
+  }
+
+  onUpdate(d) {
     var index = this.items.indexOf(d)
 
     this.element
