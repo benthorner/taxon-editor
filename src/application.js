@@ -12,7 +12,7 @@ import {GOVUKSchema} from './modules/taxplay/schemas/govuk.js'
 import {Doclist} from './modules/doclist/doclist.js'
 import {Session} from './session.js'
 
-const session = new Session({ })
+const session = new Session()
 
 const sources = { "Fake": { "schema": FakeSchema, "taxode": FakeTaxode },
                   "GOV.UK": { "schema": GOVUKSchema, "taxode": GOVUKTaxode } }
@@ -53,6 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   taxplay.on("onSave", (d) => taxitor.trigger("beforeUpdate"))
   taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
-  sourceRadio.trigger("onSelect", "Fake")
-  layoutRadio.trigger("onSelect", "Wrap")
+  sourceRadio.trigger("onSelect", session.get("source") || "Fake")
+  layoutRadio.trigger("onSelect", session.get("layout") || "Wrap")
 })
