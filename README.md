@@ -1,4 +1,4 @@
-# taxonomy-editor
+# taxonomy-explorer
 
 A prototype editor for the [GOV.UK taxonomy](https://insidegovuk.blog.gov.uk/2015/11/02/developing-a-subject-based-taxonomy-for-gov-uk/).
 
