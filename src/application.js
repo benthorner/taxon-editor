@@ -14,16 +14,16 @@ import {Doclist} from './modules/doclist/doclist.js'
 
 const options = new Node({ "layout": "Wrap", "schema": "Fake" })
 
+const layouts = { "Wrap": WrapLayout, "Force": ForceLayout,
+                  "Radial": RadialLayout, "Tree": TreeLayout }
+
 document.addEventListener("DOMContentLoaded", () => {
   var taxitor = new Taxitor()
   var taxplay = new Taxplay()
   var doclist = new Doclist()
 
-  var layoutRadio = new RadioTaxele(options, "layout",
-    ["Wrap", "Force", "Radial", "Tree"])
-
-  var schemaRadio = new RadioTaxele(options, "schema",
-    ["Fake", "GOV.UK"])
+  var layoutRadio = new RadioTaxele(options, "layout", _.keys(layouts))
+  var schemaRadio = new RadioTaxele(options, "schema", ["Fake", "GOV.UK"])
 
   layoutRadio.attach("#layout-taxadio")
   schemaRadio.attach("#schema-taxadio")
@@ -32,24 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
   doclist.attach("#doclist")
 
   layoutRadio.on("onSelect", (d) => {
-    switch(d) {
-      case "Wrap":
-        taxitor.trigger("layoutSelected", new WrapLayout(taxitor))
-        taxitor.trigger("beforeLayout")
-        break
-      case "Force":
-        taxitor.trigger("layoutSelected", new ForceLayout(taxitor))
-        taxitor.trigger("beforeLayout")
-        break
-      case "Radial":
-        taxitor.trigger("layoutSelected", new RadialLayout(taxitor))
-        taxitor.trigger("beforeLayout")
-        break
-      case "Tree":
-        taxitor.trigger("layoutSelected", new TreeLayout(taxitor))
-        taxitor.trigger("beforeLayout")
-        break
-    }
+    taxitor.trigger("layoutSelected", new layouts[d](taxitor))
+    taxitor.trigger("beforeLayout")
   })
 
   schemaRadio.on("onSelect", (d) => {
