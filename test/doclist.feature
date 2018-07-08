@@ -6,4 +6,4 @@ Feature: Doclist
 
   Scenario: Clicking on a doc
     When I click on the 1st doc
-    Then I should be on the "www.google.com" page
+    Then I should be on the google home page

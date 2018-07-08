@@ -1,6 +1,6 @@
 Feature: GOV.UK
   Background:
-    Given I click on the "GOV.UK" schema button
+    Given I click on the "GOV.UK" source button
     Then I should see 1 level 0 nodes
     And I should see the 1st node contains "GOV.UK"
     And I should see the 1st node contains "25"
