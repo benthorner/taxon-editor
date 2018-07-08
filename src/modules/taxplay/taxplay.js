@@ -8,7 +8,7 @@ export class Taxplay {
     new MainStage(this)
     new MainHandler(this)
 
-    this.on("dataReceived", (d) => {
+    this.on("onData", (d) => {
       this.data = d
       this.trigger("beforeUpdate")
     })

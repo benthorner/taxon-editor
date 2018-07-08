@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   doclist.attach("#doclist")
 
   layoutRadio.on("onSelect", (d) => {
-    taxitor.trigger("layoutSelected", new layouts[d](taxitor))
+    taxitor.trigger("onSelectLayout", new layouts[d](taxitor))
     taxitor.trigger("beforeLayout")
   })
 
@@ -43,16 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     taxplay.trigger("onClear")
     taxitor.trigger("onClear")
     doclist.trigger("onClear")
-    taxplay.trigger("schemaSelected", new sources[d].schema(taxplay))
-    taxitor.trigger("dataReceived", sources[d].taxode.root())
+    taxplay.trigger("onSelectSchema", new sources[d].schema(taxplay))
+    taxitor.trigger("onData", sources[d].taxode.root())
   })
 
-  taxitor.on("nodeSelected", (d) => {
-    doclist.trigger("dataReceived", d.docs.fetch())
+  taxitor.on("onSelect", (d) => {
+    doclist.trigger("onData", d.docs.fetch())
   })
 
   taxplay.on("onSave", (d) => taxitor.trigger("beforeUpdate"))
-  taxitor.on("nodeSelected", (d) => taxplay.trigger("dataReceived", d))
+  taxitor.on("onSelect", (d) => taxplay.trigger("onData", d))
   sourceRadio.trigger("onSelect", session.get("source") || "Fake")
   layoutRadio.trigger("onSelect", session.get("layout") || "Wrap")
 })

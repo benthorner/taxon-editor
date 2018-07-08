@@ -6,10 +6,10 @@ export class UpdateStage {
     this.schema = new FakeSchema(editor)
 
     this.editor.on("onUpdate", this.onUpdate, this)
-    this.editor.on("schemaSelected", this.schemaSelected, this)
+    this.editor.on("onSelectSchema", this.onSelectSchema, this)
   }
 
-  schemaSelected(d) {
+  onSelectSchema(d) {
     this.schema = d
   }
 

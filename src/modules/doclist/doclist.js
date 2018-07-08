@@ -8,7 +8,7 @@ export class Doclist {
     new MainStage(this)
     new MainHandler(this)
 
-    this.on("dataReceived", (d) => {
+    this.on("onData", (d) => {
       d.then((d2) => {
         this.data = d2
         this.trigger("beforeExit")
