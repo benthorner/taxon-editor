@@ -23,7 +23,7 @@ npx http-server -c-1
 npx cucumber-js tes
 ```
 
-The navigate to `http://localhost:8080` in your browser.
+Then go to `http://localhost:8080` in your browser.
 
 ## Components
 
