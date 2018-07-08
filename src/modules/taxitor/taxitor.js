@@ -9,9 +9,13 @@ export class Taxitor {
     new MainHandler(this)
 
     this.on("dataReceived", (d) => {
-      this.data = d
-      this.trigger("beforeExit")
-      this.trigger("nodeSelected", d)
+      d.then((d2) => {
+        this.data = d2
+        this.trigger("beforeExit")
+        this.trigger("nodeSelected", d2)
+      }).catch((e) => {
+        this.trigger("error", e)
+      })
     })
   }
 

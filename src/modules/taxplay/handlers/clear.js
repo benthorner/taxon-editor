@@ -5,8 +5,7 @@ export class ClearHandler {
   }
 
   onClear() {
-    this.editor.element
-      .selectAll("*")
-      .remove()
+    this.editor.data = null
+    this.editor.trigger("beforeExit")
   }
 }

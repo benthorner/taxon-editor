@@ -5,8 +5,7 @@ export class ClearHandler {
   }
 
   onClear() {
-    this.list.element
-      .selectAll(".doc")
-      .remove()
+    this.list.data = null
+    this.list.trigger("beforeExit")
   }
 }

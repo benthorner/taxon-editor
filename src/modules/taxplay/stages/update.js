@@ -14,9 +14,8 @@ export class UpdateStage {
   }
 
   onUpdate() {
-    this.editor.element
-      .selectAll("*")
-      .remove()
+    this.editor.element.selectAll("*").remove()
+    if (this.editor.data == undefined) return
 
     for (var element of this.schema.elements(this.editor.data)) {
       element.attach(this.editor.element.node())

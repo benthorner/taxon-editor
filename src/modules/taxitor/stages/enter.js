@@ -16,12 +16,16 @@ export class EnterStage {
   }
 
   onEnter() {
-    var tree = this.editor.data.tree
+    var nodes = this.editor.data ?
+      this.editor.data.tree.nodes() : []
+
+    var links = this.editor.data ?
+      this.editor.data.tree.links() : []
 
     this.editor.element
       .select(".nodes")
       .selectAll(".node")
-      .data(tree.nodes(), (d) => d.id)
+      .data(nodes, (d) => d.id)
       .enter()
       .append("g")
       .classed("node", true)
@@ -29,7 +33,7 @@ export class EnterStage {
     this.editor.element
       .select(".links")
       .selectAll(".link")
-      .data(tree.links(), (d) => d.target.id)
+      .data(links, (d) => d.target.id)
       .enter()
       .append("line")
       .classed("link", true)

@@ -7,7 +7,7 @@ export class ExitStage {
   onExit() {
     this.list.element
       .selectAll(".doc")
-      .data(this.list.data, (d) => d.id)
+      .data(this.list.data || [], (d) => d.id)
       .exit()
       .remove()
   }

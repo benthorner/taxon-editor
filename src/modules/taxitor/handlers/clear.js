@@ -5,12 +5,7 @@ export class ClearHandler {
   }
 
   onClear() {
-    this.editor.g
-      .selectAll(".node")
-      .remove()
-
-    this.editor.g
-      .selectAll(".link")
-      .remove()
+    this.editor.data = null
+    this.editor.trigger("beforeExit")
   }
 }

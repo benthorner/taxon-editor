@@ -9,8 +9,12 @@ export class Doclist {
     new MainHandler(this)
 
     this.on("dataReceived", (d) => {
-      this.data = d
-      this.trigger("beforeExit")
+      d.then((d2) => {
+        this.data = d2
+        this.trigger("beforeExit")
+      }).catch((e) => {
+        this.trigger("error", e)
+      })
     })
   }
 

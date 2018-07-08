@@ -15,6 +15,7 @@ export class LayoutStage {
   }
 
   onLayout() {
+    if (this.editor.data == undefined) return
     this.layout.call(this.editor.data)
   }
 

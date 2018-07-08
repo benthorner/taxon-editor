@@ -20,4 +20,8 @@ export class FakeTaxode extends EditTaxode {
   build() {
     return new FakeTaxode()
   }
+
+  static root() {
+    return Promise.resolve(new FakeTaxode())
+  }
 }
