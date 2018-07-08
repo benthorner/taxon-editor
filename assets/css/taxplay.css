@@ -1,0 +1,20 @@
+.taxplay {
+  padding: 10px;
+  background: #005EA5;
+}
+
+.taxplay:not(.dirty) #save {
+  display: none;
+}
+
+.taxplay .taxeles {
+  margin-top: 10px;
+}
+
+.taxplay #title {
+  font-size: 28px;
+}
+
+.taxplay #id,#content_id {
+  font-size: 10px;
+}

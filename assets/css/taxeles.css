@@ -1,0 +1,41 @@
+label.taxeles {
+  display: block;
+  cursor: inherit;
+}
+
+input.taxeles {
+  width: 100%;
+  border: none;
+  border-bottom: dashed #BFC1C3 1px;
+  background: none;
+  color: white;
+  outline-width: 0;
+  font-size: inherit;
+  text-overflow: ellipsis
+}
+
+button.taxeles {
+  padding: 5px;
+  background-color: #00823B;
+  font-size: inherit;
+  color: white;
+  border: none;
+  cursor: hand;
+}
+
+button.taxeles+button.taxeles {
+  margin-left: 5px;
+}
+
+button.taxeles:hover {
+  background-color: #006435;
+}
+
+button.taxeles:focus {
+  outline: none;
+  background-color: #006435;
+}
+
+button.taxeles.selected {
+  background-color: #FFBF47;
+}

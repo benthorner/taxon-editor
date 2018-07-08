@@ -1,0 +1,32 @@
+.taxitor .node .title {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1px;
+  height: 86px;
+}
+
+.taxitor .node .count {
+  font-size: 8px;
+  padding: 2px;
+  background: #0B0C0C;
+  height: 8px;
+  text-align: right;
+}
+
+.taxitor .node rect {
+  opacity: 0.95;
+}
+
+.taxitor .node.depth0 rect { fill: #005EA5; }
+.taxitor .node.depth1 rect { fill: #2B8CC4; }
+.taxitor .node.depth2 rect { fill: #D53880; }
+.taxitor .node.depth3 rect { fill: #006435; }
+.taxitor .node.depth4 rect { fill: #85994B; }
+
+.taxitor .node:hover rect { fill: #FFBF47; }
+.taxitor .node:focus { outline: none; }
+.taxitor .node:focus rect { fill: #FFBF47; }
+
+.taxitor .node { cursor: hand; }
+.taxitor .link { stroke: #4C2C92; }
